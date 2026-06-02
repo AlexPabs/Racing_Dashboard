@@ -13,8 +13,16 @@ export function AlarmBanner() {
   const [alarms, setAlarms] = useState<Alarm[]>([])
   const [toasts, setToasts] = useState<Alarm[]>([])
   const prevStates = useRef<Record<string, 'ok' | 'warn' | 'crit'>>({})
+  const [klar, setKlar] = useState(false)
+
+  // Vent 4 sekunder etter oppstart før alarmer aktiveres (sensorer trenger tid til å laste)
+  useEffect(() => {
+    const t = setTimeout(() => setKlar(true), 4000)
+    return () => clearTimeout(t)
+  }, [])
 
   useEffect(() => {
+    if (!klar) return
     const newAlarms: Alarm[] = []
     const newToasts: Alarm[] = []
 
@@ -51,7 +59,7 @@ export function AlarmBanner() {
       setToasts(prev => [...prev, ...newToasts])
       setTimeout(() => setToasts(prev => prev.filter(t => !newToasts.find(n => n.id === t.id))), 4000)
     }
-  }, [config.sensors])
+  }, [config.sensors, klar])
 
   const hasCritical = alarms.some(a => a.critical)
 

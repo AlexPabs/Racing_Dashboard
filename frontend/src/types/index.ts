@@ -90,19 +90,26 @@ export const DEFAULT_CONFIG: DashboardConfig = {
   sensors: DEFAULT_SENSORS,
   widgets: [
     // Stor RPM-gauge til venstre
-    { id: 'w1', sensorId: 'rpm',        type: 'gauge',  x: 20,  y: 60,  width: 260, height: 260, theme: 'modern' },
-    // Lambda/AFR gauge til høyre for RPM
-    { id: 'w6', sensorId: 'lambda',     type: 'gauge',  x: 290, y: 60,  width: 220, height: 220, theme: 'modern' },
-    // Hastighet øverst til høyre
-    { id: 'w2', sensorId: 'speed',      type: 'number', x: 520, y: 60,  width: 200, height: 110, theme: 'modern' },
-    // Batteri
-    { id: 'w7', sensorId: 'battery',    type: 'number', x: 520, y: 180, width: 200, height: 90,  theme: 'modern' },
-    // Bar-widgets nederst
-    { id: 'w3', sensorId: 'oil_temp',   type: 'bar',    x: 20,  y: 335, width: 220, height: 75,  theme: 'modern' },
-    { id: 'w5', sensorId: 'oil_press',  type: 'bar',    x: 20,  y: 420, width: 220, height: 75,  theme: 'modern' },
-    { id: 'w4', sensorId: 'cht1',       type: 'bar',    x: 255, y: 335, width: 220, height: 75,  theme: 'modern' },
-    { id: 'w8', sensorId: 'fuel',       type: 'bar',    x: 255, y: 420, width: 220, height: 75,  theme: 'modern' },
+    { id: 'w1',  sensorId: 'rpm',           type: 'gauge',  x: 20,  y: 60,  width: 260, height: 260, theme: 'modern' },
+    // Lambda/AFR gauge
+    { id: 'w6',  sensorId: 'lambda',        type: 'gauge',  x: 290, y: 60,  width: 200, height: 200, theme: 'modern' },
+    // Hastighet og batteri
+    { id: 'w2',  sensorId: 'speed',         type: 'number', x: 500, y: 60,  width: 190, height: 100, theme: 'modern' },
+    { id: 'w7',  sensorId: 'battery',       type: 'number', x: 500, y: 168, width: 190, height: 80,  theme: 'modern' },
+    // Tenningsvinkel
+    { id: 'w10', sensorId: 'ignition_adv',  type: 'number', x: 500, y: 255, width: 190, height: 80,  theme: 'modern' },
+    // Olje og drivstoff
+    { id: 'w3',  sensorId: 'oil_temp',      type: 'bar',    x: 20,  y: 335, width: 220, height: 70,  theme: 'modern' },
+    { id: 'w5',  sensorId: 'oil_press',     type: 'bar',    x: 20,  y: 415, width: 220, height: 70,  theme: 'modern' },
+    { id: 'w8',  sensorId: 'fuel',          type: 'bar',    x: 20,  y: 495, width: 220, height: 70,  theme: 'modern' },
+    // CHT — alle fire sylindre
+    { id: 'w4',  sensorId: 'cht1',          type: 'bar',    x: 250, y: 280, width: 220, height: 65,  theme: 'modern' },
+    { id: 'w11', sensorId: 'cht2',          type: 'bar',    x: 250, y: 353, width: 220, height: 65,  theme: 'modern' },
+    { id: 'w12', sensorId: 'cht3',          type: 'bar',    x: 250, y: 426, width: 220, height: 65,  theme: 'modern' },
+    { id: 'w13', sensorId: 'cht4',          type: 'bar',    x: 250, y: 499, width: 220, height: 65,  theme: 'modern' },
     // Graf — AFR over tid
-    { id: 'w9', sensorId: 'lambda',     type: 'graph',  x: 490, y: 290, width: 240, height: 110, theme: 'modern' },
+    { id: 'w9',  sensorId: 'lambda',        type: 'graph',  x: 480, y: 345, width: 220, height: 100, theme: 'modern' },
+    // RPM-graf
+    { id: 'w14', sensorId: 'rpm',           type: 'graph',  x: 480, y: 453, width: 220, height: 100, theme: 'modern' },
   ]
 }

@@ -3,7 +3,8 @@ import { DashboardConfig, DEFAULT_CONFIG, Sensor, SensorLog, Widget } from '../t
 import { v4 as uuid } from 'uuid'
 
 const STORAGE_KEY = 'racing-dashboard-config'
-const LOG_MAX = 600 // 10 min at 1Hz
+const CONFIG_VERSION = 3  // øk ved breaking endringer i DEFAULT_CONFIG
+const LOG_MAX = 600
 
 interface Ctx {
   config: DashboardConfig
@@ -28,7 +29,15 @@ export const useDashboard = () => useContext(DashboardCtx)
 function load(): DashboardConfig {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    if (raw) return { ...DEFAULT_CONFIG, ...JSON.parse(raw) }
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      // Nullstill til default om config-versjon er utdatert
+      if (parsed.__version !== CONFIG_VERSION) {
+        localStorage.removeItem(STORAGE_KEY)
+        return DEFAULT_CONFIG
+      }
+      return { ...DEFAULT_CONFIG, ...parsed }
+    }
   } catch {}
   return DEFAULT_CONFIG
 }
@@ -40,9 +49,9 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
   const [selectedWidgetId, setSelectedWidget] = useState<string | null>(null)
   const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'>('none')
 
-  // Persist config
+  // Persist config med versjonsnummer
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(config))
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...config, __version: CONFIG_VERSION }))
   }, [config])
 
   const updateBackground = useCallback((type: 'color' | 'image', value: string) => {
