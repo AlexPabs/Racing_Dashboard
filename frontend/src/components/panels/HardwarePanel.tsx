@@ -18,51 +18,73 @@ const tag = (color: string): React.CSSProperties => ({
   borderRadius: 4, padding: '1px 6px', marginLeft: 6, verticalAlign: 'middle'
 })
 
-interface Item {
-  id: string; sensor: string; desc: string; unit: string
-  type: string; connector: string; price: string; note: string; required: boolean
+interface ShopItem {
+  id: string
+  name: string
+  qty: string
+  where: string
+  note: string
+  price?: string
+  link?: string
 }
 
-const SHOPPING: Item[] = [
-  // Olje
-  { id: 'oil_temp_sender',  sensor: 'Olje Temp',         desc: 'NTC sender 1/8" NPT, 0-150°C',                   unit: '°C',  type: 'Analog (NTC)',       connector: '1/8" NPT',    price: '150–300 kr',  note: 'Passer i oljefilter-blokk, oljepanne eller tilpasset adapter i olje-sump', required: true },
-  { id: 'oil_press_sender', sensor: 'Olje Trykk',        desc: '0-10 bar transducer 1/8" NPT (0.5-4.5V)',        unit: 'bar', type: 'Analog (0.5-4.5V)',  connector: '1/8" NPT',    price: '300–500 kr',  note: 'Ikke vanlig pressostat — trenger 0-10V/0.5-4.5V ratiometrisk sender', required: true },
-  // CHT — sylinderhode-temperatur
-  { id: 'cht_thermocouple', sensor: 'CHT ×4 Termoparer', desc: 'Type K termopar, 1/8" NPT ring-terminal, 0-300°C', unit: '°C', type: 'Termopar (SPI)',     connector: '1/8" NPT',    price: '200–500 kr',  note: '4 stk — ett per sylinder. Skrues inn i sylinderhodebolten eller bruker ring-terminal under plugg', required: true },
-  { id: 'max31855',         sensor: 'MAX31855 ×4',       desc: 'SPI termopar-amplifier breakout-board',           unit: '°C',  type: 'SPI (3.3V)',         connector: 'SPI-buss',    price: '100–300 kr',  note: '4 stk — ett per termopar. Adafruit #269 eller AliExpress-klon. Del SPI-buss, bruk 4 separate CS-pinner', required: true },
-  // Lambda
-  { id: 'lambda_sensor',    sensor: 'Lambda / AFR',      desc: 'Wideband lambda-kontroller (AEM 30-0300 o.l.)',   unit: 'λ',   type: 'Analog (0-5V)',      connector: '18mm bung',   price: '1200–2500 kr', note: 'Inkluderer Bosch LSU 4.9 breidbånds-sonde + kontroller. 0V=7.35 AFR (rik), 5V=22.4 AFR (mager)', required: true },
-  // Luftkjøling
-  { id: 'iat_sender',       sensor: 'IAT (Inntaksluft)', desc: 'NTC temp-sensor, 1/8" NPT eller inline-type',     unit: '°C',  type: 'Analog (NTC)',       connector: '1/8" NPT',    price: '80–200 kr',   note: 'Monteres i luftfilter-hus eller innsugnings-kanal. Samme type som olje-NTC', required: false },
-  // GPS
-  { id: 'gps_module',       sensor: 'Hastighet (GPS)',   desc: 'NEO-6M GPS-modul, UART 3.3V, 1-10 Hz',           unit: 'km/h',type: 'UART (3.3V)',        connector: '4-pin header', price: '80–200 kr',  note: 'Erstatter kabel-speedometeret. Gir hastighet, retning og posisjon. Bruker GPIO26 (RX) direkte — ingen resistor', required: true },
-  // 123ignition
-  { id: 'ignition_123',     sensor: 'RPM + Tenning',     desc: '123\\ignition TUNE+ digital fordeler',            unit: 'rpm', type: 'Bluetooth LE',       connector: 'Fordelersokkel', price: '3500–5000 kr', note: 'Erstatter mekanisk fordeler + kontaktpunkter. Sender RPM og tenningsfremskyvning (°BTDC) via BLE til RPI. Alternativt: bruk tenningsspole NEG + 4N35 for kun RPM', required: false },
-  // Elektrisk / drivstoff
-  { id: 'voltage_div',      sensor: 'Batteri',           desc: 'Spenningsdeler 100kΩ + 27kΩ (DIY)',              unit: 'V',   type: 'Analog',             connector: 'Batteri +',   price: '10–30 kr',    note: 'Skalerer 0-15V til 0-3.3V. 100kΩ fra batteri+, 27kΩ til GND, midtpunkt til GPIO36', required: true },
-  { id: 'fuel_sender',      sensor: 'Drivstoff',         desc: 'Eksisterende tank-sender (resistiv, 0-90Ω)',      unit: 'L',   type: 'Analog (resistiv)',  connector: 'Tank-sender', price: '0 kr',        note: 'Sitter allerede i tanken. Lag spenningsdeler: 5V → 120Ω → sender → GND, midtpunkt til GPIO39', required: false },
-  // MAP / innsugning
-  { id: 'map_sensor',       sensor: 'Innsugning (MAP)',  desc: 'Absolutt trykk-sensor 0-1 bar (MPX4115 o.l.)',   unit: 'bar', type: 'Analog (0-5V)',      connector: '4mm slange',  price: '150–400 kr',  note: 'For naturlig aspirert motor: vakuummåling 0-1 bar absolutt. Gir motorbelastning og tomgangskvalitet', required: false },
-  // TPMS — dekktrykk trådløst
-  { id: 'tpms_sensors',     sensor: 'TPMS Dekktrykk ×4', desc: '433MHz interne TPMS-sensorer (ventil-montert)',  unit: 'bar', type: '433MHz RF',          connector: 'Ventilstamme', price: '400–800 kr',  note: 'Sender batteri-drevet trykk + temp trådløst. Monteres av dekkverksted. Alternativt: ventilkappe-TPMS (utvendige) for enklere montering', required: false },
-  { id: 'rtlsdr',           sensor: 'RTL-SDR USB-mottaker', desc: 'RTL2832U USB-dongle (RTL-SDR Blog V4 o.l.)', unit: '—',   type: '433MHz mottaker',    connector: 'USB-A',        price: '150–400 kr',  note: 'Plugges i RPI. rtl_433-programvare dekoderer TPMS-pakkene automatisk. Støtter også andre 433MHz-enheter', required: false },
-]
+interface ShopCategory {
+  emoji: string
+  title: string
+  items: ShopItem[]
+}
 
-const ARDUINO: { name: string; desc: string; price: string; rec: boolean; why: string }[] = [
-  { name: 'ESP32 DevKit', desc: 'WiFi + Bluetooth, 12x ADC, rask, 3.3V', price: '100–180 kr', rec: true, why: 'Sender data trådløst til RPI over WiFi – ingen kabel i bilen nødvendig' },
-  { name: 'Arduino Nano', desc: '8x ADC, USB, 5V, enkel', price: '80–150 kr', rec: false, why: 'Bra for nybegynnere, trenger USB-kabel til RPI eller HC-05 Bluetooth' },
-  { name: 'Arduino Mega', desc: '16x ADC, mange pins', price: '200–350 kr', rec: false, why: 'Om du har mange sensorer og trenger alle pinnene' },
+const CATEGORIES: ShopCategory[] = [
+  {
+    emoji: '🔧', title: 'MOTORROM',
+    items: [
+      { id: 'wt32', name: 'WT32-ETH01', qty: '1 stk', where: 'AliExpress — søk "WT32-ETH01"', note: 'ESP32 med innebygd Ethernet (LAN8720A). Mer stabil enn WiFi i bilmiljø. Programmeres via Arduino IDE akkurat som ESP32', price: '80–150 kr' },
+      { id: 'max31855', name: 'MAX31855 breakout board', qty: '2 stk', where: 'AliExpress — søk "MAX31855 breakout"', note: 'SPI termopar-forsterker. Ett per K-type termokobling. Adafruit #269 eller AliExpress-klon fungerer fint', price: '50–120 kr' },
+      { id: 'cht', name: 'K-type termokobling M6', qty: '2 stk', where: 'AliExpress — søk "K-type thermocouple M6"', note: 'Skrues inn i sylinderhodet eller bruker ring-terminal under plugg. Mål 0–300°C. Velg M6 gewinde for enkel montering', price: '60–150 kr' },
+      { id: 'buck_motor', name: '12V → 5V DC-DC buck converter (min 2A)', qty: '1 stk', where: 'AliExpress — søk "LM2596 12V 5V"', note: 'Forsyner WT32-ETH01 og sensorer fra bilens 12V. Velg en med 2A+ kapasitet og innebygd kondensatorer for støyfiltrering', price: '30–80 kr' },
+      { id: 'box_motor', name: 'IP65 prosjektboks', qty: '1 stk', where: 'Biltema / AliExpress', note: 'Vanntett boks til WT32-ETH01 og elektronikk. IP65 holder mot sprut og støv. Ca. 150×100mm er passe størrelse', price: '80–200 kr' },
+      { id: 'deutsch', name: 'Deutsch DT 12-pin connector kit', qty: '1 stk', where: 'AliExpress — søk "Deutsch DT 12 pin connector kit"', note: 'Automotive-kontakter som tåler varme, vibrasjon og olje. Brukes for alle sensorledninger inn i boksen. Langt mer pålitelig enn vanlige skjøteklemmer', price: '150–300 kr' },
+    ]
+  },
+  {
+    emoji: '📺', title: 'DASHBORD',
+    items: [
+      { id: 'rpi', name: 'Raspberry Pi 4 (2GB eller 4GB)', qty: '1 stk', where: 'Kjell & Company', note: 'Kjører Node.js backend, WebSocket-server og nettleser i fullskjerm. 2GB er nok, 4GB gir litt mer spillerom', price: '700–950 kr' },
+      { id: 'screen', name: 'Raspberry Pi offisiell 7" touchskjerm', qty: '1 stk', where: 'Kjell & Company', note: 'Offisiell DSI-skjerm, kobles direkte til RPI uten ekstra kabel. 800×480px, berøringsstøtte. Perfekt dashbord-størrelse', price: '700–900 kr' },
+      { id: 'sd', name: 'MicroSD-kort 32GB Class 10', qty: '1 stk', where: 'Kjell & Company / Clas Ohlson', note: 'Til Raspberry Pi OS. Class 10 / A1-rated for god ytelse. SanDisk Endurance-serien anbefales for lang levetid i bil', price: '100–200 kr' },
+      { id: 'buck_dash', name: '12V → 5V DC-DC buck converter (min 3A)', qty: '1 stk', where: 'AliExpress — søk "LM2596 12V 5V 3A"', note: 'RPI 4 + skjerm trekker opptil 3A. Bruk en 3A+ buck-omformer for trygg drift. Unngå billige 2A-versjoner her', price: '40–100 kr' },
+      { id: 'box_dash', name: 'Prosjektboks til RPI', qty: '1 stk', where: 'Biltema / AliExpress', note: 'Holder RPI og buck-converter. Kan 3D-printes eller kjøpes ferdig. Monter bak dashbordet med god lufting', price: '50–150 kr' },
+    ]
+  },
+  {
+    emoji: '📡', title: 'GPS — FART OG TIMING',
+    items: [
+      { id: 'gps_module', name: 'NEO-6M GPS-modul med antenne', qty: '1 stk', where: 'AliExpress — søk "NEO-6M GPS module"', note: 'Kobles direkte til WT32-ETH01 via UART (GPIO26). 3.3V logikk, 9600 baud. Gir hastighet, retning og posisjon. Erstatter kabel-speedometeret', price: '60–150 kr' },
+      { id: 'gps_ant', name: 'GPS antenne med lang kabel (aktiv)', qty: '1 stk', where: 'AliExpress — søk "GPS active antenna SMA"', note: 'Aktiv antenne gir bedre mottak enn den lille antennen som følger med NEO-6M. Legg antennen under frontruten eller på frunk for godt signal', price: '60–150 kr' },
+    ]
+  },
+  {
+    emoji: '🛞', title: 'DEKK — TPMS',
+    items: [
+      { id: 'tpms', name: 'PECHAM BLE TPMS ekstern sensor', qty: '4 stk', where: 'AliExpress — item 1005004504977890', note: 'Bluetooth LE ventilkapsler — ingen montering hos dekkverksted. Skrus rett på ventilstammene. RPI leser trykk + temperatur via BLE. Batteridrevet, holder 1–2 år', price: '300–500 kr' },
+    ]
+  },
+  {
+    emoji: '🔌', title: 'KABLING OG PROGRAMMERING',
+    items: [
+      { id: 'cat6', name: 'CAT6 FTP kabel, 5 meter', qty: '1 stk', where: 'Clas Ohlson / Elkjøp', note: 'Ethernet-kabel mellom WT32-ETH01 og RPI. FTP-skjermet kabel gir bedre støyimmunitet i bilmiljø. 5m er nok for de fleste installasjoner', price: '80–150 kr' },
+      { id: 'slange', name: 'Korrugert plastslange, 5 meter', qty: '1 stk', where: 'Biltema', note: 'Beskytter sensorledninger mot varme, skav og olje i motorrommmet. Fåes i ulike dimensjoner — 10mm passer for de fleste ledningsbunter', price: '60–120 kr' },
+      { id: 'rj45', name: 'RJ45 plugger + crimpe-verktøy', qty: '1 sett', where: 'Biltema / Clas Ohlson', note: 'For å lage tilpassede Ethernet-kabler i riktig lengde. Kjøp gjerne et sett med plugger + crimpeverktøy samlet', price: '150–300 kr' },
+      { id: 'cp2102', name: 'CP2102 USB-til-TTL adapter', qty: '1 stk', where: 'AliExpress — søk "CP2102 USB TTL"', note: 'For å programmere WT32-ETH01 fra PC via USB. Nødvendig siden WT32-ETH01 ikke har innebygd USB-til-serial. Kobles til TX/RX/GND/3.3V', price: '30–80 kr' },
+    ]
+  },
 ]
 
 const MISC: { name: string; qty: string; price: string }[] = [
-  { name: '4N35 optokoppler (RPM via tenningsspole)', qty: '2 stk', price: '~30 kr' },
   { name: 'Motstander sortiment (1kΩ–100kΩ)', qty: '1 sett', price: '~80 kr' },
   { name: '100µF/16V kondensatorer (støyfilter ADC)', qty: '5 stk', price: '~30 kr' },
-  { name: '7805 eller L7805 5V regulator', qty: '1 stk', price: '~40 kr' },
   { name: 'Automotive Superseal 2-pin kontakter', qty: '10 sett', price: '~150 kr' },
   { name: 'Tilhengerkabel 2.5mm² (strøm + GND)', qty: '3m rød + 3m sort', price: '~80 kr' },
-  { name: 'Nettverkskabel CAT5/6 (signalkabler)', qty: '5m', price: '~50 kr' },
-  { name: 'Vanntett boks til ESP32 (IP65)', qty: '1 stk', price: '~120 kr' },
   { name: 'Auto-sikring 5A + sikringsholder', qty: '1 stk', price: '~50 kr' },
   { name: 'Stripe-board / Veroboard (kondisjonering)', qty: '1 stk', price: '~40 kr' },
 ]
@@ -75,10 +97,8 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
 
   const toggle = (id: string) => setChecked(p => ({ ...p, [id]: !p[id] }))
 
-  const boughtCount = SHOPPING.filter(i => checked[i.id]).length
-  const total = SHOPPING.filter(i => checked[i.id])
-    .map(i => parseInt(i.price.split('–')[0].replace(/\D/g, '')) || 0)
-    .reduce((a, b) => a + b, 0)
+  const allItems = CATEGORIES.flatMap(c => c.items)
+  const boughtCount = allItems.filter(i => checked[i.id]).length
 
   const tabBtn = (t: typeof tab, label: string) => (
     <button onClick={() => setTab(t)} style={{
@@ -96,7 +116,7 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
       <div style={{ padding: '16px 24px', borderBottom: '1px solid #222', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: '#0d0d0d', zIndex: 10 }}>
         <div>
           <div style={h1}>HARDWARE GUIDE</div>
-          <div style={{ color: '#555', fontSize: 11 }}>Sensor-oppsett for gammel bobilmotor</div>
+          <div style={{ color: '#555', fontSize: 11 }}>Sensor-oppsett for klassisk bil — WT32-ETH01 + RPI</div>
         </div>
         <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#555', cursor: 'pointer', fontSize: 22 }}>✕</button>
       </div>
@@ -105,7 +125,7 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
       <div style={{ padding: '14px 24px', borderBottom: '1px solid #1a1a1a' }}>
         {tabBtn('shopping', 'Handleliste')}
         {tabBtn('wiring', 'Koblingsskjema')}
-        {tabBtn('arduino', 'Arduino-kode')}
+        {tabBtn('arduino', 'Firmware-kode')}
       </div>
 
       {/* SHOPPING LIST */}
@@ -114,62 +134,42 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
           <div style={{ ...section, paddingBottom: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
               <div>
-                <span style={{ color: '#fff', fontWeight: 700 }}>{boughtCount}/{SHOPPING.length}</span>
+                <span style={{ color: '#fff', fontWeight: 700 }}>{boughtCount}/{allItems.length}</span>
                 <span style={{ color: '#555', marginLeft: 8 }}>komponenter i handlekurven</span>
               </div>
-              {boughtCount > 0 && <span style={{ color: '#00e5ff' }}>≈ {total}+ kr</span>}
             </div>
           </div>
 
-          {/* MCU */}
-          <div style={section}>
-            <div style={h2}>MIKROKONTROLLER (velg 1)</div>
-            {ARDUINO.map(a => (
-              <div key={a.name} onClick={() => toggle('mcu_' + a.name)}
-                style={{ display: 'flex', gap: 12, marginBottom: 14, cursor: 'pointer', opacity: checked['mcu_' + a.name] ? 1 : 0.7 }}>
-                <div style={{ width: 20, height: 20, border: `2px solid ${checked['mcu_' + a.name] ? '#00e5ff' : '#444'}`, borderRadius: 4, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: checked['mcu_' + a.name] ? '#00e5ff22' : 'transparent' }}>
-                  {checked['mcu_' + a.name] && <span style={{ color: '#00e5ff', fontSize: 13 }}>✓</span>}
-                </div>
-                <div>
-                  <span style={{ color: '#fff', fontWeight: 600 }}>{a.name}</span>
-                  {a.rec && <span style={tag('#a8ff3e')}>ANBEFALT</span>}
-                  <span style={{ color: '#00e5ff', float: 'right', fontSize: 12 }}>{a.price}</span>
-                  <div style={{ color: '#555', fontSize: 11, marginTop: 2 }}>{a.desc}</div>
-                  <div style={{ color: '#888', fontSize: 11, marginTop: 2, fontStyle: 'italic' }}>{a.why}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Sensors */}
-          <div style={section}>
-            <div style={h2}>SENSORER</div>
-            {SHOPPING.map(item => (
-              <div key={item.id} onClick={() => toggle(item.id)}
-                style={{ display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer', opacity: checked[item.id] ? 1 : 0.75 }}>
-                <div style={{ width: 20, height: 20, border: `2px solid ${checked[item.id] ? '#00e5ff' : '#444'}`, borderRadius: 4, flexShrink: 0, marginTop: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', background: checked[item.id] ? '#00e5ff22' : 'transparent' }}>
-                  {checked[item.id] && <span style={{ color: '#00e5ff', fontSize: 13 }}>✓</span>}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#fff', fontWeight: 600 }}>{item.sensor}</span>
-                    <span style={{ color: checked[item.id] ? '#00e5ff' : '#555', fontSize: 12 }}>{item.price}</span>
+          {CATEGORIES.map(cat => (
+            <div key={cat.title} style={section}>
+              <div style={h2}>{cat.emoji} {cat.title}</div>
+              {cat.items.map(item => (
+                <div key={item.id} onClick={() => toggle(item.id)}
+                  style={{ display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer', opacity: checked[item.id] ? 1 : 0.75 }}>
+                  <div style={{ width: 20, height: 20, border: `2px solid ${checked[item.id] ? '#00e5ff' : '#444'}`, borderRadius: 4, flexShrink: 0, marginTop: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', background: checked[item.id] ? '#00e5ff22' : 'transparent' }}>
+                    {checked[item.id] && <span style={{ color: '#00e5ff', fontSize: 13 }}>✓</span>}
                   </div>
-                  <div style={{ color: '#888', fontSize: 11, marginTop: 1 }}>{item.desc}</div>
-                  <div style={{ marginTop: 4, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                    <span style={tag('#555')}>{item.type}</span>
-                    <span style={tag('#555')}>{item.connector}</span>
-                    {item.required && <span style={tag('#ffaa00')}>NØDVENDIG</span>}
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                      <span style={{ color: '#fff', fontWeight: 600 }}>{item.name}</span>
+                      <span style={{ color: '#555', fontSize: 11, marginLeft: 8, flexShrink: 0 }}>{item.qty}</span>
+                    </div>
+                    <div style={{ color: '#888', fontSize: 11, marginTop: 1 }}>{item.where}</div>
+                    {item.price && (
+                      <div style={{ marginTop: 3 }}>
+                        <span style={tag('#555')}>{item.price}</span>
+                      </div>
+                    )}
+                    <div style={{ color: '#555', fontSize: 11, marginTop: 5, borderLeft: '2px solid #222', paddingLeft: 8, lineHeight: 1.6 }}>{item.note}</div>
                   </div>
-                  <div style={{ color: '#555', fontSize: 11, marginTop: 4, borderLeft: '2px solid #222', paddingLeft: 8 }}>{item.note}</div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ))}
 
           {/* Misc */}
           <div style={section}>
-            <div style={h2}>DIVERSE / ELEKTRONIKK</div>
+            <div style={h2}>🔩 DIVERSE / ELEKTRONIKK</div>
             {MISC.map(m => (
               <div key={m.name} onClick={() => toggle('misc_' + m.name)}
                 style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10, cursor: 'pointer' }}>
@@ -186,11 +186,11 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
           <div style={{ ...section, background: '#111', margin: '0 16px 16px', borderRadius: 8, border: '1px solid #222' }}>
             <div style={{ color: '#00e5ff', fontWeight: 700, marginBottom: 6 }}>Hvor kjøpe?</div>
             <div style={{ color: '#888', lineHeight: 1.8, fontSize: 12 }}>
-              <div>• <strong style={{ color: '#ccc' }}>Elfadistrelec.no / TME.eu</strong> — elektronikk, motstander, kondensatorer</div>
-              <div>• <strong style={{ color: '#ccc' }}>AliExpress</strong> — sensorer, ESP32, Arduino (3-4 ukers leveringstid)</div>
-              <div>• <strong style={{ color: '#ccc' }}>Autodoc.no / Biltema</strong> — temp-sendere, oljetrykk-sendere</div>
-              <div>• <strong style={{ color: '#ccc' }}>Amazon.de</strong> — raskere enn Ali, litt dyrere</div>
-              <div>• <strong style={{ color: '#ccc' }}>Kjell & Company</strong> — akutthandel, dyrere men raskt</div>
+              <div>• <strong style={{ color: '#ccc' }}>AliExpress</strong> — sensorer, WT32-ETH01, MAX31855, TPMS (3–4 ukers leveringstid)</div>
+              <div>• <strong style={{ color: '#ccc' }}>Kjell & Company</strong> — Raspberry Pi + skjerm + SD-kort (rask levering)</div>
+              <div>• <strong style={{ color: '#ccc' }}>Clas Ohlson / Elkjøp</strong> — CAT6-kabel, SD-kort, verktøy</div>
+              <div>• <strong style={{ color: '#ccc' }}>Biltema</strong> — prosjektbokser, korrugert slange, crimpe-verktøy</div>
+              <div>• <strong style={{ color: '#ccc' }}>Amazon.de</strong> — raskere enn Ali for enkeltkomponenter</div>
             </div>
           </div>
         </>
@@ -199,24 +199,24 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
       {/* WIRING */}
       {tab === 'wiring' && (
         <div style={{ padding: '16px 24px' }}>
-          <div style={h2}>KOBLINGSSKJEMA — ESP32 + SENSORER</div>
+          <div style={h2}>KOBLINGSSKJEMA — WT32-ETH01 + RPI</div>
           <WiringDiagram />
           <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {[
-              { pin: 'SPI + CS1-4',  sensor: 'CHT Syl. 1-4 (MAX31855)', note: 'MISO=19, CLK=18, MOSI=23, CS: 5/17/16/4' },
+              { pin: 'SPI + CS1-2',  sensor: 'CHT Syl. 1-2 (MAX31855)', note: 'MISO=19, CLK=18, MOSI=23, CS: 5/17' },
               { pin: 'GPIO34',       sensor: 'Olje Temp (ADC)',           note: 'NTC 4.7kΩ pull-up til 5V' },
               { pin: 'GPIO35',       sensor: 'Olje Trykk (ADC)',          note: 'Spenningsdeler 10k+3.3kΩ (4.5V→3.3V)' },
               { pin: 'GPIO32',       sensor: 'Lambda / AFR (ADC)',        note: 'Spenningsdeler 10k+6.8kΩ (5V→3.3V)' },
               { pin: 'GPIO33',       sensor: 'IAT Inntaksluft (ADC)',     note: 'NTC 4.7kΩ pull-up til 5V' },
               { pin: 'GPIO36',       sensor: 'Batteri (ADC)',             note: '100k/27kΩ spenningsdeler (15V→3.3V)' },
               { pin: 'GPIO39',       sensor: 'Drivstoff (ADC)',           note: '120Ω i serie + tank-sender + 5V' },
-              { pin: 'GPIO37',       sensor: 'Termostatflap (ADC)',       note: 'Pot 10kΩ, spenningsdeler 10k+6.8kΩ' },
               { pin: 'GPIO25',       sensor: 'RPM (interrupt)',           note: 'Via 4N35 optokoppler, tenningsspole NEG' },
               { pin: 'GPIO26 (RX2)', sensor: 'GPS NEO-6M (UART)',         note: '3.3V direkte, 9600 baud NMEA' },
-              { pin: 'WiFi',         sensor: 'Data → RPI bulk',           note: 'HTTP POST til :4000/api/sensors/bulk' },
-              { pin: 'RPI BLE',      sensor: '123\\ignition TUNE+',       note: 'Bluetooth LE → RPM + °BTDC' },
+              { pin: 'Ethernet',     sensor: 'Data → RPI bulk',           note: 'HTTP POST til :4000/api/sensors/bulk via CAT6' },
+              { pin: 'RPI BLE',      sensor: 'TPMS PECHAM ×4',           note: 'Bluetooth LE ventilkapsler → RPI' },
+              { pin: 'RPI BLE',      sensor: '123\\ignition TUNE+',       note: 'Valgfritt: BLE → RPM + °BTDC via RPI' },
             ].map(r => (
-              <div key={r.pin} style={{ background: '#111', border: '1px solid #1a1a1a', borderRadius: 6, padding: '8px 12px' }}>
+              <div key={r.pin + r.sensor} style={{ background: '#111', border: '1px solid #1a1a1a', borderRadius: 6, padding: '8px 12px' }}>
                 <span style={{ color: '#00e5ff', fontWeight: 700, fontSize: 12 }}>{r.pin}</span>
                 <span style={{ color: '#fff', marginLeft: 8, fontSize: 12 }}>{r.sensor}</span>
                 <div style={{ color: '#555', fontSize: 11, marginTop: 2 }}>{r.note}</div>
@@ -226,16 +226,19 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
         </div>
       )}
 
-      {/* ARDUINO CODE */}
+      {/* FIRMWARE CODE */}
       {tab === 'arduino' && (
         <div style={section}>
-          <div style={h2}>ESP32 FIRMWARE (Arduino IDE)</div>
+          <div style={h2}>WT32-ETH01 FIRMWARE (Arduino IDE)</div>
           <pre style={{ color: '#a8ff3e', fontSize: 11, lineHeight: 1.7, background: '#0a0a0a', padding: 16, borderRadius: 8, overflowX: 'auto', border: '1px solid #1a1a1a' }}>{`// Krever Arduino-biblioteker:
 //   Adafruit MAX31855  (Biblioteksbehandler → søk "MAX31855")
 //   TinyGPSPlus        (Biblioteksbehandler → søk "TinyGPSPlus")
 //   ArduinoJson        (Biblioteksbehandler → søk "ArduinoJson")
+//
+// Board: "ESP32 Dev Module" i Arduino IDE
+// WT32-ETH01 spesifikk: bruk ETH.h (innebygd Ethernet)
 
-#include <WiFi.h>
+#include <ETH.h>
 #include <HTTPClient.h>
 #include <SPI.h>
 #include <Adafruit_MAX31855.h>
@@ -243,26 +246,34 @@ export function HardwarePanel({ onClose }: { onClose: () => void }) {
 #include <HardwareSerial.h>
 
 // ── Konfigurasjon ─────────────────────────────────
-const char* SSID     = "ditt-wifi";
-const char* PASS     = "passord";
 const char* RPI_HOST = "http://192.168.1.xxx:4000/api/sensors/bulk";
 
-// ── MAX31855 — CHT sylinder 1-4 (delt SPI-buss) ──
-// SPI: MISO=19, CLK=18, MOSI=23 (standard)
-Adafruit_MAX31855 cht1(5),  cht2(17), cht3(16), cht4(4);
+// ── Ethernet-hendelse ─────────────────────────────
+static bool ethConnected = false;
+void WiFiEvent(WiFiEvent_t event) {
+  if (event == ARDUINO_EVENT_ETH_GOT_IP) {
+    ethConnected = true;
+    Serial.println("Ethernet OK: " + ETH.localIP().toString());
+  } else if (event == ARDUINO_EVENT_ETH_DISCONNECTED) {
+    ethConnected = false;
+  }
+}
+
+// ── MAX31855 — CHT syl. 1-2 (delt SPI-buss) ──────
+// SPI: MISO=19, CLK=18, MOSI=23 (standard ESP32 SPI)
+Adafruit_MAX31855 cht1(5), cht2(17);
 
 // ── GPS NEO-6M — UART2 på GPIO26 (RX) ────────────
 HardwareSerial gpsUART(2);
 TinyGPSPlus    gps;
 
-// ── ADC-pinner (alle ADC1 — virker med WiFi) ──────
+// ── ADC-pinner (alle ADC1 — virker med Ethernet) ──
 #define PIN_OIL_TEMP   34   // NTC → 4.7kΩ pull-up 5V
 #define PIN_OIL_PRESS  35   // 0-10bar → spenningsdeler 10k+3.3kΩ
 #define PIN_LAMBDA     32   // Wideband 0-5V → spenningsdeler 10k+6.8kΩ
 #define PIN_IAT        33   // NTC inntaksluft → 4.7kΩ pull-up 5V
 #define PIN_BATTERY    36   // 12V → spenningsdeler 100k+27kΩ
 #define PIN_FUEL       39   // Tank-sender → 120Ω serie + 5V
-#define PIN_AIR_FLAP   37   // Pot 10kΩ → spenningsdeler 10k+6.8kΩ
 
 // ── RPM via 4N35 optokoppler (tenningsspole NEG) ──
 #define PIN_RPM 25
@@ -270,8 +281,7 @@ volatile uint32_t rpmPulses = 0;
 void IRAM_ATTR rpmISR() { rpmPulses++; }
 unsigned long lastCalc = 0;
 float rpm = 0;
-// 4-sylindret 4-takt fordeler: 2 pulser per motoromdreiing
-#define RPM_PPR 2
+#define RPM_PPR 2  // 4-sylindret 4-takt: 2 pulser per omdr.
 
 // ── Steinhart-Hart NTC konvertering ───────────────
 float ntcToC(int raw, float rPull = 4700, float r25 = 120, float b = 3977) {
@@ -281,20 +291,17 @@ float ntcToC(int raw, float rPull = 4700, float r25 = 120, float b = 3977) {
   return 1.0f / (1.0f / 298.15f + log(r / r25) / b) - 273.15f;
 }
 
-// ── Oljetrykk (0.5V=0bar, 4.5V=10bar) ─────────────
 float oilPressBar(int raw) {
   float v = raw * 3.3f / 4095.0f * (4.5f / 3.3f);
   return constrain((v - 0.5f) * 2.5f, 0, 10);
 }
 
-// ── Lambda (AEM 30-0300: 0V=7.35AFR, 5V=22.4AFR) ──
 float lambdaVal(int raw) {
   float v5 = raw * 5.0f / 4095.0f;
   float afr = 7.35f + v5 * (22.4f - 7.35f) / 5.0f;
-  return afr / 14.7f;  // → lambda (1.0 = stoikiometrisk)
+  return afr / 14.7f;
 }
 
-// ── Batteri (100kΩ + 27kΩ) ────────────────────────
 float batteryV(int raw) {
   return raw * 3.3f / 4095.0f * (127000.0f / 27000.0f);
 }
@@ -307,20 +314,19 @@ void calcRpm() {
   lastCalc = now;
 }
 
-// ── Bulk JSON POST til RPI ─────────────────────────
-void pushBulk(float oilT, float oilP, float c1, float c2, float c3, float c4,
-              float lam, float iat, float flap, float batt, float fuel, float spd) {
-  if (WiFi.status() != WL_CONNECTED) return;
-  char json[512];
+void pushBulk(float oilT, float oilP, float c1, float c2,
+              float lam, float iat, float batt, float fuel, float spd) {
+  if (!ethConnected) return;
+  char json[400];
   snprintf(json, sizeof(json),
     "{"
       "\\"rpm\\":%.0f,\\"speed\\":%.1f,"
       "\\"oil_temp\\":%.1f,\\"oil_press\\":%.2f,"
-      "\\"cht1\\":%.0f,\\"cht2\\":%.0f,\\"cht3\\":%.0f,\\"cht4\\":%.0f,"
-      "\\"lambda\\":%.3f,\\"iat\\":%.1f,\\"air_flap\\":%.0f,"
+      "\\"cht1\\":%.0f,\\"cht2\\":%.0f,"
+      "\\"lambda\\":%.3f,\\"iat\\":%.1f,"
       "\\"battery\\":%.2f,\\"fuel\\":%.1f"
     "}",
-    rpm, spd, oilT, oilP, c1, c2, c3, c4, lam, iat, flap, batt, fuel);
+    rpm, spd, oilT, oilP, c1, c2, lam, iat, batt, fuel);
   HTTPClient http;
   http.begin(RPI_HOST);
   http.addHeader("Content-Type", "application/json");
@@ -330,16 +336,14 @@ void pushBulk(float oilT, float oilP, float c1, float c2, float c3, float c4,
 
 void setup() {
   Serial.begin(115200);
+  WiFi.onEvent(WiFiEvent);
+  ETH.begin();  // Start innebygd Ethernet på WT32-ETH01
   analogReadResolution(12);
   analogSetAttenuation(ADC_11db);
-  cht1.begin(); cht2.begin(); cht3.begin(); cht4.begin();
-  // GPS: RX=GPIO26, TX=GPIO27 (vi leser kun RX)
+  cht1.begin(); cht2.begin();
   gpsUART.begin(9600, SERIAL_8N1, 26, 27);
   attachInterrupt(digitalPinToInterrupt(PIN_RPM), rpmISR, FALLING);
-  WiFi.begin(SSID, PASS);
-  Serial.print("WiFi...");
-  while (WiFi.status() != WL_CONNECTED) { delay(500); Serial.print("."); }
-  Serial.println(" OK " + WiFi.localIP().toString());
+  Serial.println("Venter på Ethernet...");
 }
 
 unsigned long lastPush = 0;
@@ -351,33 +355,29 @@ void loop() {
   if (millis() - lastPush < 200) return;  // 5 Hz
 
   double c1 = cht1.readCelsius(), c2 = cht2.readCelsius();
-  double c3 = cht3.readCelsius(), c4 = cht4.readCelsius();
 
   pushBulk(
     ntcToC(analogRead(PIN_OIL_TEMP)),
     oilPressBar(analogRead(PIN_OIL_PRESS)),
-    isnan(c1)?-1:c1, isnan(c2)?-1:c2,
-    isnan(c3)?-1:c3, isnan(c4)?-1:c4,
+    isnan(c1) ? -1 : c1,
+    isnan(c2) ? -1 : c2,
     lambdaVal(analogRead(PIN_LAMBDA)),
     ntcToC(analogRead(PIN_IAT), 4700, 10000, 3950),
-    analogRead(PIN_AIR_FLAP) * 100.0f / 4095.0f,
     batteryV(analogRead(PIN_BATTERY)),
-    analogRead(PIN_FUEL) * 40.0f / 4095.0f,  // kalibreres!
+    analogRead(PIN_FUEL) * 40.0f / 4095.0f,
     gps.speed.isValid() ? gps.speed.kmph() : 0
   );
   lastPush = millis();
-}
-`}</pre>
+}`}</pre>
           <div style={{ marginTop: 16, background: '#111', border: '1px solid #ffaa0033', borderRadius: 8, padding: 14 }}>
-            <div style={{ color: '#ffaa00', fontWeight: 700, marginBottom: 6 }}>⚠ Kalibrering</div>
+            <div style={{ color: '#ffaa00', fontWeight: 700, marginBottom: 6 }}>⚠ Programmering av WT32-ETH01</div>
             <div style={{ color: '#888', fontSize: 12, lineHeight: 1.8 }}>
-              <div>• <strong style={{ color: '#ccc' }}>NTC r25 + B-verdi</strong>: les fra datasheetet til senderen du kjøper (oljetemperatur-sendre er vanligvis 120Ω @ 25°C, B≈3977)</div>
-              <div>• <strong style={{ color: '#ccc' }}>IAT</strong>: IAT NTC er typisk 10kΩ @ 25°C, B≈3950 — endre r25=10000 i ntcToC-kallet</div>
-              <div>• <strong style={{ color: '#ccc' }}>Oljetrykk-sender</strong>: sjekk om den er 0.5-4.5V (ratiometrisk) eller 4-20mA (da trenger du 250Ω shunt)</div>
-              <div>• <strong style={{ color: '#ccc' }}>RPM_PPR</strong>: 4-sylindret 4-takt fordeler = 2 pulser per omdr. Sjekk ved tomgang mot turteller</div>
-              <div>• <strong style={{ color: '#ccc' }}>Drivstoff</strong>: mål sender-motstand tom/full med multimeter, tilpass formelen</div>
-              <div>• <strong style={{ color: '#ccc' }}>Lambda</strong>: AEM 30-0300 brukes her. Sjekk hvilken AFR-range din kontroller sender</div>
-              <div>• <strong style={{ color: '#ccc' }}>123ignition TUNE+</strong>: sender RPM via BLE til RPI (ikke ESP32). Se server.js for BLE-bridge</div>
+              <div>• <strong style={{ color: '#ccc' }}>Koble CP2102</strong>: CP2102 TX → WT32 RX0, CP2102 RX → WT32 TX0, felles GND</div>
+              <div>• <strong style={{ color: '#ccc' }}>Boot-modus</strong>: hold IO0 til GND mens du kobler til strøm, slipp så etter 1 sek</div>
+              <div>• <strong style={{ color: '#ccc' }}>Board i Arduino IDE</strong>: "ESP32 Dev Module", Flash Mode: "DIO", Flash Size: "4MB"</div>
+              <div>• <strong style={{ color: '#ccc' }}>NTC r25 + B-verdi</strong>: les fra datasheetet (oljetemperatur: vanligvis 120Ω @ 25°C, B≈3977)</div>
+              <div>• <strong style={{ color: '#ccc' }}>RPM_PPR</strong>: 4-sylindret 4-takt = 2 pulser per omdreiing. Juster ved behov</div>
+              <div>• <strong style={{ color: '#ccc' }}>TPMS (PECHAM BLE)</strong>: leses av RPI via Bluetooth — ingen kode nødvendig på WT32</div>
             </div>
           </div>
         </div>
