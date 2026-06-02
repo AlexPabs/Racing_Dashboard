@@ -10,10 +10,10 @@ interface Ctx {
   logs: SensorLog[]
   editMode: boolean
   selectedWidgetId: string | null
-  showPanel: 'none' | 'settings' | 'logger' | 'hardware'
+  showPanel: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'
   setEditMode: (v: boolean) => void
   setSelectedWidget: (id: string | null) => void
-  setShowPanel: (p: 'none' | 'settings' | 'logger' | 'hardware') => void
+  setShowPanel: (p: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms') => void
   updateBackground: (type: 'color' | 'image', value: string) => void
   updateSensor: (sensor: Sensor) => void
   addWidget: (widget: Omit<Widget, 'id'>) => void
@@ -38,7 +38,7 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
   const [logs, setLogs] = useState<SensorLog[]>([])
   const [editMode, setEditMode] = useState(false)
   const [selectedWidgetId, setSelectedWidget] = useState<string | null>(null)
-  const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware'>('none')
+  const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'>('none')
 
   // Persist config
   useEffect(() => {

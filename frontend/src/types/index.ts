@@ -85,14 +85,24 @@ export const DEFAULT_SENSORS: Sensor[] = [
 ]
 
 export const DEFAULT_CONFIG: DashboardConfig = {
-  background: { type: 'color', value: '#0a0a0a' },
+  background: { type: 'color', value: '#0D1117' },
   globalTheme: 'modern',
   sensors: DEFAULT_SENSORS,
   widgets: [
-    { id: 'w1', sensorId: 'rpm',       type: 'gauge',  x: 40,  y: 50,  width: 240, height: 240, theme: 'modern' },
-    { id: 'w2', sensorId: 'speed',     type: 'number', x: 300, y: 50,  width: 200, height: 110, theme: 'modern' },
-    { id: 'w3', sensorId: 'oil_temp',  type: 'bar',    x: 300, y: 180, width: 200, height: 80,  theme: 'modern' },
-    { id: 'w4', sensorId: 'cht1',      type: 'bar',    x: 300, y: 275, width: 200, height: 80,  theme: 'modern' },
-    { id: 'w5', sensorId: 'oil_press', type: 'number', x: 40,  y: 310, width: 160, height: 90,  theme: 'modern' },
+    // Stor RPM-gauge til venstre
+    { id: 'w1', sensorId: 'rpm',        type: 'gauge',  x: 20,  y: 60,  width: 260, height: 260, theme: 'modern' },
+    // Lambda/AFR gauge til høyre for RPM
+    { id: 'w6', sensorId: 'lambda',     type: 'gauge',  x: 290, y: 60,  width: 220, height: 220, theme: 'modern' },
+    // Hastighet øverst til høyre
+    { id: 'w2', sensorId: 'speed',      type: 'number', x: 520, y: 60,  width: 200, height: 110, theme: 'modern' },
+    // Batteri
+    { id: 'w7', sensorId: 'battery',    type: 'number', x: 520, y: 180, width: 200, height: 90,  theme: 'modern' },
+    // Bar-widgets nederst
+    { id: 'w3', sensorId: 'oil_temp',   type: 'bar',    x: 20,  y: 335, width: 220, height: 75,  theme: 'modern' },
+    { id: 'w5', sensorId: 'oil_press',  type: 'bar',    x: 20,  y: 420, width: 220, height: 75,  theme: 'modern' },
+    { id: 'w4', sensorId: 'cht1',       type: 'bar',    x: 255, y: 335, width: 220, height: 75,  theme: 'modern' },
+    { id: 'w8', sensorId: 'fuel',       type: 'bar',    x: 255, y: 420, width: 220, height: 75,  theme: 'modern' },
+    // Graf — AFR over tid
+    { id: 'w9', sensorId: 'lambda',     type: 'graph',  x: 490, y: 290, width: 240, height: 110, theme: 'modern' },
   ]
 }
