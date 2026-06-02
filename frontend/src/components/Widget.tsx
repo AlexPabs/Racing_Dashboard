@@ -51,7 +51,7 @@ export function Widget({ widget }: Props) {
       if (d.includes('s')) h = Math.max(50, oh + dy)
       if (d.includes('w')) { w = Math.max(80, ow - dx); x = ox + (ow - w) }
       if (d.includes('n')) { h = Math.max(50, oh - dy); y = oy + (oh - h) }
-      updateWidget(widget.id, { w: w, h: h, x, y, width: w, height: h })
+      updateWidget(widget.id, { x, y, width: w, height: h })
     }
     const up = () => { resizeRef.current = null; window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up) }
     window.addEventListener('mousemove', move)

@@ -332,8 +332,7 @@ function DetailCard({ wire, x, y }: { wire: WireDef; x: number; y: number }) {
       </text>
       {wire.resistorNote && (
         <foreignObject x={clampX+10} y={clampY+64} width={cw-20} height={38}>
-          <div xmlns="http://www.w3.org/1999/xhtml"
-            style={{ fontSize: 8, color: '#888', fontFamily: FONT, lineHeight: 1.5, wordBreak: 'break-word' }}>
+          <div style={{ fontSize: 8, color: '#888', fontFamily: FONT, lineHeight: 1.5, wordBreak: 'break-word' }}>
             {wire.resistorNote}
           </div>
         </foreignObject>
@@ -341,8 +340,7 @@ function DetailCard({ wire, x, y }: { wire: WireDef; x: number; y: number }) {
 
       {/* Notes */}
       <foreignObject x={clampX+10} y={clampY+104} width={cw-20} height={50}>
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ fontSize: 8, color: '#666', fontFamily: FONT, lineHeight: 1.5, wordBreak: 'break-word' }}>
+        <div style={{ fontSize: 8, color: '#666', fontFamily: FONT, lineHeight: 1.5, wordBreak: 'break-word' }}>
           {wire.notes}
         </div>
       </foreignObject>
@@ -571,9 +569,9 @@ export function WiringDiagram() {
         <rect x={20} y={SH-115} width={240} height={105} rx={5} fill="#111" stroke="#222" />
         <text x={32} y={SH-99} fill="#fff" fontSize={9} fontWeight="700" fontFamily={FONT}>TEGNFORKLARING</text>
         {[
-          { c:C.pwr12, l:'12V strøm',         thick:true,  dash:false },
-          { c:C.pwr5,  l:'5V strøm',           thick:true,  dash:false },
-          { c:C.gnd,   l:'Jord / GND',         thick:true,  dash:false },
+          { c:C.pwr12, l:'12V strøm',         thick:true,  dash:undefined },
+          { c:C.pwr5,  l:'5V strøm',           thick:true,  dash:undefined },
+          { c:C.gnd,   l:'Jord / GND',         thick:true,  dash:undefined },
           { c:C.ntc,   l:'Signal — nettverkskabel',    thick:false, dash:'12 6' },
           { c:C.wifi,  l:'WiFi / BLE — ingen kabel',  thick:false, dash:'4 5'  },
           { c:C.tpms,  l:'433MHz RF — TPMS/trådløs',  thick:false, dash:'4 5'  },
