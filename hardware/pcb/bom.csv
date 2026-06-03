@@ -1,0 +1,29 @@
+Item,Qty,Reference(s),Value,Package,LCSC Part#,Description,Manufacturer,MPN,Pris NOK ca.
+1,1,U1,WT32-ETH01,Module 2×20-pin,-,ESP32 Ethernet-modul (bestilles separat),Wireless-Tag,WT32-ETH01,90
+2,4,U2 U3 U4 U5,MAX31855KASA+,SOIC-8,C79396,K-type termopar-forsterker (CHT 1-4),Maxim Integrated,MAX31855KASA+T,18 stk
+3,1,U6,4N35,DIP-6,C9938,Optokoppler for RPM (tenningsspole isolasjon),Vishay,4N35,4
+4,1,U7,LM7805CT,TO-220,C56158,12V→5V lineær regulator 1.5A (kan byttes mot MP2307),STMicro,L7805CV,12
+5,4,C1 C2 C3 C4,100nF,0402,C1525,Avkoplingskondensator for MAX31855 VCC,Samsung,CL05B104KO5NNNC,1
+6,1,C5,100µF 25V,THT Ø6.3mm,C16780,Inngangselyttkondensator for spenningsregulator,Rubycon,25YXJ100M6.3X11,4
+7,1,C6,10µF 10V,0805,C15850,Avkoplingskondensator WT32 VIN,Samsung,CL21A106KOQNNNE,2
+8,2,R1 R2,4.7kΩ,0402,C25900,Pull-up til 5V for NTC-sensorer (Olje Temp + IAT),YAGEO,RC0402FR-074K7L,1
+9,1,R3,10kΩ,0402,C25744,Øvre del spenningsdeler Olje Trykk (4.5V→3.3V),YAGEO,RC0402FR-0710KL,1
+10,1,R4,3.3kΩ,0402,C25890,Nedre del spenningsdeler Olje Trykk,YAGEO,RC0402FR-073K3L,1
+11,1,R5,10kΩ,0402,C25744,Øvre del spenningsdeler Lambda / Innovate LC-2,YAGEO,RC0402FR-0710KL,1
+12,1,R6,6.8kΩ,0402,C25879,Nedre del spenningsdeler Lambda (5V→3.3V),YAGEO,RC0402FR-076K8L,1
+13,1,R7,100kΩ,0402,C25741,Øvre del spenningsdeler Batterispenning (15V→3.3V),YAGEO,RC0402FR-07100KL,1
+14,1,R8,27kΩ,0402,C25843,Nedre del spenningsdeler Batterispenning,YAGEO,RC0402FR-0727KL,1
+15,1,R9,120Ω,0402,C25087,Seriemotstand Tank-sender (0-90Ω resistiv),YAGEO,RC0402FR-07120RL,1
+16,1,R10,10kΩ,0402,C25744,Strømbegrenser på anode-siden av 4N35 optokoppler,YAGEO,RC0402FR-0710KL,1
+17,1,R11,10kΩ,0402,C25744,Pull-up på kollektor-siden av 4N35 (3.3V→GPIO),YAGEO,RC0402FR-0710KL,1
+18,3,R12 R13 R14,470Ω,0402,C25117,Strømbegrenser for status-LED (PWR/ETH/DATA),YAGEO,RC0402FR-07470RL,1
+19,1,LED1,Grønn LED,0402,C2286,Strøm-indikator (PWR),Everlight,19-217/GHC-YR1S2/3T,1
+20,1,LED2,Blå LED,0402,C72043,Ethernet-indikator (ETH),Everlight,19-213/BHC-AP1Q2/3T,2
+21,1,LED3,Gul LED,0402,C2290,Data-indikator (DATA),Everlight,19-213/Y2C-CN2P2B/3T,1
+22,8,J1-J8,Skruklemme 2-pin 5mm,THT 5mm,C8262,Sensor-innganger (se merking på PCB),Ningbo Kangnex,WJ500V-5.0-2P,4 stk
+23,4,J9-J12,Skruklemme 2-pin 3.5mm,THT 3.5mm,C8465,K-type termopar-innganger for MAX31855,Ningbo Kangnex,WJ500V-3.5-2P,4 stk
+24,1,J13,Skruklemme 2-pin 5mm STOR,THT 5mm,C8262,12V strøm inn fra sikring,Ningbo Kangnex,WJ500V-5.0-2P,4
+25,1,J14,RJ45-kontakt (horisontal),THT,C12074,Ethernet til RPi 5 (CAT6 FTP),Amphenol,RJHSE5380,25
+26,1,J15,4-pin 2.54mm hann-header,THT 2.54mm,C49257,GPS NEO-6M kobling (TX/RX/VCC/GND),BOOMELE,2541S-4CG,2
+27,2,H1 H2,20-pin 2.54mm hunn-header,THT 2.54mm,C50982,Sokkel for WT32-ETH01 modul (2×20),BOOMELE,2541F-20,8
+28,1,F1,Sikringsholder PCB,THT,C382046,5A littelfuse (ikke montert - ekstern sikring anbefalt),Keystone,3557-2,12
