@@ -7,7 +7,7 @@ const FONT = "'Segoe UI', system-ui, sans-serif"
 // LONG DASH    = signal / nettverkskabel (CAT5/6)  — 12 6
 // SHORT DASH   = WiFi / ingen kabel                — 4 5
 
-type WireType = 'power12' | 'power5' | 'gnd' | 'signal' | 'wifi'
+type WireType = 'power12' | 'power5' | 'gnd' | 'signal' | 'wifi' | 'ethernet'
 
 interface WireDef {
   id: string
@@ -33,7 +33,7 @@ const C = {
   ntc:   '#66bb6a', press: '#ab47bc', rpm: '#ffa726',
   lambda:'#ff6b6b', gps: '#42a5f5', batt: '#fdd835',
   fuel:  '#26c6da', spi: '#ce93d8', wifi: '#29b6f6',
-  sig:   '#00e5ff', tpms: '#fb923c',
+  sig:   '#00e5ff', tpms: '#fb923c', eth: '#10b981',
 }
 
 // ── Layout ──────────────────────────────────────────────────────────────────
@@ -53,8 +53,8 @@ const COMPS: Component[] = [
   { id:'bat',  x:20,  y:PWR_Y, w:100, h:48, title:'BATTERI 12V',   sub:'Kjøretøybatteri',       color:C.pwr12 },
   { id:'fuse', x:168, y:PWR_Y, w:88,  h:48, title:'SIKRING 5A',    sub:'Overbelastningsvern',    color:C.pwr12 },
   { id:'reg',  x:300, y:PWR_Y, w:100, h:48, title:'7805  12V→5V',  sub:'1A spenningsregulator',  color:C.pwr5  },
-  { id:'esp',  x:ESP_X, y:ESP_Y, w:ESP_W, h:py(10)-ESP_Y+24, title:'ESP32 DevKit', sub:'WiFi · 240MHz · 3.3V ADC', color:C.sig },
-  { id:'rpi',  x:RPI_X, y:RPI_Y, w:RPI_W, h:115, title:'RPI 4/5', sub:'racing1.alexlab.no', color:C.wifi },
+  { id:'esp',  x:ESP_X, y:ESP_Y, w:ESP_W, h:py(10)-ESP_Y+24, title:'WT32-ETH01', sub:'Ethernet · 240MHz · 3.3V ADC', color:C.sig },
+  { id:'rpi',  x:RPI_X, y:RPI_Y, w:RPI_W, h:115, title:'RPi 5', sub:'racing1.alexlab.no', color:C.eth },
   { id:'spi_block', x:COND_X+10, y:py(2)-20, w:COND_W-10, h:88, title:'MAX31855 ×4', sub:'SPI termopar-amp', color:C.spi },
 ]
 
@@ -86,6 +86,7 @@ const ESP_PINS = [
   { label:'GPIO39          Fuel',      color:C.fuel  },
   { label:'GPIO25          RPM',       color:C.rpm   },
   { label:'GPIO26 (RX)    GPS',       color:C.gps   },
+  { label:'ETH (RJ45) →', color:C.eth },
 ]
 
 // ── Wire definitions ─────────────────────────────────────────────────────────
@@ -190,8 +191,8 @@ function buildWires(): WireDef[] {
       id:'lambda_sig', label:'Lambda/AFR signal', type:'signal', color:C.lambda,
       pts:[[SEN_R, H(3)],[COND_X, H(3)]],
       cableType:'Nettverkskabel CAT5/6', gauge:'Enkeltleder',
-      resistor:true, resistorNote:'Spenningsdeler 10kΩ + 6.8kΩ: lambda-kontrolleren gir 0-5V, deles ned til 0-3.3V.',
-      notes:'Wideband-kontrolleren (f.eks. AEM 30-0300) gir 0-5V analogt ut. Trenger 12V strøm og GND direkte fra bilen.',
+      resistor:true, resistorNote:'Spenningsdeler 10kΩ + 6.8kΩ: Innovate LC-2 gir 0-5V, deles ned til 0-3.3V.',
+      notes:'Innovate LC-2 wideband-controller gir 0-5V analogt ut. Trenger 12V strøm og GND direkte fra bilen. O2-bung sveises inn i eksosrøret.',
     },
     {
       id:'lambda_esp', label:'Lambda → GPIO32', type:'signal', color:C.lambda,
@@ -272,23 +273,23 @@ function buildWires(): WireDef[] {
       cableType:'Nettverkskabel CAT5/6', gauge:'Enkeltleder',
       resistor:false, resistorNote:'3.3V TTL direkte.', notes:'ESP32 UART2 RX.',
     },
-    // WiFi
+    // Ethernet WT32-ETH01 → RPi 5
     {
-      id:'wifi_link', label:'WiFi ESP32 → RPI', type:'wifi', color:C.wifi,
-      pts:[[ESP_X+ESP_W, py(0)],[RPI_X, py(0)]],
-      cableType:'WiFi — ingen fysisk kabel',
-      gauge:'802.11 b/g/n 2.4GHz',
+      id:'eth_link', label:'Ethernet WT32-ETH01 → RPi 5', type:'ethernet', color:C.eth,
+      pts:[[ESP_X+ESP_W, py(10)],[RPI_X, py(10)]],
+      cableType:'CAT6 FTP nettverkskabel (skjermet)',
+      gauge:'CAT6 FTP, maks 100m, RJ45 crimpe',
       resistor:false, resistorNote:'',
-      notes:'ESP32 sender HTTP POST til RPI hvert 200ms. Alternativt bruk Ethernet (RPI har RJ45). Ingen kabel mellom ESP32 og RPI nødvendig.',
+      notes:'WT32-ETH01 sender UDP-pakker til RPi 5 hvert 20ms (50Hz). RPi kjører Python asyncio-mottaker på port 8888. Bruk skjermet CAT6 i motorrom for støyreduksjon. WT32 bruker ETH.h (ikke WiFi.h).',
     },
-    // TPMS dekktrykk → RPI via 433MHz RF
+    // TPMS dekktrykk → RPi via BLE
     {
-      id:'tpms_rf', label:'TPMS Dekktrykk → RPI (433MHz)', type:'wifi', color:'#fb923c',
+      id:'tpms_ble', label:'TPMS Dekktrykk → RPi (BLE)', type:'wifi', color:'#fb923c',
       pts:[[RPI_X+RPI_W/2, RPI_Y+320],[RPI_X+RPI_W/2, RPI_Y+225]],
-      cableType:'433MHz RF — ingen fysisk kabel',
-      gauge:'Trådløs ISM-bånd',
+      cableType:'Bluetooth LE — ingen fysisk kabel',
+      gauge:'BLE 4.0+ (innebygget i RPi 5)',
       resistor:false, resistorNote:'',
-      notes:'TPMS-sensorer sender batteri-drevne 433MHz-pakker. RPI leser dem via RTL-SDR USB-dongle (100-300kr) + rtl_433-programvare. Sensor-ID læres ved første kjøring. Støtter de fleste TPMS-merkevarer (Schrader, Huf, Continental m.fl.).',
+      notes:'PECHAM BLE TPMS-sensorer (ventilkapsler) sender trykk + temperatur via Bluetooth LE. RPi 5 har innebygget BT5.0. Sensor-ID programmeres ved første montering. Batterilevetid ~1 år.',
     },
     // 123ignition TUNE+ → RPI via Bluetooth LE
     {
@@ -319,10 +320,10 @@ function DetailCard({ wire, x, y }: { wire: WireDef; x: number; y: number }) {
 
       {/* Cable type badge */}
       <rect x={clampX+8} y={clampY+28} width={cw-16} height={16} rx={3}
-        fill={wire.type === 'wifi' ? '#0d2035' : wire.type.startsWith('power') || wire.type === 'gnd' ? '#1a0f00' : '#001a0f'} />
-      <text x={clampX+14} y={clampY+39} fill={wire.type === 'wifi' ? C.wifi : wire.type.startsWith('power') || wire.type === 'gnd' ? C.pwr5 : C.ntc}
+        fill={wire.type === 'wifi' ? '#0d2035' : wire.type === 'ethernet' ? '#0a1f18' : wire.type.startsWith('power') || wire.type === 'gnd' ? '#1a0f00' : '#001a0f'} />
+      <text x={clampX+14} y={clampY+39} fill={wire.type === 'wifi' ? C.wifi : wire.type === 'ethernet' ? C.eth : wire.type.startsWith('power') || wire.type === 'gnd' ? C.pwr5 : C.ntc}
         fontSize={8.5} fontFamily={FONT}>
-        {wire.type === 'wifi' ? '~ WiFi' : wire.type.startsWith('power') || wire.type === 'gnd' ? '▐ TILHENGER-KABEL' : '── NETTVERKSKABEL (CAT5/6)'}
+        {wire.type === 'wifi' ? '~ BLE/WiFi' : wire.type === 'ethernet' ? '── ETHERNET CAT6 FTP' : wire.type.startsWith('power') || wire.type === 'gnd' ? '▐ TILHENGER-KABEL' : '── NETTVERKSKABEL (CAT5/6)'}
         {'  '}{wire.gauge}
       </text>
 
@@ -369,7 +370,7 @@ export function WiringDiagram() {
   const selWire = wires.find(w => w.id === sel)
 
   const wireStroke = (w: WireDef, active: boolean) => {
-    const base = w.type === 'power12' ? 4 : w.type === 'power5' ? 3.5 : w.type === 'gnd' ? 3 : 2
+    const base = w.type === 'power12' ? 4 : w.type === 'power5' ? 3.5 : w.type === 'gnd' ? 3 : w.type === 'ethernet' ? 2.5 : 2
     return active ? base + 2 : base
   }
 
@@ -382,10 +383,10 @@ export function WiringDiagram() {
 
         {/* ── Title ── */}
         <text x={20} y={20} fill="#fff" fontSize={13} fontWeight="700" fontFamily={FONT}>
-          KOBLINGSSKJEMA — Luftkjølt Bobilmotor Sensor System
+          KOBLINGSSKJEMA — VW Boble 1956 · WT32-ETH01 + RPi 5
         </text>
         <text x={20} y={35} fill="#444" fontSize={9} fontFamily={FONT}>
-          ESP32 + RPI 4/5 · VW Boble/luftkjølt ·
+          WT32-ETH01 + RPi 5 · VW Boble/luftkjølt ·
           {'  '}── Tilhengerkabel (strøm){'  '}╌ ╌ Nettverkskabel (signal){'  '}· · WiFi (ingen kabel){'  '}
           Klikk en linje for detaljer
         </text>
@@ -411,10 +412,10 @@ export function WiringDiagram() {
             <text x={ESP_X+9} y={py(i)+4} fill="#aaa" fontSize={8.5} fontFamily={FONT}>{p.label}</text>
           </g>
         ))}
-        {/* WiFi out pin */}
-        <circle cx={ESP_X+ESP_W} cy={py(0)} r={3.5} fill={C.wifi}
-          style={{ filter: `drop-shadow(0 0 3px ${C.wifi})` }} />
-        <text x={ESP_X+ESP_W-8} y={py(0)+4} textAnchor="end" fill="#aaa" fontSize={8.5} fontFamily={FONT}>WiFi →</text>
+        {/* Ethernet out pin */}
+        <circle cx={ESP_X+ESP_W} cy={py(10)} r={3.5} fill={C.eth}
+          style={{ filter: `drop-shadow(0 0 3px ${C.eth})` }} />
+        <text x={ESP_X+ESP_W-8} y={py(10)+4} textAnchor="end" fill="#aaa" fontSize={8.5} fontFamily={FONT}>ETH →</text>
 
         {/* ── Sensor boxes + cond boxes ── */}
         {ALL_ROWS.map((s, i) => {
@@ -468,8 +469,8 @@ export function WiringDiagram() {
           const active = sel === w.id
           const sw = wireStroke(w, active)
           const d = w.pts.map((p,i) => (i===0?'M':'L')+p[0]+' '+p[1]).join(' ')
-          const isDash = w.type === 'wifi' || w.type === 'signal'
-          const dashArr = w.type === 'signal' ? '12 6' : '4 5'
+          const isDash = w.type === 'wifi' || w.type === 'signal' || w.type === 'ethernet'
+          const dashArr = (w.type === 'signal' || w.type === 'ethernet') ? '12 6' : '4 5'
           const isPower = w.type === 'power12' || w.type === 'power5' || w.type === 'gnd'
           const glowColor = active ? w.color : (isPower ? w.color+'44' : 'none')
 
@@ -496,12 +497,13 @@ export function WiringDiagram() {
           )
         })}
 
-        {/* RPI box wires */}
-        <circle cx={RPI_X} cy={py(0)} r={3.5} fill={C.wifi}
-          style={{ filter: `drop-shadow(0 0 3px ${C.wifi})` }} />
-        <text x={RPI_X+8} y={py(0)+4} fill="#aaa" fontSize={8.5} fontFamily={FONT}>WiFi IN</text>
+        {/* RPi 5 box wires */}
+        <circle cx={RPI_X} cy={py(10)} r={3.5} fill={C.eth}
+          style={{ filter: `drop-shadow(0 0 3px ${C.eth})` }} />
+        <text x={RPI_X+8} y={py(10)+4} fill="#aaa" fontSize={8.5} fontFamily={FONT}>ETH IN</text>
         <text x={RPI_X+8} y={RPI_Y+70} fill="#555" fontSize={8.5} fontFamily={FONT}>Web :4000 / Skjerm</text>
-        <text x={RPI_X+8} y={RPI_Y+88} fill="#a78bfa99" fontSize={8} fontFamily={FONT}>BLE: 123\ignition TUNE+</text>
+        <text x={RPI_X+8} y={RPI_Y+88} fill="#a78bfa99" fontSize={8} fontFamily={FONT}>BLE5: 123\ignition TUNE+</text>
+        <text x={RPI_X+8} y={RPI_Y+100} fill={C.tpms+'88'} fontSize={8} fontFamily={FONT}>BLE: PECHAM TPMS ×4</text>
 
         {/* 123ignition TUNE+ box */}
         <rect x={RPI_X-5} y={RPI_Y+130} width={RPI_W+10} height={62} rx={5}
@@ -526,8 +528,8 @@ export function WiringDiagram() {
           ]
           return (
             <g>
-              {/* RTL-SDR badge on RPI */}
-              <text x={RPI_X+8} y={RPI_Y+106} fill={C.tpms+'99'} fontSize={8} fontFamily={FONT}>433MHz: RTL-SDR USB</text>
+              {/* BLE TPMS badge on RPi */}
+              <text x={RPI_X+8} y={RPI_Y+115} fill={C.tpms+'99'} fontSize={8} fontFamily={FONT}>BLE 5.0 innebygd (RPi 5)</text>
               {/* Tire boxes 2×2 */}
               {tires.map((t, i) => {
                 const col = i % 2, row = Math.floor(i / 2)
@@ -546,7 +548,7 @@ export function WiringDiagram() {
               })}
               {/* Label */}
               <text x={TX + TW/2} y={TY + 2*(th+gap) + 12} textAnchor="middle"
-                fill={C.tpms+'66'} fontSize={7.5} fontFamily={FONT}>TPMS 433MHz — batteri-drevet, trådløs</text>
+                fill={C.tpms+'66'} fontSize={7.5} fontFamily={FONT}>PECHAM BLE TPMS — batteri-drevet, ventilkapsler</text>
             </g>
           )
         })()}
@@ -572,9 +574,10 @@ export function WiringDiagram() {
           { c:C.pwr12, l:'12V strøm',         thick:true,  dash:undefined },
           { c:C.pwr5,  l:'5V strøm',           thick:true,  dash:undefined },
           { c:C.gnd,   l:'Jord / GND',         thick:true,  dash:undefined },
-          { c:C.ntc,   l:'Signal — nettverkskabel',    thick:false, dash:'12 6' },
-          { c:C.wifi,  l:'WiFi / BLE — ingen kabel',  thick:false, dash:'4 5'  },
-          { c:C.tpms,  l:'433MHz RF — TPMS/trådløs',  thick:false, dash:'4 5'  },
+          { c:C.ntc,   l:'Signal — nettverkskabel',       thick:false, dash:'12 6' },
+          { c:C.eth,   l:'Ethernet CAT6 — WT32→RPi',    thick:false, dash:'12 6' },
+          { c:C.wifi,  l:'BLE / WiFi — ingen kabel',    thick:false, dash:'4 5'  },
+          { c:C.tpms,  l:'BLE TPMS — trådløs (RPi 5)',  thick:false, dash:'4 5'  },
         ].map((it, i) => (
           <g key={i}>
             <line x1={32} y1={SH-84+i*17} x2={72} y2={SH-84+i*17}
