@@ -1,7 +1,7 @@
 import { useDashboard } from '../contexts/DashboardContext'
 
 export function Toolbar() {
-  const { editMode, setEditMode, showPanel, setShowPanel } = useDashboard()
+  const { editMode, setEditMode, showPanel, setShowPanel, forceDesktop, setForceDesktop } = useDashboard()
 
   const btn = (label: string, active: boolean, onClick: () => void, color = '#00C8FF') => (
     <button onClick={onClick} style={{
@@ -24,6 +24,7 @@ export function Toolbar() {
       zIndex: 2000, boxShadow: '0 4px 20px #000c',
     }}>
       <span style={{ color: '#2a3040', fontSize: 10, letterSpacing: 2, marginRight: 4, fontFamily: 'IBM Plex Mono, monospace' }}>VW 1956</span>
+      {forceDesktop && btn('MOBIL', false, () => setForceDesktop(false), '#a8ff3e')}
       {btn('EDIT', editMode, () => { setEditMode(!editMode); if (showPanel === 'settings') setShowPanel('none') })}
       {btn('INNSTILLINGER', showPanel === 'settings', () => setShowPanel(showPanel === 'settings' ? 'none' : 'settings'))}
       {btn('DRAG', showPanel === 'drag', () => setShowPanel(showPanel === 'drag' ? 'none' : 'drag'), '#a8ff3e')}

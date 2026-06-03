@@ -11,7 +11,7 @@ interface Props { widget: WidgetType }
 const HS = 10 // handle size
 
 export function Widget({ widget }: Props) {
-  const { config, editMode, selectedWidgetId, setSelectedWidget, updateWidget, removeWidget } = useDashboard()
+  const { config, editMode, selectedWidgetId, setSelectedWidget, updateWidget, removeWidget, canvasScale } = useDashboard()
   const sensor = config.sensors.find(s => s.id === widget.sensorId)
   const isSelected = selectedWidgetId === widget.id
 
@@ -27,8 +27,8 @@ export function Widget({ widget }: Props) {
     const move = (ev: MouseEvent) => {
       if (!dragRef.current) return
       updateWidget(widget.id, {
-        x: dragRef.current.ox + ev.clientX - dragRef.current.sx,
-        y: dragRef.current.oy + ev.clientY - dragRef.current.sy,
+        x: dragRef.current.ox + (ev.clientX - dragRef.current.sx) / canvasScale,
+        y: dragRef.current.oy + (ev.clientY - dragRef.current.sy) / canvasScale,
       })
     }
     const up = () => { dragRef.current = null; window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up) }
@@ -43,8 +43,8 @@ export function Widget({ widget }: Props) {
     resizeRef.current = { dir, sx: e.clientX, sy: e.clientY, ow: widget.width, oh: widget.height, ox: widget.x, oy: widget.y }
     const move = (ev: MouseEvent) => {
       if (!resizeRef.current) return
-      const dx = ev.clientX - resizeRef.current.sx
-      const dy = ev.clientY - resizeRef.current.sy
+      const dx = (ev.clientX - resizeRef.current.sx) / canvasScale
+      const dy = (ev.clientY - resizeRef.current.sy) / canvasScale
       const { dir: d, ow, oh, ox, oy } = resizeRef.current
       let w = ow, h = oh, x = ox, y = oy
       if (d.includes('e')) w = Math.max(80, ow + dx)
