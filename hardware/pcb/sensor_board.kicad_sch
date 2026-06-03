@@ -12,7 +12,6 @@
   )
 
   (lib_symbols
-    ;; ── Resistor ────────────────────────────────────────────────────────────
     (symbol "Device:R"
       (pin_numbers (hide yes))
       (pin_names (offset 0))
@@ -27,7 +26,6 @@
       )
     )
 
-    ;; ── Capacitor ───────────────────────────────────────────────────────────
     (symbol "Device:C"
       (pin_numbers (hide yes))
       (pin_names (offset 0.254))
@@ -42,7 +40,6 @@
       )
     )
 
-    ;; ── LED ─────────────────────────────────────────────────────────────────
     (symbol "Device:LED"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016) (hide yes))
@@ -57,7 +54,6 @@
       )
     )
 
-    ;; ── Generic connector 2-pin (skruklemme) ────────────────────────────────
     (symbol "Connector:Conn_01x02"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016) (hide yes))
@@ -71,7 +67,6 @@
       )
     )
 
-    ;; ── Generic connector 4-pin (GPS header) ─────────────────────────────────
     (symbol "Connector:Conn_01x04"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016) (hide yes))
@@ -87,7 +82,6 @@
       )
     )
 
-    ;; ── 4N35 Optocoupler ────────────────────────────────────────────────────
     (symbol "Opto:4N35"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016))
@@ -107,7 +101,6 @@
       )
     )
 
-    ;; ── MAX31855 Thermocouple Amplifier ─────────────────────────────────────
     (symbol "MAX31855"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016))
@@ -127,7 +120,6 @@
       )
     )
 
-    ;; ── LM7805 Voltage Regulator ────────────────────────────────────────────
     (symbol "LM7805"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016))
@@ -142,7 +134,6 @@
       )
     )
 
-    ;; ── WT32-ETH01 (som sokkel-header) ─────────────────────────────────────
     (symbol "WT32-ETH01"
       (pin_numbers (hide yes))
       (pin_names (offset 1.016))
@@ -176,7 +167,6 @@
       )
     )
 
-    ;; ── PWR symbols ─────────────────────────────────────────────────────────
     (symbol "power:GND"
       (power) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes))
       (in_bom no) (on_board no)
@@ -228,11 +218,7 @@
     )
   )
 
-  ;; ════════════════════════════════════════════════════════════════════════════
-  ;; KOMPONENT-INSTANSER
-  ;; ════════════════════════════════════════════════════════════════════════════
 
-  ;; ── 12V strøm inn ─────────────────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 25.4 25.4 0) (unit 1) (in_bom yes) (on_board yes) (uuid "10000001")
     (property "Reference" "J1" (at 25.4 20.32 0) (effects (font (size 1.27 1.27))))
     (property "Value" "12V_INN" (at 25.4 22.86 0) (effects (font (size 1.27 1.27))))
@@ -252,7 +238,6 @@
     (pin "1" (uuid "10000003a"))
   )
 
-  ;; ── LM7805 spenningsregulator 12V→5V ──────────────────────────────────────
   (symbol (lib_id "LM7805") (at 55.88 25.4 0) (unit 1) (in_bom yes) (on_board yes) (uuid "10000010")
     (property "Reference" "U7" (at 55.88 15.24 0) (effects (font (size 1.27 1.27))))
     (property "Value" "LM7805CT" (at 55.88 17.78 0) (effects (font (size 1.27 1.27))))
@@ -289,7 +274,6 @@
     (pin "1" (uuid "10000014a"))
   )
 
-  ;; ── WT32-ETH01 hovudmodul ─────────────────────────────────────────────────
   (symbol (lib_id "WT32-ETH01") (at 120.65 101.6 0) (unit 1) (in_bom yes) (on_board yes) (uuid "20000001")
     (property "Reference" "U1" (at 120.65 68.58 0) (effects (font (size 1.524 1.524) (bold yes))))
     (property "Value" "WT32-ETH01" (at 120.65 71.12 0) (effects (font (size 1.27 1.27))))
@@ -332,7 +316,6 @@
     (pin "1" (uuid "20000004a"))
   )
 
-  ;; ── CHT 1 — MAX31855 ──────────────────────────────────────────────────────
   (symbol (lib_id "MAX31855") (at 180.34 60.96 0) (unit 1) (in_bom yes) (on_board yes) (uuid "30000001")
     (property "Reference" "U2" (at 180.34 48.26 0) (effects (font (size 1.27 1.27))))
     (property "Value" "MAX31855KASA+ CHT1" (at 180.34 50.8 0) (effects (font (size 1.27 1.27))))
@@ -358,7 +341,6 @@
     (pin "1" (uuid "30000003a")) (pin "2" (uuid "30000003b"))
   )
 
-  ;; ── CHT 2-4 — MAX31855 (identisk oppsett, forskjellig CS-pin) ────────────
   (symbol (lib_id "MAX31855") (at 180.34 91.44 0) (unit 1) (in_bom yes) (on_board yes) (uuid "30000010")
     (property "Reference" "U3" (at 180.34 78.74 0) (effects (font (size 1.27 1.27))))
     (property "Value" "MAX31855KASA+ CHT2" (at 180.34 81.28 0) (effects (font (size 1.27 1.27))))
@@ -432,7 +414,6 @@
     (pin "1" (uuid "30000032a")) (pin "2" (uuid "30000032b"))
   )
 
-  ;; ── NTC Olje Temperatur ────────────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 93.98 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000001")
     (property "Reference" "J2" (at 43.18 88.9 0) (effects (font (size 1.27 1.27))))
     (property "Value" "Olje Temp NTC" (at 43.18 91.44 0) (effects (font (size 1.27 1.27))))
@@ -448,7 +429,6 @@
     (pin "1" (uuid "40000002a")) (pin "2" (uuid "40000002b"))
   )
 
-  ;; ── NTC IAT inntaksluft ────────────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 109.22 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000010")
     (property "Reference" "J3" (at 43.18 104.14 0) (effects (font (size 1.27 1.27))))
     (property "Value" "IAT Inntaksluft NTC" (at 43.18 106.68 0) (effects (font (size 1.27 1.27))))
@@ -464,7 +444,6 @@
     (pin "1" (uuid "40000011a")) (pin "2" (uuid "40000011b"))
   )
 
-  ;; ── Olje Trykk 0-10 bar (spenningsdeler 4.5V→3.3V) ───────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 124.46 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000020")
     (property "Reference" "J4" (at 43.18 119.38 0) (effects (font (size 1.27 1.27))))
     (property "Value" "Olje Trykk 0-10bar" (at 43.18 121.92 0) (effects (font (size 1.27 1.27))))
@@ -487,7 +466,6 @@
     (pin "1" (uuid "40000022a")) (pin "2" (uuid "40000022b"))
   )
 
-  ;; ── Lambda / Innovate LC-2 (spenningsdeler 5V→3.3V) ──────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 144.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000030")
     (property "Reference" "J5" (at 43.18 139.7 0) (effects (font (size 1.27 1.27))))
     (property "Value" "Lambda Innovate LC-2" (at 43.18 142.24 0) (effects (font (size 1.27 1.27))))
@@ -510,7 +488,6 @@
     (pin "1" (uuid "40000032a")) (pin "2" (uuid "40000032b"))
   )
 
-  ;; ── Batterispenning (spenningsdeler 15V→3.3V) ────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 165.1 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000040")
     (property "Reference" "J6" (at 43.18 160.02 0) (effects (font (size 1.27 1.27))))
     (property "Value" "Batteri 12-15V" (at 43.18 162.56 0) (effects (font (size 1.27 1.27))))
@@ -533,7 +510,6 @@
     (pin "1" (uuid "40000042a")) (pin "2" (uuid "40000042b"))
   )
 
-  ;; ── Tank-sender (120Ω serie) ──────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 185.42 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000050")
     (property "Reference" "J7" (at 43.18 180.34 0) (effects (font (size 1.27 1.27))))
     (property "Value" "Tank sender 0-90Ω" (at 43.18 182.88 0) (effects (font (size 1.27 1.27))))
@@ -549,7 +525,6 @@
     (pin "1" (uuid "40000051a")) (pin "2" (uuid "40000051b"))
   )
 
-  ;; ── RPM — 4N35 optokoppler ────────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x02") (at 43.18 205.74 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000060")
     (property "Reference" "J8" (at 43.18 200.66 0) (effects (font (size 1.27 1.27))))
     (property "Value" "RPM Tenning NEG ⚠HV" (at 43.18 203.2 0) (effects (font (size 1.27 1.27))))
@@ -580,7 +555,6 @@
     (pin "1" (uuid "40000063a")) (pin "2" (uuid "40000063b"))
   )
 
-  ;; ── GPS NEO-6M header ─────────────────────────────────────────────────────
   (symbol (lib_id "Connector:Conn_01x04") (at 43.18 233.68 0) (unit 1) (in_bom yes) (on_board yes) (uuid "40000070")
     (property "Reference" "J15" (at 43.18 225.55 0) (effects (font (size 1.27 1.27))))
     (property "Value" "GPS NEO-6M" (at 43.18 228.09 0) (effects (font (size 1.27 1.27))))
@@ -590,7 +564,6 @@
     (pin "3" (uuid "40000070c")) (pin "4" (uuid "40000070d"))
   )
 
-  ;; ── Status-LEDs ───────────────────────────────────────────────────────────
   (symbol (lib_id "Device:R") (at 25.4 55.88 0) (unit 1) (in_bom yes) (on_board yes) (uuid "50000001")
     (property "Reference" "R12" (at 27.94 55.88 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "470Ω PWR" (at 27.94 58.42 0) (effects (font (size 1.27 1.27)) (justify left)))
@@ -634,9 +607,6 @@
     (pin "1" (uuid "50000006a")) (pin "2" (uuid "50000006b"))
   )
 
-  ;; ════════════════════════════════════════════════════════════════════════════
-  ;; NETTLABELS (erstatter lange ledninger — standard praksis for komplekse skjema)
-  ;; ════════════════════════════════════════════════════════════════════════════
   (global_label "SPI_MOSI" (shape input) (at 135.89 87.63 180) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid "nl0001") (property "Intersheetrefs" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))))
   (global_label "SPI_MOSI" (shape input) (at 169.93 60.96 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid "nl0002") (property "Intersheetrefs" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))))
   (global_label "SPI_MOSI" (shape input) (at 169.93 91.44 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid "nl0003") (property "Intersheetrefs" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))))
