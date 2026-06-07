@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useRef, FormEvent } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 
 const FONT_MONO = "'IBM Plex Mono', monospace"
 const FONT_UI   = "'Space Grotesk', system-ui, sans-serif"
@@ -138,7 +139,99 @@ const BOARD_SPECS = [
 type Tab = 'overview' | 'connectors' | 'bom' | 'schematic' | 'firmware'
 
 export function HardwarePanel({ onClose }: { onClose: () => void }) {
+  const { authenticated, tryLogin } = useAuth()
   const [tab, setTab] = useState<Tab>('overview')
+  const [pwInput, setPwInput] = useState('')
+  const [pwError, setPwError] = useState(false)
+  const [pwShake, setPwShake] = useState(false)
+  const pwRef = useRef<HTMLInputElement>(null)
+
+  const handlePwSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    if (!tryLogin(pwInput)) {
+      setPwError(true)
+      setPwShake(true)
+      setPwInput('')
+      setTimeout(() => { setPwError(false); setPwShake(false) }, 700)
+    }
+  }
+
+  if (!authenticated) {
+    return (
+      <div style={{ ...panel, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <style>{`
+          @keyframes hw-shake {
+            0%, 100% { transform: translateX(0); }
+            15% { transform: translateX(-8px); }
+            30% { transform: translateX(8px); }
+            45% { transform: translateX(-5px); }
+            60% { transform: translateX(5px); }
+            75% { transform: translateX(-2px); }
+            90% { transform: translateX(2px); }
+          }
+        `}</style>
+        {/* Grid bg */}
+        <div style={{
+          position: 'absolute', inset: 0, opacity: 0.025, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(#ff6b35 1px, transparent 1px), linear-gradient(90deg, #ff6b35 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }} />
+        {/* Close btn */}
+        <button onClick={onClose} style={{
+          position: 'absolute', top: 16, right: 20,
+          background: 'none', border: '1px solid #1a2030', color: '#3a4a5a',
+          cursor: 'pointer', borderRadius: 6, padding: '4px 12px', fontSize: 11, fontFamily: FONT_MONO,
+        }}>✕ CLOSE</button>
+        {/* Card */}
+        <div
+          style={{
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28,
+            width: '100%', maxWidth: 320, padding: '0 24px',
+            animation: pwShake ? 'hw-shake 0.6s ease-in-out' : undefined,
+          }}
+        >
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ color: '#ff6b35', fontSize: 9, letterSpacing: 5, marginBottom: 10, fontFamily: FONT_MONO }}>PCB / SCHEMATICS / BOM</div>
+            <div style={{ color: '#e2e8f0', fontSize: 26, fontWeight: 700, letterSpacing: 4, fontFamily: FONT_MONO }}>HARDWARE</div>
+            <div style={{ color: '#2a3a50', fontSize: 9, letterSpacing: 3, marginTop: 6, fontFamily: FONT_MONO }}>ACCESS RESTRICTED</div>
+          </div>
+          <form onSubmit={handlePwSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, width: '100%' }}>
+            <div style={{ color: pwError ? '#ff4444' : '#2a3a50', fontSize: 9, letterSpacing: 3, fontFamily: FONT_MONO, transition: 'color 0.2s', height: 14 }}>
+              {pwError ? '— WRONG CODE —' : 'ENTER ACCESS CODE'}
+            </div>
+            <input
+              ref={pwRef}
+              autoFocus
+              type="password"
+              value={pwInput}
+              onChange={e => setPwInput(e.target.value)}
+              placeholder="• • • •"
+              maxLength={16}
+              style={{
+                background: '#0a0e18',
+                border: `1px solid ${pwError ? '#ff444466' : '#1e2d3d'}`,
+                borderRadius: 8, color: '#ff6b35',
+                fontFamily: FONT_MONO, fontSize: 26, fontWeight: 700, letterSpacing: 10,
+                padding: '11px 24px', outline: 'none', width: '100%',
+                textAlign: 'center', boxSizing: 'border-box',
+                boxShadow: pwError ? '0 0 0 3px #ff444422' : 'none',
+                transition: 'border-color 0.2s',
+              }}
+            />
+            <button type="submit" style={{
+              background: 'transparent', border: '1px solid #2a1a10',
+              borderRadius: 6, color: '#3a2515', fontFamily: FONT_MONO,
+              fontSize: 10, fontWeight: 700, letterSpacing: 3, padding: '8px 28px',
+              cursor: 'pointer', width: '100%', transition: 'all 0.15s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#ff6b3566'; e.currentTarget.style.color = '#ff6b35'; e.currentTarget.style.background = '#ff6b3508' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = '#2a1a10'; e.currentTarget.style.color = '#3a2515'; e.currentTarget.style.background = 'transparent' }}
+            >AUTHENTICATE</button>
+          </form>
+        </div>
+      </div>
+    )
+  }
 
   function TabBtn({ id, label }: { id: Tab; label: string }) {
     const active = tab === id
