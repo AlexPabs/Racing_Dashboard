@@ -74,7 +74,7 @@ export const DEFAULT_SENSORS: Sensor[] = [
   { id: 'tpms_rr',         name: 'Dekk RR',          unit: 'bar', min: 0,    max: 4,    value: 0, offset: 0, scale: 1, decimals: 2, warnMin: 1.7, critMin: 1.4 },
 
   // ── Blanding ─────────────────────────────────────────────────────────────
-  { id: 'lambda',          name: 'Lambda / AFR',     unit: 'λ',   min: 0.7,  max: 1.3,  value: 0, offset: 0, scale: 1, decimals: 3, warnMin: 0.85, warnMax: 1.1 },
+  { id: 'lambda',          name: 'AFR',              unit: ':1',  min: 10.0, max: 20.0, value: 0, offset: 0, scale: 1, decimals: 1, warnMin: 12.5, warnMax: 16.0, critMin: 11.5, critMax: 17.5 },
 
   // ── Elektrisk / drivstoff ────────────────────────────────────────────────
   { id: 'battery',         name: 'Batteri',          unit: 'V',   min: 10,   max: 16,   value: 0, offset: 0, scale: 1, decimals: 2, warnMin: 11.5, critMin: 10.5 },

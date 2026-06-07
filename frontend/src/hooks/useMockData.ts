@@ -57,8 +57,8 @@ export function useMockData() {
       updateSensorValue('cht3', 165 + Math.sin(T * 0.17) * 28 + Math.random() * 3)
       updateSensorValue('cht4', 158 + Math.sin(T * 0.19) * 32 + Math.random() * 3)
 
-      // Lambda/AFR
-      updateSensorValue('lambda', 1.0 + Math.sin(T * 1.2) * 0.06 + Math.random() * 0.01)
+      // AFR — stoikiometrisk bensin = 14.7, varierer med belastning
+      updateSensorValue('lambda', 14.7 + Math.sin(T * 1.2) * 0.9 + Math.random() * 0.15)
 
       // Inntaksluft + drivstoff
       updateSensorValue('iat', 28 + Math.sin(T * 0.05) * 8 + Math.random() * 1)
