@@ -28,22 +28,36 @@ function useNattmodus(): number {
   return dimming
 }
 
-function useMobilDeteksjon(): boolean {
-  const [erMobil, setErMobil] = useState(window.innerWidth < 600)
+// Virtuell designstørrelse som widgets er laget for
+const CANVAS_W = 720
+const CANVAS_H = 590
+
+function useViewport() {
+  const [vp, setVp] = useState({ w: window.innerWidth, h: window.innerHeight })
   useEffect(() => {
-    const handler = () => setErMobil(window.innerWidth < 600)
+    const handler = () => setVp({ w: window.innerWidth, h: window.innerHeight })
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)
   }, [])
-  return erMobil
+  return vp
 }
 
 export function Dashboard() {
   useMockData()
-  const { config, showPanel, setSelectedWidget, setShowPanel, editMode } = useDashboard()
+  const { config, showPanel, setSelectedWidget, setShowPanel, editMode, forceDesktop, setCanvasScale } = useDashboard()
   const { background } = config
   const dimming = useNattmodus()
-  const erMobil = useMobilDeteksjon()
+  const vp = useViewport()
+
+  const erMobil = vp.w < 768 && !forceDesktop
+
+  const scale = Math.min(vp.w / CANVAS_W, vp.h / CANVAS_H)
+  const canvasLeft = (vp.w - CANVAS_W * scale) / 2
+  const canvasTop = (vp.h - CANVAS_H * scale) / 2
+
+  useEffect(() => {
+    setCanvasScale(erMobil ? 1 : scale)
+  }, [scale, erMobil, setCanvasScale])
 
   // Mobilvisning — kompakt layout for telefon
   if (erMobil && showPanel === 'none') {
@@ -70,7 +84,18 @@ export function Dashboard() {
       }}
       onClick={() => editMode && setSelectedWidget(null)}
     >
-      {config.widgets.map(w => <Widget key={w.id} widget={w} />)}
+      {/* Skalert widget-canvas — passer alltid til skjermen */}
+      <div style={{
+        position: 'absolute',
+        left: canvasLeft,
+        top: canvasTop,
+        width: CANVAS_W,
+        height: CANVAS_H,
+        transformOrigin: 'top left',
+        transform: `scale(${scale})`,
+      }}>
+        {config.widgets.map(w => <Widget key={w.id} widget={w} />)}
+      </div>
       <AlarmBanner />
       <Toolbar />
       {showPanel === 'settings' && <SettingsPanel />}

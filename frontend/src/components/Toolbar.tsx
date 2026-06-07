@@ -1,7 +1,7 @@
 import { useDashboard } from '../contexts/DashboardContext'
 
 export function Toolbar() {
-  const { editMode, setEditMode, showPanel, setShowPanel } = useDashboard()
+  const { editMode, setEditMode, showPanel, setShowPanel, forceDesktop, setForceDesktop } = useDashboard()
 
   const btn = (label: string, active: boolean, onClick: () => void, color = '#00C8FF') => (
     <button

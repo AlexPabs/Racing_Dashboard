@@ -8,7 +8,7 @@ import { useState } from 'react'
 type Tab = 'motor' | 'cht' | 'tpms' | 'drag'
 
 export function MobileView() {
-  const { config } = useDashboard()
+  const { config, setForceDesktop } = useDashboard()
   const [tab, setTab] = useState<Tab>('motor')
 
   const S = (id: string) => config.sensors.find(s => s.id === id)
@@ -87,7 +87,18 @@ export function MobileView() {
       {/* Header */}
       <div style={{ padding: '12px 16px', borderBottom: '1px solid #1a2030', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ color: '#2a3040', fontSize: 11, letterSpacing: 3, fontFamily: 'IBM Plex Mono, monospace' }}>VW BOBLE 1956</span>
-        <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00C8FF', boxShadow: '0 0 6px #00C8FF', display: 'inline-block' }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <button
+            onClick={() => setForceDesktop(true)}
+            style={{
+              background: 'transparent', border: '1px solid #2a3040', color: '#4a5568',
+              borderRadius: 5, padding: '3px 8px', cursor: 'pointer',
+              fontSize: 10, fontWeight: 700, letterSpacing: 1,
+              fontFamily: 'IBM Plex Mono, monospace',
+            }}
+          >PC</button>
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00C8FF', boxShadow: '0 0 6px #00C8FF', display: 'inline-block' }} />
+        </div>
       </div>
 
       {/* Innhold */}

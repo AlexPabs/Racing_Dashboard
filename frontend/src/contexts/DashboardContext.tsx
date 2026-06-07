@@ -12,9 +12,13 @@ interface Ctx {
   editMode: boolean
   selectedWidgetId: string | null
   showPanel: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'
+  canvasScale: number
+  forceDesktop: boolean
   setEditMode: (v: boolean) => void
   setSelectedWidget: (id: string | null) => void
   setShowPanel: (p: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms') => void
+  setCanvasScale: (s: number) => void
+  setForceDesktop: (v: boolean) => void
   updateBackground: (type: 'color' | 'image', value: string) => void
   updateSensor: (sensor: Sensor) => void
   addWidget: (widget: Omit<Widget, 'id'>) => void
@@ -48,6 +52,8 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
   const [editMode, setEditMode] = useState(false)
   const [selectedWidgetId, setSelectedWidget] = useState<string | null>(null)
   const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'>('none')
+  const [canvasScale, setCanvasScale] = useState(1)
+  const [forceDesktop, setForceDesktop] = useState(false)
 
   // Persist config med versjonsnummer
   useEffect(() => {
@@ -98,8 +104,8 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
 
   return (
     <DashboardCtx.Provider value={{
-      config, logs, editMode, selectedWidgetId, showPanel,
-      setEditMode, setSelectedWidget, setShowPanel,
+      config, logs, editMode, selectedWidgetId, showPanel, canvasScale, forceDesktop,
+      setEditMode, setSelectedWidget, setShowPanel, setCanvasScale, setForceDesktop,
       updateBackground, updateSensor, addWidget, updateWidget, removeWidget, updateSensorValue
     }}>
       {children}
