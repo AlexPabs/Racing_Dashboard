@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3800" height="2680" xmlns="http://www.w3.org/2000/svg">
+<rect width="3800" height="2680" fill="#F8F8F0"/>
+<rect x="0" y="0" width="3800" height="55" fill="#0D1B2A"/>
+<text x="1900" y="30" font-size="20" font-weight="bold" fill="#E8F0FE" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">UNIVERSAL RACING SENSOR BOARD — TEENSY 4.1</text>
+<text x="1900" y="48" font-size="11" font-weight="normal" fill="#90A4AE" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Generiske J-kontakter · Sensortildeling via /settings · Åpen hardware</text>
+<rect x="40" y="70" width="1020" height="360" fill="#FFEBEE" stroke="#B71C1C" stroke-width="2" rx="6"/>
+<rect x="40" y="70" width="1020" height="26" fill="#B71C1C" rx="5"/>
+<rect x="40" y="83" width="1020" height="13" fill="#B71C1C"/>
+<text x="550" y="88" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">⚡  STRØM — 12V → 5V  |  MP2307DN BUCK CONVERTER</text>
+<rect x="60" y="110" width="68" height="46" fill="#B0B0B0" stroke="#555" stroke-width="1.5" rx="3"/>
+<text x="94" y="103" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J30</text>
+<rect x="64" y="114" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="136" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="84" y="123" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="84" y="147" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="128" y1="121" x2="158" y2="121" stroke="#CC0000" stroke-width="2"/>
+<line x1="128" y1="143" x2="380" y2="143" stroke="#333" stroke-width="2"/>
+<rect x="158" y="111" width="46" height="20" fill="#FFE082" stroke="#666" stroke-width="1.5" rx="3"/>
+<text x="181" y="106" font-size="9" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">F1</text>
+<text x="181" y="118" font-size="9" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">5A</text>
+<line x1="204" y1="121" x2="240" y2="121" stroke="#CC0000" stroke-width="2"/>
+<line x1="240" y1="121" x2="260" y2="121" stroke="#CC0000" stroke-width="2"/>
+<line x1="260" y1="111" x2="260" y2="121" stroke="#CC0000" stroke-width="2"/>
+<rect x="258" y="112" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="258" y="123" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="260" y1="132" x2="260" y2="143" stroke="#333" stroke-width="2"/>
+<text x="270" y="122" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">C1</text>
+<text x="270" y="133" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100µF</text>
+<rect x="290" y="105" width="180" height="80" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="4"/>
+<text x="380" y="137" font-size="11" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MP2307DN</text>
+<text x="380" y="152" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">3A Buck</text>
+<text x="380" y="166" font-size="9" font-weight="normal" fill="#888" text-anchor="middle" font-family="Courier New, Courier, monospace">LCSC: C89312</text>
+<line x1="240" y1="121" x2="290" y2="121" stroke="#CC0000" stroke-width="2"/>
+<line x1="290" y1="143" x2="240" y2="143" stroke="#333" stroke-width="2"/>
+<line x1="470" y1="121" x2="600" y2="121" stroke="#CC0000" stroke-width="2"/>
+<text x="520" y="114" font-size="10" font-weight="bold" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="510" y1="121" x2="510" y2="111" stroke="#CC0000" stroke-width="2"/>
+<rect x="508" y="112" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="508" y="123" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="510" y1="132" x2="510" y2="143" stroke="#333" stroke-width="2"/>
+<text x="524" y="122" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">C2</text>
+<text x="524" y="133" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100µF</text>
+<line x1="550" y1="121" x2="550" y2="111" stroke="#CC0000" stroke-width="2"/>
+<rect x="548" y="112" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="548" y="123" width="4" height="9" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="550" y1="132" x2="550" y2="143" stroke="#333" stroke-width="2"/>
+<text x="564" y="122" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">C3</text>
+<text x="564" y="133" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">10µF</text>
+<line x1="380" y1="143" x2="600" y2="143" stroke="#333" stroke-width="2"/>
+<line x1="600" y1="143" x2="600" y2="151" stroke="#444" stroke-width="2"/>
+<line x1="590" y1="151" x2="610" y2="151" stroke="#444" stroke-width="2"/>
+<line x1="594" y1="156" x2="606" y2="156" stroke="#444" stroke-width="2"/>
+<line x1="598" y1="161" x2="602" y2="161" stroke="#444" stroke-width="2"/>
+<line x1="600" y1="121" x2="630" y2="121" stroke="#CC0000" stroke-width="2"/>
+<polygon points="630,112 670,112 680,121 670,130 630,130" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="652" y="125" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="240" y1="143" x2="240" y2="230" stroke="#333" stroke-width="2"/>
+<line x1="240" y1="230" x2="630" y2="230" stroke="#333" stroke-width="2"/>
+<polygon points="630,221 670,221 680,230 670,239 630,239" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="652" y="234" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="158" y1="121" x2="158" y2="280" stroke="#CC0000" stroke-width="2"/>
+<line x1="158" y1="280" x2="630" y2="280" stroke="#CC0000" stroke-width="2"/>
+<polygon points="630,271 676,271 686,280 676,289 630,289" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="655" y="284" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="380" y="320" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Input: 8–24V DC  |  Output: 5.0V / 3A</text>
+<text x="380" y="338" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Buck-omformer ~90% effektivitet (vs LM7805 ~40%)</text>
+<text x="380" y="356" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Modul inkl. spole og kondensatorer</text>
+<text x="380" y="374" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Monter på PCB-kanten for luftkjøling</text>
+<rect x="1080" y="70" width="1260" height="1060" fill="#E8EAF6" stroke="#1A237E" stroke-width="2" rx="6"/>
+<rect x="1080" y="70" width="1260" height="26" fill="#1A237E" rx="5"/>
+<rect x="1080" y="83" width="1260" height="13" fill="#1A237E"/>
+<text x="1710" y="88" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">🎛  TEENSY 4.1 — 600MHz ARM Cortex-M7  |  18× ADC  |  SPI + SPI1  |  SD-kort</text>
+<rect x="1340" y="110" width="730" height="1000" fill="#FFFDE7" stroke="#555" stroke-width="2" rx="6"/>
+<text x="1705" y="140" font-size="16" font-weight="bold" fill="#111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">TEENSY 4.1</text>
+<text x="1705" y="158" font-size="11" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">PJRC · 600MHz · ARM Cortex-M7 · FPU</text>
+<text x="1705" y="173" font-size="10" font-weight="normal" fill="#888" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">ca. 320 NOK</text>
+<line x1="1250" y1="200" x2="1340" y2="200" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="204" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="1280" y1="200" x2="1280" y2="208" stroke="#444" stroke-width="2"/>
+<line x1="1270" y1="208" x2="1290" y2="208" stroke="#444" stroke-width="2"/>
+<line x1="1274" y1="213" x2="1286" y2="213" stroke="#444" stroke-width="2"/>
+<line x1="1278" y1="218" x2="1282" y2="218" stroke="#444" stroke-width="2"/>
+<line x1="1250" y1="256" x2="1340" y2="256" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="260" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="1280" y1="256" x2="1280" y2="264" stroke="#444" stroke-width="2"/>
+<line x1="1270" y1="264" x2="1290" y2="264" stroke="#444" stroke-width="2"/>
+<line x1="1274" y1="269" x2="1286" y2="269" stroke="#444" stroke-width="2"/>
+<line x1="1278" y1="274" x2="1282" y2="274" stroke="#444" stroke-width="2"/>
+<line x1="1250" y1="312" x2="1340" y2="312" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="316" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">3.3V</text>
+<line x1="1280" y1="312" x2="1280" y2="296" stroke="#CC0000" stroke-width="1.5"/>
+<text x="1280" y="290" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="1250" y1="368" x2="1340" y2="368" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="372" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">VIN(5V)</text>
+<polygon points="1240,359 1200,359 1190,368 1200,377 1240,377" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1218" y="372" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="1250" y1="424" x2="1340" y2="424" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="428" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A0 / p14</text>
+<polygon points="1240,415 1194,415 1184,424 1194,433 1240,433" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="428" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA0</text>
+<line x1="1250" y1="480" x2="1340" y2="480" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="484" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A1 / p15</text>
+<polygon points="1240,471 1194,471 1184,480 1194,489 1240,489" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="484" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA1</text>
+<line x1="1250" y1="536" x2="1340" y2="536" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="540" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A2 / p16</text>
+<polygon points="1240,527 1194,527 1184,536 1194,545 1240,545" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="540" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA2</text>
+<line x1="1250" y1="592" x2="1340" y2="592" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="596" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A3 / p17</text>
+<polygon points="1240,583 1194,583 1184,592 1194,601 1240,601" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="596" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA3</text>
+<line x1="1250" y1="648" x2="1340" y2="648" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="652" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A4 / p18</text>
+<polygon points="1240,639 1194,639 1184,648 1194,657 1240,657" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="652" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA4</text>
+<line x1="1250" y1="704" x2="1340" y2="704" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="708" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A5 / p19</text>
+<polygon points="1240,695 1194,695 1184,704 1194,713 1240,713" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="708" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA5</text>
+<line x1="1250" y1="760" x2="1340" y2="760" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="764" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A6 / p20</text>
+<polygon points="1240,751 1194,751 1184,760 1194,769 1240,769" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="764" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA6</text>
+<line x1="1250" y1="816" x2="1340" y2="816" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="820" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A7 / p21</text>
+<polygon points="1240,807 1194,807 1184,816 1194,825 1240,825" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="820" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA7</text>
+<line x1="1250" y1="872" x2="1340" y2="872" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="876" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A8 / p22</text>
+<polygon points="1240,863 1194,863 1184,872 1194,881 1240,881" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="876" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC0</text>
+<line x1="1250" y1="928" x2="1340" y2="928" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="932" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A9 / p23</text>
+<polygon points="1240,919 1194,919 1184,928 1194,937 1240,937" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="932" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC1</text>
+<line x1="1250" y1="984" x2="1340" y2="984" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="988" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A10/p24</text>
+<polygon points="1240,975 1194,975 1184,984 1194,993 1240,993" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="988" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC2</text>
+<line x1="1250" y1="1040" x2="1340" y2="1040" stroke="#333" stroke-width="1.5"/>
+<text x="1246" y="1044" font-size="10" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">A11/p25</text>
+<polygon points="1240,1031 1194,1031 1184,1040 1194,1049 1240,1049" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1215" y="1044" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC3</text>
+<line x1="2070" y1="200" x2="2160" y2="200" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="204" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p11</text>
+<text x="2164" y="204" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOSI</text>
+<polygon points="2240,191 2286,191 2296,200 2286,209 2240,209" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="204" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOSI</text>
+<line x1="2070" y1="234" x2="2160" y2="234" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="238" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p12</text>
+<text x="2164" y="238" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MISO</text>
+<polygon points="2240,225 2286,225 2296,234 2286,243 2240,243" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="238" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MISO</text>
+<line x1="2070" y1="268" x2="2160" y2="268" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="272" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p13</text>
+<text x="2164" y="272" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<polygon points="2240,259 2280,259 2290,268 2280,277 2240,277" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2262" y="272" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SCK</text>
+<line x1="2070" y1="302" x2="2160" y2="302" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="306" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p2</text>
+<text x="2164" y="306" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_ACC</text>
+<polygon points="2240,293 2302,293 2312,302 2302,311 2240,311" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="306" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_ACC</text>
+<line x1="2070" y1="336" x2="2160" y2="336" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="340" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p10</text>
+<text x="2164" y="340" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC0</text>
+<polygon points="2240,327 2302,327 2312,336 2302,345 2240,345" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="340" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC0</text>
+<line x1="2070" y1="370" x2="2160" y2="370" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="374" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p9</text>
+<text x="2164" y="374" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC1</text>
+<polygon points="2240,361 2302,361 2312,370 2302,379 2240,379" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="374" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC1</text>
+<line x1="2070" y1="404" x2="2160" y2="404" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="408" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p8</text>
+<text x="2164" y="408" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC2</text>
+<polygon points="2240,395 2302,395 2312,404 2302,413 2240,413" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="408" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC2</text>
+<line x1="2070" y1="438" x2="2160" y2="438" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="442" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p7</text>
+<text x="2164" y="442" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC3</text>
+<polygon points="2240,429 2302,429 2312,438 2302,447 2240,447" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="442" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC3</text>
+<line x1="2070" y1="472" x2="2160" y2="472" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="476" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p6</text>
+<text x="2164" y="476" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC4</text>
+<polygon points="2240,463 2302,463 2312,472 2302,481 2240,481" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="476" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC4</text>
+<line x1="2070" y1="506" x2="2160" y2="506" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="510" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p5</text>
+<text x="2164" y="510" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC5</text>
+<polygon points="2240,497 2302,497 2312,506 2302,515 2240,515" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="510" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC5</text>
+<line x1="2070" y1="540" x2="2160" y2="540" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="544" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p4</text>
+<text x="2164" y="544" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC6</text>
+<polygon points="2240,531 2302,531 2312,540 2302,549 2240,549" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="544" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC6</text>
+<line x1="2070" y1="574" x2="2160" y2="574" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="578" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p3</text>
+<text x="2164" y="578" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_TC7</text>
+<polygon points="2240,565 2302,565 2312,574 2302,583 2240,583" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="578" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC7</text>
+<line x1="2070" y1="608" x2="2160" y2="608" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="612" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p1</text>
+<text x="2164" y="612" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SP1_MISO</text>
+<polygon points="2240,599 2318,599 2328,608 2318,617 2240,617" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2281" y="612" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_MISO</text>
+<line x1="2070" y1="642" x2="2160" y2="642" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="646" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p26</text>
+<text x="2164" y="646" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SP1_MOSI</text>
+<polygon points="2240,633 2318,633 2328,642 2318,651 2240,651" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2281" y="646" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_MOSI</text>
+<line x1="2070" y1="676" x2="2160" y2="676" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="680" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p27</text>
+<text x="2164" y="680" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SP1_SCK</text>
+<polygon points="2240,667 2310,667 2320,676 2310,685 2240,685" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2277" y="680" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_SCK</text>
+<line x1="2070" y1="710" x2="2160" y2="710" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="714" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p0</text>
+<text x="2164" y="714" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">CS_ETH</text>
+<polygon points="2240,701 2302,701 2312,710 2302,719 2240,719" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2273" y="714" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_ETH</text>
+<line x1="2070" y1="744" x2="2160" y2="744" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="748" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p28</text>
+<text x="2164" y="748" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">INT_ETH</text>
+<polygon points="2240,735 2310,735 2320,744 2310,753 2240,753" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2277" y="748" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">INT_ETH</text>
+<line x1="2070" y1="778" x2="2160" y2="778" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="782" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p29</text>
+<text x="2164" y="782" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">RST_ETH</text>
+<polygon points="2240,769 2310,769 2320,778 2310,787 2240,787" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2277" y="782" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">RST_ETH</text>
+<line x1="2070" y1="812" x2="2160" y2="812" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="816" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p30</text>
+<text x="2164" y="816" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG0</text>
+<polygon points="2240,803 2286,803 2296,812 2286,821 2240,821" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="816" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG0</text>
+<line x1="2070" y1="846" x2="2160" y2="846" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="850" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p31</text>
+<text x="2164" y="850" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG1</text>
+<polygon points="2240,837 2286,837 2296,846 2286,855 2240,855" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="850" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG1</text>
+<line x1="2070" y1="880" x2="2160" y2="880" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="884" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p32</text>
+<text x="2164" y="884" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG2</text>
+<polygon points="2240,871 2286,871 2296,880 2286,889 2240,889" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="884" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG2</text>
+<line x1="2070" y1="914" x2="2160" y2="914" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="918" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p33</text>
+<text x="2164" y="918" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG3</text>
+<polygon points="2240,905 2286,905 2296,914 2286,923 2240,923" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="918" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG3</text>
+<line x1="2070" y1="948" x2="2160" y2="948" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="952" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p34</text>
+<text x="2164" y="952" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG4</text>
+<polygon points="2240,939 2286,939 2296,948 2286,957 2240,957" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="952" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG4</text>
+<line x1="2070" y1="982" x2="2160" y2="982" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="986" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p35</text>
+<text x="2164" y="986" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">DIG5</text>
+<polygon points="2240,973 2286,973 2296,982 2286,991 2240,991" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="986" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG5</text>
+<line x1="2070" y1="1016" x2="2160" y2="1016" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="1020" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p36</text>
+<text x="2164" y="1020" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOS0</text>
+<polygon points="2240,1007 2286,1007 2296,1016 2286,1025 2240,1025" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1020" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS0</text>
+<line x1="2070" y1="1050" x2="2160" y2="1050" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="1054" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p37</text>
+<text x="2164" y="1054" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOS1</text>
+<polygon points="2240,1041 2286,1041 2296,1050 2286,1059 2240,1059" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1054" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS1</text>
+<line x1="2070" y1="1084" x2="2160" y2="1084" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="1088" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p38</text>
+<text x="2164" y="1088" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOS2</text>
+<polygon points="2240,1075 2286,1075 2296,1084 2286,1093 2240,1093" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1088" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS2</text>
+<line x1="2070" y1="1118" x2="2160" y2="1118" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="1122" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p39</text>
+<text x="2164" y="1122" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOS3</text>
+<polygon points="2240,1109 2286,1109 2296,1118 2286,1127 2240,1127" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1122" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS3</text>
+<line x1="2070" y1="1152" x2="2160" y2="1152" stroke="#333" stroke-width="1.5"/>
+<text x="2067" y="1156" font-size="9" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">p41</text>
+<text x="2164" y="1156" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LED</text>
+<polygon points="2240,1143 2280,1143 2290,1152 2280,1161 2240,1161" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2262" y="1156" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">LED</text>
+<text x="1705" y="1080" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">USB: Programmering + Serial Monitor</text>
+<text x="1705" y="1095" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">SD-kort: Lagrer /settings konfigurasjon</text>
+<rect x="40" y="450" width="1020" height="620" fill="#F3E5F5" stroke="#4A148C" stroke-width="2" rx="6"/>
+<rect x="40" y="450" width="1020" height="26" fill="#4A148C" rx="5"/>
+<rect x="40" y="463" width="1020" height="13" fill="#4A148C"/>
+<text x="550" y="468" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">🌡  TERMOKOBLER × 8  —  MAX31855KASA+  (K-type, SPI)</text>
+<text x="94" y="484" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J0</text>
+<rect x="60" y="490" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="494" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="516" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="504" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="526" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="501" x2="180" y2="501" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="523" x2="180" y2="523" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="485" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="502" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="516" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="532" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC0</text>
+<text x="178" y="499" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="514" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="499" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="511" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="523" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="535" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS0</text>
+<text x="362" y="547" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="500" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="510" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="499" x2="415" y2="499" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="518" x2="415" y2="518" stroke="#333" stroke-width="1"/>
+<text x="423" y="510" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="523" x2="460" y2="523" stroke="#555" stroke-width="1"/>
+<polygon points="460,514 530,514 540,523 530,532 460,532" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="527" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="547" x2="460" y2="547" stroke="#555" stroke-width="1"/>
+<polygon points="460,538 538,538 548,547 538,556 460,556" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="551" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="535" x2="460" y2="535" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,526 522,526 532,535 522,544 460,544" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="539" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC0</text>
+<line x1="430" y1="511" x2="438" y2="511" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,502 484,502 494,511 484,520 438,520" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="515" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="499" x2="438" y2="499" stroke="#333" stroke-width="1"/>
+<polygon points="438,490 478,490 488,499 478,508 438,508" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="503" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="552" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J1</text>
+<rect x="60" y="558" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="562" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="584" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="572" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="594" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="569" x2="180" y2="569" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="591" x2="180" y2="591" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="553" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="570" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="584" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="600" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC1</text>
+<text x="178" y="567" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="582" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="567" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="579" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="591" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="603" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS1</text>
+<text x="362" y="615" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="568" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="578" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="567" x2="415" y2="567" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="586" x2="415" y2="586" stroke="#333" stroke-width="1"/>
+<text x="423" y="578" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="591" x2="460" y2="591" stroke="#555" stroke-width="1"/>
+<polygon points="460,582 530,582 540,591 530,600 460,600" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="595" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="615" x2="460" y2="615" stroke="#555" stroke-width="1"/>
+<polygon points="460,606 538,606 548,615 538,624 460,624" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="619" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="603" x2="460" y2="603" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,594 522,594 532,603 522,612 460,612" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="607" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC1</text>
+<line x1="430" y1="579" x2="438" y2="579" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,570 484,570 494,579 484,588 438,588" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="583" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="567" x2="438" y2="567" stroke="#333" stroke-width="1"/>
+<polygon points="438,558 478,558 488,567 478,576 438,576" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="571" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="620" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J2</text>
+<rect x="60" y="626" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="630" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="652" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="640" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="662" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="637" x2="180" y2="637" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="659" x2="180" y2="659" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="621" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="638" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="652" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="668" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC2</text>
+<text x="178" y="635" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="650" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="635" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="647" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="659" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="671" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS2</text>
+<text x="362" y="683" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="636" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="646" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="635" x2="415" y2="635" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="654" x2="415" y2="654" stroke="#333" stroke-width="1"/>
+<text x="423" y="646" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="659" x2="460" y2="659" stroke="#555" stroke-width="1"/>
+<polygon points="460,650 530,650 540,659 530,668 460,668" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="663" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="683" x2="460" y2="683" stroke="#555" stroke-width="1"/>
+<polygon points="460,674 538,674 548,683 538,692 460,692" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="687" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="671" x2="460" y2="671" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,662 522,662 532,671 522,680 460,680" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="675" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC2</text>
+<line x1="430" y1="647" x2="438" y2="647" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,638 484,638 494,647 484,656 438,656" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="651" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="635" x2="438" y2="635" stroke="#333" stroke-width="1"/>
+<polygon points="438,626 478,626 488,635 478,644 438,644" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="639" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="688" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J3</text>
+<rect x="60" y="694" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="698" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="720" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="708" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="730" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="705" x2="180" y2="705" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="727" x2="180" y2="727" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="689" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="706" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="720" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="736" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC3</text>
+<text x="178" y="703" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="718" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="703" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="715" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="727" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="739" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS3</text>
+<text x="362" y="751" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="704" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="714" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="703" x2="415" y2="703" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="722" x2="415" y2="722" stroke="#333" stroke-width="1"/>
+<text x="423" y="714" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="727" x2="460" y2="727" stroke="#555" stroke-width="1"/>
+<polygon points="460,718 530,718 540,727 530,736 460,736" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="731" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="751" x2="460" y2="751" stroke="#555" stroke-width="1"/>
+<polygon points="460,742 538,742 548,751 538,760 460,760" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="755" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="739" x2="460" y2="739" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,730 522,730 532,739 522,748 460,748" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="743" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC3</text>
+<line x1="430" y1="715" x2="438" y2="715" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,706 484,706 494,715 484,724 438,724" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="719" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="703" x2="438" y2="703" stroke="#333" stroke-width="1"/>
+<polygon points="438,694 478,694 488,703 478,712 438,712" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="707" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="756" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J4</text>
+<rect x="60" y="762" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="766" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="788" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="776" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="798" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="773" x2="180" y2="773" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="795" x2="180" y2="795" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="757" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="774" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="788" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="804" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC4</text>
+<text x="178" y="771" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="786" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="771" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="783" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="795" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="807" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS4</text>
+<text x="362" y="819" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="772" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="782" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="771" x2="415" y2="771" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="790" x2="415" y2="790" stroke="#333" stroke-width="1"/>
+<text x="423" y="782" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="795" x2="460" y2="795" stroke="#555" stroke-width="1"/>
+<polygon points="460,786 530,786 540,795 530,804 460,804" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="799" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="819" x2="460" y2="819" stroke="#555" stroke-width="1"/>
+<polygon points="460,810 538,810 548,819 538,828 460,828" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="823" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="807" x2="460" y2="807" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,798 522,798 532,807 522,816 460,816" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="811" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC4</text>
+<line x1="430" y1="783" x2="438" y2="783" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,774 484,774 494,783 484,792 438,792" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="787" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="771" x2="438" y2="771" stroke="#333" stroke-width="1"/>
+<polygon points="438,762 478,762 488,771 478,780 438,780" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="775" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="824" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J5</text>
+<rect x="60" y="830" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="834" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="856" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="844" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="866" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="841" x2="180" y2="841" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="863" x2="180" y2="863" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="825" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="842" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="856" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="872" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC5</text>
+<text x="178" y="839" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="854" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="839" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="851" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="863" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="875" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS5</text>
+<text x="362" y="887" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="840" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="850" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="839" x2="415" y2="839" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="858" x2="415" y2="858" stroke="#333" stroke-width="1"/>
+<text x="423" y="850" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="863" x2="460" y2="863" stroke="#555" stroke-width="1"/>
+<polygon points="460,854 530,854 540,863 530,872 460,872" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="867" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="887" x2="460" y2="887" stroke="#555" stroke-width="1"/>
+<polygon points="460,878 538,878 548,887 538,896 460,896" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="891" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="875" x2="460" y2="875" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,866 522,866 532,875 522,884 460,884" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="879" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC5</text>
+<line x1="430" y1="851" x2="438" y2="851" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,842 484,842 494,851 484,860 438,860" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="855" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="839" x2="438" y2="839" stroke="#333" stroke-width="1"/>
+<polygon points="438,830 478,830 488,839 478,848 438,848" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="843" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="892" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J6</text>
+<rect x="60" y="898" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="902" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="924" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="912" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="934" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="909" x2="180" y2="909" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="931" x2="180" y2="931" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="893" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="910" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="924" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="940" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC6</text>
+<text x="178" y="907" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="922" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="907" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="919" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="931" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="943" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS6</text>
+<text x="362" y="955" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="908" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="918" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="907" x2="415" y2="907" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="926" x2="415" y2="926" stroke="#333" stroke-width="1"/>
+<text x="423" y="918" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="931" x2="460" y2="931" stroke="#555" stroke-width="1"/>
+<polygon points="460,922 530,922 540,931 530,940 460,940" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="935" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="955" x2="460" y2="955" stroke="#555" stroke-width="1"/>
+<polygon points="460,946 538,946 548,955 538,964 460,964" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="959" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="943" x2="460" y2="943" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,934 522,934 532,943 522,952 460,952" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="947" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC6</text>
+<line x1="430" y1="919" x2="438" y2="919" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,910 484,910 494,919 484,928 438,928" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="923" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="907" x2="438" y2="907" stroke="#333" stroke-width="1"/>
+<polygon points="438,898 478,898 488,907 478,916 438,916" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="911" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<text x="94" y="960" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J7</text>
+<rect x="60" y="966" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="970" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="992" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="980" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">T+</text>
+<text x="82" y="1002" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">T−</text>
+<line x1="128" y1="977" x2="180" y2="977" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="128" y1="999" x2="180" y2="999" stroke="#333" stroke-width="1.5"/>
+<rect x="180" y="961" width="180" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="270" y="978" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">MAX31855KASA+</text>
+<text x="270" y="992" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOIC-8</text>
+<text x="270" y="1008" font-size="9" font-weight="normal" fill="#7B1FA2" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC7</text>
+<text x="178" y="975" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">T−</text>
+<text x="178" y="990" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">T+</text>
+<text x="362" y="975" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<text x="362" y="987" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+3V3</text>
+<text x="362" y="999" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="362" y="1011" font-size="8" font-weight="normal" fill="#7B1FA2" text-anchor="start" font-family="Courier New, Courier, monospace">/CS7</text>
+<text x="362" y="1023" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">SO</text>
+<rect x="415" y="976" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="415" y="986" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="415" y1="975" x2="415" y2="975" stroke="#CC0000" stroke-width="1"/>
+<line x1="415" y1="994" x2="415" y2="994" stroke="#333" stroke-width="1"/>
+<text x="423" y="986" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="430" y1="999" x2="460" y2="999" stroke="#555" stroke-width="1"/>
+<polygon points="460,990 530,990 540,999 530,1008 460,1008" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="497" y="1003" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="430" y1="1023" x2="460" y2="1023" stroke="#555" stroke-width="1"/>
+<polygon points="460,1014 538,1014 548,1023 538,1032 460,1032" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="501" y="1027" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="430" y1="1011" x2="460" y2="1011" stroke="#7B1FA2" stroke-width="1"/>
+<polygon points="460,1002 522,1002 532,1011 522,1020 460,1020" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="493" y="1015" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_TC7</text>
+<line x1="430" y1="987" x2="438" y2="987" stroke="#CC0000" stroke-width="1"/>
+<polygon points="438,978 484,978 494,987 484,996 438,996" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="463" y="991" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="430" y1="975" x2="438" y2="975" stroke="#333" stroke-width="1"/>
+<polygon points="438,966 478,966 488,975 478,984 438,984" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="460" y="979" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="40" y="1090" width="1020" height="350" fill="#FFF3E0" stroke="#E65100" stroke-width="2" rx="6"/>
+<rect x="40" y="1090" width="1020" height="26" fill="#E65100" rx="5"/>
+<rect x="40" y="1103" width="1020" height="13" fill="#E65100"/>
+<text x="550" y="1108" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">🌡  NTC TERMISTOR × 4  —  Analog 0–3.3V  (A8–A11)</text>
+<text x="94" y="1134" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J8</text>
+<rect x="60" y="1140" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="1144" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="1166" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="1154" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="82" y="1176" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="128" y1="1151" x2="160" y2="1151" stroke="#333" stroke-width="1.5"/>
+<rect x="160" y="1145" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="160" y="1151" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="160" y="1157" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="164" y1="1143" x2="164" y2="1145" stroke="#333" stroke-width="1.5"/>
+<line x1="164" y1="1163" x2="164" y2="1175" stroke="#333" stroke-width="1.5"/>
+<text x="176" y="1154" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<text x="176" y="1164" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">R</text>
+<line x1="164" y1="1143" x2="164" y2="1135" stroke="#CC0000" stroke-width="1.5"/>
+<text x="164" y="1128" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="160" y1="1175" x2="160" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="190" y1="1151" x2="160" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="190" y1="1151" x2="220" y2="1151" stroke="#333" stroke-width="1.5"/>
+<polygon points="220,1142 266,1142 276,1151 266,1160 220,1160" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="245" y="1155" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC0</text>
+<line x1="128" y1="1173" x2="160" y2="1173" stroke="#333" stroke-width="1.5"/>
+<line x1="160" y1="1173" x2="160" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="150" y1="1181" x2="170" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="154" y1="1186" x2="166" y2="1186" stroke="#444" stroke-width="2"/>
+<line x1="158" y1="1191" x2="162" y2="1191" stroke="#444" stroke-width="2"/>
+<text x="180" y="1235" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">NTC0 → Teensy A8 / pin 22</text>
+<text x="344" y="1134" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J9</text>
+<rect x="310" y="1140" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="314" y="1144" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="314" y="1166" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="332" y="1154" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="332" y="1176" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="378" y1="1151" x2="410" y2="1151" stroke="#333" stroke-width="1.5"/>
+<rect x="410" y="1145" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="410" y="1151" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="410" y="1157" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="414" y1="1143" x2="414" y2="1145" stroke="#333" stroke-width="1.5"/>
+<line x1="414" y1="1163" x2="414" y2="1175" stroke="#333" stroke-width="1.5"/>
+<text x="426" y="1154" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<text x="426" y="1164" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">R</text>
+<line x1="414" y1="1143" x2="414" y2="1135" stroke="#CC0000" stroke-width="1.5"/>
+<text x="414" y="1128" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="410" y1="1175" x2="410" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="440" y1="1151" x2="410" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="440" y1="1151" x2="470" y2="1151" stroke="#333" stroke-width="1.5"/>
+<polygon points="470,1142 516,1142 526,1151 516,1160 470,1160" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="495" y="1155" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC1</text>
+<line x1="378" y1="1173" x2="410" y2="1173" stroke="#333" stroke-width="1.5"/>
+<line x1="410" y1="1173" x2="410" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="400" y1="1181" x2="420" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="404" y1="1186" x2="416" y2="1186" stroke="#444" stroke-width="2"/>
+<line x1="408" y1="1191" x2="412" y2="1191" stroke="#444" stroke-width="2"/>
+<text x="430" y="1235" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">NTC1 → Teensy A9 / pin 23</text>
+<text x="594" y="1134" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J10</text>
+<rect x="560" y="1140" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="564" y="1144" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="564" y="1166" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="582" y="1154" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="582" y="1176" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="628" y1="1151" x2="660" y2="1151" stroke="#333" stroke-width="1.5"/>
+<rect x="660" y="1145" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="660" y="1151" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="660" y="1157" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="664" y1="1143" x2="664" y2="1145" stroke="#333" stroke-width="1.5"/>
+<line x1="664" y1="1163" x2="664" y2="1175" stroke="#333" stroke-width="1.5"/>
+<text x="676" y="1154" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<text x="676" y="1164" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">R</text>
+<line x1="664" y1="1143" x2="664" y2="1135" stroke="#CC0000" stroke-width="1.5"/>
+<text x="664" y="1128" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="660" y1="1175" x2="660" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="690" y1="1151" x2="660" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="690" y1="1151" x2="720" y2="1151" stroke="#333" stroke-width="1.5"/>
+<polygon points="720,1142 766,1142 776,1151 766,1160 720,1160" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="745" y="1155" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC2</text>
+<line x1="628" y1="1173" x2="660" y2="1173" stroke="#333" stroke-width="1.5"/>
+<line x1="660" y1="1173" x2="660" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="650" y1="1181" x2="670" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="654" y1="1186" x2="666" y2="1186" stroke="#444" stroke-width="2"/>
+<line x1="658" y1="1191" x2="662" y2="1191" stroke="#444" stroke-width="2"/>
+<text x="680" y="1235" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">NTC2 → Teensy A10 / pin 24</text>
+<text x="844" y="1134" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J11</text>
+<rect x="810" y="1140" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="814" y="1144" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="814" y="1166" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="832" y="1154" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="832" y="1176" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="878" y1="1151" x2="910" y2="1151" stroke="#333" stroke-width="1.5"/>
+<rect x="910" y="1145" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="910" y="1151" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="910" y="1157" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="914" y1="1143" x2="914" y2="1145" stroke="#333" stroke-width="1.5"/>
+<line x1="914" y1="1163" x2="914" y2="1175" stroke="#333" stroke-width="1.5"/>
+<text x="926" y="1154" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<text x="926" y="1164" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">R</text>
+<line x1="914" y1="1143" x2="914" y2="1135" stroke="#CC0000" stroke-width="1.5"/>
+<text x="914" y="1128" font-size="8" font-weight="normal" fill="#CC0000" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="910" y1="1175" x2="910" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="940" y1="1151" x2="910" y2="1151" stroke="#333" stroke-width="1"/>
+<line x1="940" y1="1151" x2="970" y2="1151" stroke="#333" stroke-width="1.5"/>
+<polygon points="970,1142 1016,1142 1026,1151 1016,1160 970,1160" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="995" y="1155" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">NTC3</text>
+<line x1="878" y1="1173" x2="910" y2="1173" stroke="#333" stroke-width="1.5"/>
+<line x1="910" y1="1173" x2="910" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="900" y1="1181" x2="920" y2="1181" stroke="#444" stroke-width="2"/>
+<line x1="904" y1="1186" x2="916" y2="1186" stroke="#444" stroke-width="2"/>
+<line x1="908" y1="1191" x2="912" y2="1191" stroke="#444" stroke-width="2"/>
+<text x="930" y="1235" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">NTC3 → Teensy A11 / pin 25</text>
+<text x="550" y="1210" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">10k pull-up til +3V3 → 10-bit NTC kurve</text>
+<text x="550" y="1228" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Passer: NTC10k, oljetemperatur, innsugsluft</text>
+<rect x="40" y="1460" width="1020" height="380" fill="#E0F7FA" stroke="#006064" stroke-width="2" rx="6"/>
+<rect x="40" y="1460" width="1020" height="26" fill="#006064" rx="5"/>
+<rect x="40" y="1473" width="1020" height="13" fill="#006064"/>
+<text x="550" y="1478" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">⚙  MOSFET UTGANG × 4  —  AO3400A  (30V / 5.7A, logikk-nivå)</text>
+<text x="94" y="1504" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J12</text>
+<rect x="60" y="1510" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="64" y="1514" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="64" y="1536" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="82" y="1524" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="82" y="1546" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LAST</text>
+<rect x="170" y="1530" width="80" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="210" y="1550" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">AO3400A</text>
+<text x="210" y="1563" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOT-23</text>
+<text x="168" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">G</text>
+<text x="168" y="1568" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">S</text>
+<text x="252" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">D</text>
+<line x1="128" y1="1543" x2="160" y2="1543" stroke="#333" stroke-width="1.5"/>
+<line x1="128" y1="1543" x2="140" y2="1543" stroke="#555" stroke-width="1.5"/>
+<polygon points="172,1534 126,1534 116,1543 126,1552 172,1552" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="147" y="1547" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS0</text>
+<rect x="144" y="1539" width="16" height="8" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="160" y1="1543" x2="170" y2="1543" stroke="#333" stroke-width="1.5"/>
+<text x="152" y="1536" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">100Ω</text>
+<line x1="250" y1="1548" x2="280" y2="1548" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="280" y1="1548" x2="280" y2="1532" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="280" y1="1532" x2="280" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<polygon points="275,1532 285,1532 280,1524" fill="#FF6B6B"/>
+<line x1="275" y1="1524" x2="285" y2="1524" stroke="#333" stroke-width="1.5"/>
+<text x="293" y="1528" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">1N4007</text>
+<polygon points="266,1511 220,1511 210,1520 220,1529 266,1529" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="241" y="1524" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+12V</text>
+<line x1="266" y1="1520" x2="280" y2="1520" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="280" y1="1520" x2="280" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="170" y1="1568" x2="160" y2="1568" stroke="#333" stroke-width="1.5"/>
+<line x1="160" y1="1568" x2="160" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="150" y1="1576" x2="170" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="154" y1="1581" x2="166" y2="1581" stroke="#444" stroke-width="2"/>
+<line x1="158" y1="1586" x2="162" y2="1586" stroke="#444" stroke-width="2"/>
+<text x="180" y="1690" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J12: Vifter, pumper,</text>
+<text x="180" y="1703" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">releer, ventiler</text>
+<text x="344" y="1504" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J13</text>
+<rect x="310" y="1510" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="314" y="1514" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="314" y="1536" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="332" y="1524" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="332" y="1546" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LAST</text>
+<rect x="420" y="1530" width="80" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="460" y="1550" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">AO3400A</text>
+<text x="460" y="1563" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOT-23</text>
+<text x="418" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">G</text>
+<text x="418" y="1568" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">S</text>
+<text x="502" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">D</text>
+<line x1="378" y1="1543" x2="410" y2="1543" stroke="#333" stroke-width="1.5"/>
+<line x1="378" y1="1543" x2="390" y2="1543" stroke="#555" stroke-width="1.5"/>
+<polygon points="422,1534 376,1534 366,1543 376,1552 422,1552" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="397" y="1547" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS1</text>
+<rect x="394" y="1539" width="16" height="8" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="410" y1="1543" x2="420" y2="1543" stroke="#333" stroke-width="1.5"/>
+<text x="402" y="1536" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">100Ω</text>
+<line x1="500" y1="1548" x2="530" y2="1548" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="530" y1="1548" x2="530" y2="1532" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="530" y1="1532" x2="530" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<polygon points="525,1532 535,1532 530,1524" fill="#FF6B6B"/>
+<line x1="525" y1="1524" x2="535" y2="1524" stroke="#333" stroke-width="1.5"/>
+<text x="543" y="1528" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">1N4007</text>
+<polygon points="516,1511 470,1511 460,1520 470,1529 516,1529" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="491" y="1524" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+12V</text>
+<line x1="516" y1="1520" x2="530" y2="1520" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="530" y1="1520" x2="530" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="420" y1="1568" x2="410" y2="1568" stroke="#333" stroke-width="1.5"/>
+<line x1="410" y1="1568" x2="410" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="400" y1="1576" x2="420" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="404" y1="1581" x2="416" y2="1581" stroke="#444" stroke-width="2"/>
+<line x1="408" y1="1586" x2="412" y2="1586" stroke="#444" stroke-width="2"/>
+<text x="430" y="1690" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J13: Vifter, pumper,</text>
+<text x="430" y="1703" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">releer, ventiler</text>
+<text x="594" y="1504" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J14</text>
+<rect x="560" y="1510" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="564" y="1514" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="564" y="1536" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="582" y="1524" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="582" y="1546" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LAST</text>
+<rect x="670" y="1530" width="80" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="710" y="1550" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">AO3400A</text>
+<text x="710" y="1563" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOT-23</text>
+<text x="668" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">G</text>
+<text x="668" y="1568" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">S</text>
+<text x="752" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">D</text>
+<line x1="628" y1="1543" x2="660" y2="1543" stroke="#333" stroke-width="1.5"/>
+<line x1="628" y1="1543" x2="640" y2="1543" stroke="#555" stroke-width="1.5"/>
+<polygon points="672,1534 626,1534 616,1543 626,1552 672,1552" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="647" y="1547" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS2</text>
+<rect x="644" y="1539" width="16" height="8" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="660" y1="1543" x2="670" y2="1543" stroke="#333" stroke-width="1.5"/>
+<text x="652" y="1536" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">100Ω</text>
+<line x1="750" y1="1548" x2="780" y2="1548" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="780" y1="1548" x2="780" y2="1532" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="780" y1="1532" x2="780" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<polygon points="775,1532 785,1532 780,1524" fill="#FF6B6B"/>
+<line x1="775" y1="1524" x2="785" y2="1524" stroke="#333" stroke-width="1.5"/>
+<text x="793" y="1528" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">1N4007</text>
+<polygon points="766,1511 720,1511 710,1520 720,1529 766,1529" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="741" y="1524" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+12V</text>
+<line x1="766" y1="1520" x2="780" y2="1520" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="780" y1="1520" x2="780" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="670" y1="1568" x2="660" y2="1568" stroke="#333" stroke-width="1.5"/>
+<line x1="660" y1="1568" x2="660" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="650" y1="1576" x2="670" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="654" y1="1581" x2="666" y2="1581" stroke="#444" stroke-width="2"/>
+<line x1="658" y1="1586" x2="662" y2="1586" stroke="#444" stroke-width="2"/>
+<text x="680" y="1690" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J14: Vifter, pumper,</text>
+<text x="680" y="1703" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">releer, ventiler</text>
+<text x="844" y="1504" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J15</text>
+<rect x="810" y="1510" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="814" y="1514" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="814" y="1536" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="832" y="1524" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="start" font-family="Courier New, Courier, monospace">+12V</text>
+<text x="832" y="1546" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LAST</text>
+<rect x="920" y="1530" width="80" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="960" y="1550" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">AO3400A</text>
+<text x="960" y="1563" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">SOT-23</text>
+<text x="918" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">G</text>
+<text x="918" y="1568" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">S</text>
+<text x="1002" y="1548" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">D</text>
+<line x1="878" y1="1543" x2="910" y2="1543" stroke="#333" stroke-width="1.5"/>
+<line x1="878" y1="1543" x2="890" y2="1543" stroke="#555" stroke-width="1.5"/>
+<polygon points="922,1534 876,1534 866,1543 876,1552 922,1552" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="897" y="1547" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">MOS3</text>
+<rect x="894" y="1539" width="16" height="8" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="910" y1="1543" x2="920" y2="1543" stroke="#333" stroke-width="1.5"/>
+<text x="902" y="1536" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">100Ω</text>
+<line x1="1000" y1="1548" x2="1030" y2="1548" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1030" y1="1548" x2="1030" y2="1532" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1030" y1="1532" x2="1030" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<polygon points="1025,1532 1035,1532 1030,1524" fill="#FF6B6B"/>
+<line x1="1025" y1="1524" x2="1035" y2="1524" stroke="#333" stroke-width="1.5"/>
+<text x="1043" y="1528" font-size="8" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">1N4007</text>
+<polygon points="1016,1511 970,1511 960,1520 970,1529 1016,1529" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="991" y="1524" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+12V</text>
+<line x1="1016" y1="1520" x2="1030" y2="1520" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1030" y1="1520" x2="1030" y2="1524" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="920" y1="1568" x2="910" y2="1568" stroke="#333" stroke-width="1.5"/>
+<line x1="910" y1="1568" x2="910" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="900" y1="1576" x2="920" y2="1576" stroke="#444" stroke-width="2"/>
+<line x1="904" y1="1581" x2="916" y2="1581" stroke="#444" stroke-width="2"/>
+<line x1="908" y1="1586" x2="912" y2="1586" stroke="#444" stroke-width="2"/>
+<text x="930" y="1690" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J15: Vifter, pumper,</text>
+<text x="930" y="1703" font-size="9" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">releer, ventiler</text>
+<rect x="2360" y="70" width="1400" height="350" fill="#ECEFF1" stroke="#37474F" stroke-width="2" rx="6"/>
+<rect x="2360" y="70" width="1400" height="26" fill="#37474F" rx="5"/>
+<rect x="2360" y="83" width="1400" height="13" fill="#37474F"/>
+<text x="3060" y="88" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">🌐  WIZ820io ETHERNET MODULE  —  SPI1  (Teensy pins 0,1,26,27)</text>
+<text x="2470" y="107" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J22 — WIZ820io 2×10 Header (2mm)</text>
+<rect x="2390" y="115" width="160" height="220" fill="#DDDDDD" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="2394" y="123" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="133" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2394" y="143" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="153" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2394" y="163" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="173" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MISO</text>
+<rect x="2394" y="183" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="193" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">MOSI</text>
+<rect x="2394" y="203" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="213" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SCLK</text>
+<rect x="2394" y="223" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="233" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SCSn</text>
+<rect x="2394" y="243" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="253" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">RSTn</text>
+<rect x="2394" y="263" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="273" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">PWRDWNn</text>
+<rect x="2394" y="283" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="293" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">INTn</text>
+<rect x="2394" y="303" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2410" y="313" font-size="8" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">LINKLEDn</text>
+<rect x="2534" y="123" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="133" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="143" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="153" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">VCC</text>
+<rect x="2534" y="163" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="173" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">VCC</text>
+<rect x="2534" y="183" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="193" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="203" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="213" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="223" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="233" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="243" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="253" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="263" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="273" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="283" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="293" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<rect x="2534" y="303" width="12" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2530" y="313" font-size="8" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="2550" y1="170" x2="2590" y2="170" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,161 2668,161 2678,170 2668,179 2590,179" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2631" y="174" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_MISO</text>
+<line x1="2550" y1="190" x2="2590" y2="190" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,181 2668,181 2678,190 2668,199 2590,199" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2631" y="194" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_MOSI</text>
+<line x1="2550" y1="210" x2="2590" y2="210" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,201 2660,201 2670,210 2660,219 2590,219" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2627" y="214" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SP1_SCK</text>
+<line x1="2550" y1="230" x2="2590" y2="230" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,221 2652,221 2662,230 2652,239 2590,239" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2623" y="234" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_ETH</text>
+<line x1="2550" y1="250" x2="2590" y2="250" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,241 2660,241 2670,250 2660,259 2590,259" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2627" y="254" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">RST_ETH</text>
+<line x1="2550" y1="290" x2="2590" y2="290" stroke="#555" stroke-width="1.5"/>
+<polygon points="2590,281 2660,281 2670,290 2660,299 2590,299" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2627" y="294" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">INT_ETH</text>
+<text x="2920" y="130" font-size="11" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">RJ45 → LAN</text>
+<text x="2920" y="148" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">10/100 Mbit Ethernet</text>
+<text x="2920" y="166" font-size="10" font-weight="normal" fill="#888" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">ca. 120 NOK</text>
+<text x="2920" y="210" font-size="10" font-weight="normal" fill="#37474F" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Dashboard → Nettleser</text>
+<text x="2920" y="228" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">JSON API + WebSocket</text>
+<text x="2920" y="246" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">/settings konfigurasjon</text>
+<text x="2920" y="264" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Printbar kablingsoversikt</text>
+<rect x="2360" y="440" width="1400" height="300" fill="#E8F5E9" stroke="#1B5E20" stroke-width="2" rx="6"/>
+<rect x="2360" y="440" width="1400" height="26" fill="#1B5E20" rx="5"/>
+<rect x="2360" y="453" width="1400" height="13" fill="#1B5E20"/>
+<text x="3060" y="458" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">📐  LIS3DH AKSELEROMETER  —  3-akse G-kraft  (SPI, on-board)</text>
+<rect x="2390" y="485" width="160" height="164" fill="#FFFDE7" stroke="#777" stroke-width="1.5" rx="4"/>
+<text x="2470" y="572" font-size="11" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">LIS3DH
+(14-LGA)</text>
+<line x1="2370" y1="499" x2="2390" y2="499" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="503" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">VDD</text>
+<text x="2393" y="503" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">1</text>
+<line x1="2370" y1="523" x2="2390" y2="523" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="527" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">GND</text>
+<text x="2393" y="527" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">6</text>
+<line x1="2370" y1="547" x2="2390" y2="547" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="551" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">SCK</text>
+<text x="2393" y="551" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">7</text>
+<line x1="2370" y1="571" x2="2390" y2="571" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="575" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">SDI</text>
+<text x="2393" y="575" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">8</text>
+<line x1="2370" y1="595" x2="2390" y2="595" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="599" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">SDO</text>
+<text x="2393" y="599" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">9</text>
+<line x1="2370" y1="619" x2="2390" y2="619" stroke="#333" stroke-width="1.5"/>
+<text x="2366" y="623" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">CS</text>
+<text x="2393" y="623" font-size="8" font-weight="normal" fill="#888" text-anchor="start" font-family="Courier New, Courier, monospace">10</text>
+<line x1="2550" y1="499" x2="2570" y2="499" stroke="#333" stroke-width="1.5"/>
+<text x="2574" y="503" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">INT1</text>
+<text x="2547" y="503" font-size="8" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">5</text>
+<line x1="2550" y1="523" x2="2570" y2="523" stroke="#333" stroke-width="1.5"/>
+<text x="2574" y="527" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">INT2</text>
+<text x="2547" y="527" font-size="8" font-weight="normal" fill="#888" text-anchor="end" font-family="Courier New, Courier, monospace">4</text>
+<line x1="2370" y1="499" x2="2340" y2="499" stroke="#CC0000" stroke-width="1.5"/>
+<polygon points="2336,490 2290,490 2280,499 2290,508 2336,508" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2311" y="503" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+3V3</text>
+<line x1="2370" y1="523" x2="2340" y2="523" stroke="#333" stroke-width="1.5"/>
+<line x1="2340" y1="523" x2="2340" y2="531" stroke="#444" stroke-width="2"/>
+<line x1="2330" y1="531" x2="2350" y2="531" stroke="#444" stroke-width="2"/>
+<line x1="2334" y1="536" x2="2346" y2="536" stroke="#444" stroke-width="2"/>
+<line x1="2338" y1="541" x2="2342" y2="541" stroke="#444" stroke-width="2"/>
+<line x1="2370" y1="547" x2="2340" y2="547" stroke="#555" stroke-width="1.5"/>
+<polygon points="2350,538 2280,538 2270,547 2280,556 2350,556" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2313" y="551" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_SCK</text>
+<line x1="2370" y1="571" x2="2340" y2="571" stroke="#555" stroke-width="1.5"/>
+<polygon points="2348,562 2270,562 2260,571 2270,580 2348,580" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2307" y="575" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MOSI</text>
+<line x1="2370" y1="595" x2="2340" y2="595" stroke="#555" stroke-width="1.5"/>
+<polygon points="2348,586 2270,586 2260,595 2270,604 2348,604" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2307" y="599" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">SPI_MISO</text>
+<line x1="2370" y1="619" x2="2340" y2="619" stroke="#7B1FA2" stroke-width="1.5"/>
+<polygon points="2342,610 2280,610 2270,619 2280,628 2342,628" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2309" y="623" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">CS_ACC</text>
+<rect x="2590" y="495" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2590" y="505" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<text x="2602" y="505" font-size="9" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<text x="3060" y="490" font-size="11" font-weight="normal" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">±2g / ±4g / ±8g / ±16g</text>
+<text x="3060" y="508" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Lateral G, akselerasjon,</text>
+<text x="3060" y="524" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">retardasjon, helling</text>
+<text x="3060" y="550" font-size="10" font-weight="normal" fill="#888" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">LCSC: C91122</text>
+<text x="3060" y="570" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Deles SPI-buss med MAX31855</text>
+<text x="3060" y="588" font-size="10" font-weight="normal" fill="#777" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Eget CS_ACC (Teensy pin 2)</text>
+<rect x="2360" y="760" width="1400" height="600" fill="#E1F5FE" stroke="#0277BD" stroke-width="2" rx="6"/>
+<rect x="2360" y="760" width="1400" height="26" fill="#0277BD" rx="5"/>
+<rect x="2360" y="773" width="1400" height="13" fill="#0277BD"/>
+<text x="3060" y="778" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">📊  ANALOG INNGANG × 8  —  0–5V  →  Teensy ADC  (A0–A7)</text>
+<text x="3060" y="798" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Spenningsdeler 10k/15k: 5V → 3.0V (Teensy ADC maks 3.3V)    |    100nF støyfilter</text>
+<text x="2414" y="809" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J16</text>
+<rect x="2380" y="815" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="2384" y="819" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="2384" y="841" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2402" y="829" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="2402" y="851" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="2448" y1="826" x2="2480" y2="826" stroke="#333" stroke-width="1.5"/>
+<rect x="2480" y="821" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="827" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="833" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2484" y1="819" x2="2484" y2="821" stroke="#333" stroke-width="1.5"/>
+<text x="2496" y="829" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="2484" y1="839" x2="2484" y2="845" stroke="#333" stroke-width="1.5"/>
+<rect x="2480" y="845" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="851" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="857" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2484" y1="861" x2="2484" y2="870" stroke="#333" stroke-width="1.5"/>
+<text x="2496" y="853" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="2484" y1="870" x2="2484" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2474" y1="878" x2="2494" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2478" y1="883" x2="2490" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="2482" y1="888" x2="2486" y2="888" stroke="#444" stroke-width="2"/>
+<line x1="2484" y1="845" x2="2530" y2="845" stroke="#333" stroke-width="1.5"/>
+<circle cx="2530" cy="845" r="4" fill="#111"/>
+<rect x="2530" y="840" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2530" y="848" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2530" y1="856" x2="2530" y2="870" stroke="#333" stroke-width="1.5"/>
+<line x1="2530" y1="870" x2="2530" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2520" y1="878" x2="2540" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2524" y1="883" x2="2536" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="2528" y1="888" x2="2532" y2="888" stroke="#444" stroke-width="2"/>
+<text x="2542" y="845" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="2534" y1="845" x2="2570" y2="845" stroke="#333" stroke-width="1.5"/>
+<polygon points="2570,836 2616,836 2626,845 2616,854 2570,854" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2595" y="849" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA0</text>
+<line x1="2448" y1="848" x2="2484" y2="848" stroke="#333" stroke-width="1.5"/>
+<circle cx="2484" cy="848" r="4" fill="#111"/>
+<text x="2759" y="809" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J17</text>
+<rect x="2725" y="815" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="2729" y="819" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="2729" y="841" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2747" y="829" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="2747" y="851" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="2793" y1="826" x2="2825" y2="826" stroke="#333" stroke-width="1.5"/>
+<rect x="2825" y="821" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="827" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="833" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2829" y1="819" x2="2829" y2="821" stroke="#333" stroke-width="1.5"/>
+<text x="2841" y="829" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="2829" y1="839" x2="2829" y2="845" stroke="#333" stroke-width="1.5"/>
+<rect x="2825" y="845" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="851" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="857" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2829" y1="861" x2="2829" y2="870" stroke="#333" stroke-width="1.5"/>
+<text x="2841" y="853" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="2829" y1="870" x2="2829" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2819" y1="878" x2="2839" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2823" y1="883" x2="2835" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="2827" y1="888" x2="2831" y2="888" stroke="#444" stroke-width="2"/>
+<line x1="2829" y1="845" x2="2875" y2="845" stroke="#333" stroke-width="1.5"/>
+<circle cx="2875" cy="845" r="4" fill="#111"/>
+<rect x="2875" y="840" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2875" y="848" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2875" y1="856" x2="2875" y2="870" stroke="#333" stroke-width="1.5"/>
+<line x1="2875" y1="870" x2="2875" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2865" y1="878" x2="2885" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="2869" y1="883" x2="2881" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="2873" y1="888" x2="2877" y2="888" stroke="#444" stroke-width="2"/>
+<text x="2887" y="845" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="2879" y1="845" x2="2915" y2="845" stroke="#333" stroke-width="1.5"/>
+<polygon points="2915,836 2961,836 2971,845 2961,854 2915,854" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2940" y="849" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA1</text>
+<line x1="2793" y1="848" x2="2829" y2="848" stroke="#333" stroke-width="1.5"/>
+<circle cx="2829" cy="848" r="4" fill="#111"/>
+<text x="3104" y="809" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J18</text>
+<rect x="3070" y="815" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="3074" y="819" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="3074" y="841" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="3092" y="829" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="3092" y="851" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="3138" y1="826" x2="3170" y2="826" stroke="#333" stroke-width="1.5"/>
+<rect x="3170" y="821" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="827" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="833" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3174" y1="819" x2="3174" y2="821" stroke="#333" stroke-width="1.5"/>
+<text x="3186" y="829" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="3174" y1="839" x2="3174" y2="845" stroke="#333" stroke-width="1.5"/>
+<rect x="3170" y="845" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="851" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="857" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3174" y1="861" x2="3174" y2="870" stroke="#333" stroke-width="1.5"/>
+<text x="3186" y="853" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="3174" y1="870" x2="3174" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3164" y1="878" x2="3184" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3168" y1="883" x2="3180" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="3172" y1="888" x2="3176" y2="888" stroke="#444" stroke-width="2"/>
+<line x1="3174" y1="845" x2="3220" y2="845" stroke="#333" stroke-width="1.5"/>
+<circle cx="3220" cy="845" r="4" fill="#111"/>
+<rect x="3220" y="840" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3220" y="848" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3220" y1="856" x2="3220" y2="870" stroke="#333" stroke-width="1.5"/>
+<line x1="3220" y1="870" x2="3220" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3210" y1="878" x2="3230" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3214" y1="883" x2="3226" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="3218" y1="888" x2="3222" y2="888" stroke="#444" stroke-width="2"/>
+<text x="3232" y="845" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="3224" y1="845" x2="3260" y2="845" stroke="#333" stroke-width="1.5"/>
+<polygon points="3260,836 3306,836 3316,845 3306,854 3260,854" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="3285" y="849" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA2</text>
+<line x1="3138" y1="848" x2="3174" y2="848" stroke="#333" stroke-width="1.5"/>
+<circle cx="3174" cy="848" r="4" fill="#111"/>
+<text x="3449" y="809" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J19</text>
+<rect x="3415" y="815" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="3419" y="819" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="3419" y="841" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="3437" y="829" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="3437" y="851" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="3483" y1="826" x2="3515" y2="826" stroke="#333" stroke-width="1.5"/>
+<rect x="3515" y="821" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="827" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="833" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3519" y1="819" x2="3519" y2="821" stroke="#333" stroke-width="1.5"/>
+<text x="3531" y="829" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="3519" y1="839" x2="3519" y2="845" stroke="#333" stroke-width="1.5"/>
+<rect x="3515" y="845" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="851" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="857" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3519" y1="861" x2="3519" y2="870" stroke="#333" stroke-width="1.5"/>
+<text x="3531" y="853" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="3519" y1="870" x2="3519" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3509" y1="878" x2="3529" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3513" y1="883" x2="3525" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="3517" y1="888" x2="3521" y2="888" stroke="#444" stroke-width="2"/>
+<line x1="3519" y1="845" x2="3565" y2="845" stroke="#333" stroke-width="1.5"/>
+<circle cx="3565" cy="845" r="4" fill="#111"/>
+<rect x="3565" y="840" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3565" y="848" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3565" y1="856" x2="3565" y2="870" stroke="#333" stroke-width="1.5"/>
+<line x1="3565" y1="870" x2="3565" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3555" y1="878" x2="3575" y2="878" stroke="#444" stroke-width="2"/>
+<line x1="3559" y1="883" x2="3571" y2="883" stroke="#444" stroke-width="2"/>
+<line x1="3563" y1="888" x2="3567" y2="888" stroke="#444" stroke-width="2"/>
+<text x="3577" y="845" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="3569" y1="845" x2="3605" y2="845" stroke="#333" stroke-width="1.5"/>
+<polygon points="3605,836 3651,836 3661,845 3651,854 3605,854" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="3630" y="849" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA3</text>
+<line x1="3483" y1="848" x2="3519" y2="848" stroke="#333" stroke-width="1.5"/>
+<circle cx="3519" cy="848" r="4" fill="#111"/>
+<text x="2414" y="945" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J20</text>
+<rect x="2380" y="951" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="2384" y="955" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="2384" y="977" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2402" y="965" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="2402" y="987" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="2448" y1="962" x2="2480" y2="962" stroke="#333" stroke-width="1.5"/>
+<rect x="2480" y="957" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="963" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="969" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2484" y1="955" x2="2484" y2="957" stroke="#333" stroke-width="1.5"/>
+<text x="2496" y="965" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="2484" y1="975" x2="2484" y2="981" stroke="#333" stroke-width="1.5"/>
+<rect x="2480" y="981" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="987" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2480" y="993" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2484" y1="997" x2="2484" y2="1006" stroke="#333" stroke-width="1.5"/>
+<text x="2496" y="989" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="2484" y1="1006" x2="2484" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2474" y1="1014" x2="2494" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2478" y1="1019" x2="2490" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="2482" y1="1024" x2="2486" y2="1024" stroke="#444" stroke-width="2"/>
+<line x1="2484" y1="981" x2="2530" y2="981" stroke="#333" stroke-width="1.5"/>
+<circle cx="2530" cy="981" r="4" fill="#111"/>
+<rect x="2530" y="976" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2530" y="984" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2530" y1="992" x2="2530" y2="1006" stroke="#333" stroke-width="1.5"/>
+<line x1="2530" y1="1006" x2="2530" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2520" y1="1014" x2="2540" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2524" y1="1019" x2="2536" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="2528" y1="1024" x2="2532" y2="1024" stroke="#444" stroke-width="2"/>
+<text x="2542" y="981" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="2534" y1="981" x2="2570" y2="981" stroke="#333" stroke-width="1.5"/>
+<polygon points="2570,972 2616,972 2626,981 2616,990 2570,990" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2595" y="985" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA4</text>
+<line x1="2448" y1="984" x2="2484" y2="984" stroke="#333" stroke-width="1.5"/>
+<circle cx="2484" cy="984" r="4" fill="#111"/>
+<text x="2759" y="945" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J21</text>
+<rect x="2725" y="951" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="2729" y="955" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="2729" y="977" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="2747" y="965" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="2747" y="987" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="2793" y1="962" x2="2825" y2="962" stroke="#333" stroke-width="1.5"/>
+<rect x="2825" y="957" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="963" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="969" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2829" y1="955" x2="2829" y2="957" stroke="#333" stroke-width="1.5"/>
+<text x="2841" y="965" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="2829" y1="975" x2="2829" y2="981" stroke="#333" stroke-width="1.5"/>
+<rect x="2825" y="981" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="987" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2825" y="993" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2829" y1="997" x2="2829" y2="1006" stroke="#333" stroke-width="1.5"/>
+<text x="2841" y="989" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="2829" y1="1006" x2="2829" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2819" y1="1014" x2="2839" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2823" y1="1019" x2="2835" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="2827" y1="1024" x2="2831" y2="1024" stroke="#444" stroke-width="2"/>
+<line x1="2829" y1="981" x2="2875" y2="981" stroke="#333" stroke-width="1.5"/>
+<circle cx="2875" cy="981" r="4" fill="#111"/>
+<rect x="2875" y="976" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2875" y="984" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2875" y1="992" x2="2875" y2="1006" stroke="#333" stroke-width="1.5"/>
+<line x1="2875" y1="1006" x2="2875" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2865" y1="1014" x2="2885" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="2869" y1="1019" x2="2881" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="2873" y1="1024" x2="2877" y2="1024" stroke="#444" stroke-width="2"/>
+<text x="2887" y="981" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="2879" y1="981" x2="2915" y2="981" stroke="#333" stroke-width="1.5"/>
+<polygon points="2915,972 2961,972 2971,981 2961,990 2915,990" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2940" y="985" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA5</text>
+<line x1="2793" y1="984" x2="2829" y2="984" stroke="#333" stroke-width="1.5"/>
+<circle cx="2829" cy="984" r="4" fill="#111"/>
+<text x="3104" y="945" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J22</text>
+<rect x="3070" y="951" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="3074" y="955" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="3074" y="977" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="3092" y="965" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="3092" y="987" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="3138" y1="962" x2="3170" y2="962" stroke="#333" stroke-width="1.5"/>
+<rect x="3170" y="957" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="963" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="969" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3174" y1="955" x2="3174" y2="957" stroke="#333" stroke-width="1.5"/>
+<text x="3186" y="965" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="3174" y1="975" x2="3174" y2="981" stroke="#333" stroke-width="1.5"/>
+<rect x="3170" y="981" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="987" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3170" y="993" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3174" y1="997" x2="3174" y2="1006" stroke="#333" stroke-width="1.5"/>
+<text x="3186" y="989" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="3174" y1="1006" x2="3174" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3164" y1="1014" x2="3184" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3168" y1="1019" x2="3180" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="3172" y1="1024" x2="3176" y2="1024" stroke="#444" stroke-width="2"/>
+<line x1="3174" y1="981" x2="3220" y2="981" stroke="#333" stroke-width="1.5"/>
+<circle cx="3220" cy="981" r="4" fill="#111"/>
+<rect x="3220" y="976" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3220" y="984" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3220" y1="992" x2="3220" y2="1006" stroke="#333" stroke-width="1.5"/>
+<line x1="3220" y1="1006" x2="3220" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3210" y1="1014" x2="3230" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3214" y1="1019" x2="3226" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="3218" y1="1024" x2="3222" y2="1024" stroke="#444" stroke-width="2"/>
+<text x="3232" y="981" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="3224" y1="981" x2="3260" y2="981" stroke="#333" stroke-width="1.5"/>
+<polygon points="3260,972 3306,972 3316,981 3306,990 3260,990" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="3285" y="985" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA6</text>
+<line x1="3138" y1="984" x2="3174" y2="984" stroke="#333" stroke-width="1.5"/>
+<circle cx="3174" cy="984" r="4" fill="#111"/>
+<text x="3449" y="945" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J23</text>
+<rect x="3415" y="951" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="3419" y="955" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="3419" y="977" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="3437" y="965" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">SIG</text>
+<text x="3437" y="987" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">GND</text>
+<line x1="3483" y1="962" x2="3515" y2="962" stroke="#333" stroke-width="1.5"/>
+<rect x="3515" y="957" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="963" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="969" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3519" y1="955" x2="3519" y2="957" stroke="#333" stroke-width="1.5"/>
+<text x="3531" y="965" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">10k</text>
+<line x1="3519" y1="975" x2="3519" y2="981" stroke="#333" stroke-width="1.5"/>
+<rect x="3515" y="981" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="987" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3515" y="993" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3519" y1="997" x2="3519" y2="1006" stroke="#333" stroke-width="1.5"/>
+<text x="3531" y="989" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">15k</text>
+<line x1="3519" y1="1006" x2="3519" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3509" y1="1014" x2="3529" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3513" y1="1019" x2="3525" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="3517" y1="1024" x2="3521" y2="1024" stroke="#444" stroke-width="2"/>
+<line x1="3519" y1="981" x2="3565" y2="981" stroke="#333" stroke-width="1.5"/>
+<circle cx="3565" cy="981" r="4" fill="#111"/>
+<rect x="3565" y="976" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="3565" y="984" width="4" height="8" fill="#888" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="3565" y1="992" x2="3565" y2="1006" stroke="#333" stroke-width="1.5"/>
+<line x1="3565" y1="1006" x2="3565" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3555" y1="1014" x2="3575" y2="1014" stroke="#444" stroke-width="2"/>
+<line x1="3559" y1="1019" x2="3571" y2="1019" stroke="#444" stroke-width="2"/>
+<line x1="3563" y1="1024" x2="3567" y2="1024" stroke="#444" stroke-width="2"/>
+<text x="3577" y="981" font-size="8" font-weight="normal" fill="#777" text-anchor="start" font-family="Courier New, Courier, monospace">100nF</text>
+<line x1="3569" y1="981" x2="3605" y2="981" stroke="#333" stroke-width="1.5"/>
+<polygon points="3605,972 3651,972 3661,981 3651,990 3605,990" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="3630" y="985" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">ANA7</text>
+<line x1="3483" y1="984" x2="3519" y2="984" stroke="#333" stroke-width="1.5"/>
+<circle cx="3519" cy="984" r="4" fill="#111"/>
+<rect x="1080" y="1150" width="1260" height="430" fill="#EFEBE9" stroke="#4E342E" stroke-width="2" rx="6"/>
+<rect x="1080" y="1150" width="1260" height="26" fill="#4E342E" rx="5"/>
+<rect x="1080" y="1163" width="1260" height="13" fill="#4E342E"/>
+<text x="1710" y="1168" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">🔌  DIGITALE INNGANGER × 6  —  PC817C OPTOCOUPLER  (galvanisk isolert)</text>
+<text x="1710" y="1188" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">RPM, hjulhastighet (Hall), bryter-innganger  |  Tåler transient-spenning fra tenningsspole</text>
+<text x="1134" y="1199" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J20</text>
+<rect x="1100" y="1205" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1104" y="1209" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1104" y="1231" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1122" y="1219" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1122" y="1241" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1168" y1="1216" x2="1200" y2="1216" stroke="#333" stroke-width="1.5"/>
+<rect x="1200" y="1211" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1200" y="1217" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1200" y="1223" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="1204" y1="1209" x2="1204" y2="1211" stroke="#333" stroke-width="1.5"/>
+<line x1="1204" y1="1227" x2="1204" y2="1232" stroke="#333" stroke-width="1.5"/>
+<text x="1216" y="1219" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="1250" y="1215" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="1300" y="1235" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="1300" y="1250" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="1248" y="1231" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="1248" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="1352" y="1231" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="1352" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="1204" y1="1232" x2="1250" y2="1232" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1168" y1="1238" x2="1235" y2="1238" stroke="#333" stroke-width="1.5"/>
+<line x1="1235" y1="1238" x2="1235" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="1235" y1="1247" x2="1250" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="1350" y1="1231" x2="1380" y2="1231" stroke="#555" stroke-width="1.5"/>
+<line x1="1380" y1="1231" x2="1380" y2="1223" stroke="#555" stroke-width="1.5"/>
+<polygon points="1340,1212 1380,1212 1390,1221 1380,1230 1340,1230" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1362" y="1225" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="1390" y1="1221" x2="1380" y2="1221" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1350" y1="1247" x2="1380" y2="1247" stroke="#555" stroke-width="1.5"/>
+<line x1="1380" y1="1247" x2="1380" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="1370" y1="1255" x2="1390" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="1374" y1="1260" x2="1386" y2="1260" stroke="#444" stroke-width="2"/>
+<line x1="1378" y1="1265" x2="1382" y2="1265" stroke="#444" stroke-width="2"/>
+<circle cx="1380" cy="1231" r="4" fill="#111"/>
+<line x1="1380" y1="1231" x2="1410" y2="1231" stroke="#555" stroke-width="1.5"/>
+<polygon points="1410,1222 1456,1222 1466,1231 1456,1240 1410,1240" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1435" y="1235" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG0</text>
+<text x="1549" y="1199" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J21</text>
+<rect x="1515" y="1205" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1519" y="1209" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1519" y="1231" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1537" y="1219" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1537" y="1241" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1583" y1="1216" x2="1615" y2="1216" stroke="#333" stroke-width="1.5"/>
+<rect x="1615" y="1211" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1615" y="1217" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1615" y="1223" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="1619" y1="1209" x2="1619" y2="1211" stroke="#333" stroke-width="1.5"/>
+<line x1="1619" y1="1227" x2="1619" y2="1232" stroke="#333" stroke-width="1.5"/>
+<text x="1631" y="1219" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="1665" y="1215" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="1715" y="1235" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="1715" y="1250" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="1663" y="1231" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="1663" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="1767" y="1231" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="1767" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="1619" y1="1232" x2="1665" y2="1232" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1583" y1="1238" x2="1650" y2="1238" stroke="#333" stroke-width="1.5"/>
+<line x1="1650" y1="1238" x2="1650" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="1650" y1="1247" x2="1665" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="1765" y1="1231" x2="1795" y2="1231" stroke="#555" stroke-width="1.5"/>
+<line x1="1795" y1="1231" x2="1795" y2="1223" stroke="#555" stroke-width="1.5"/>
+<polygon points="1755,1212 1795,1212 1805,1221 1795,1230 1755,1230" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1777" y="1225" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="1805" y1="1221" x2="1795" y2="1221" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1765" y1="1247" x2="1795" y2="1247" stroke="#555" stroke-width="1.5"/>
+<line x1="1795" y1="1247" x2="1795" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="1785" y1="1255" x2="1805" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="1789" y1="1260" x2="1801" y2="1260" stroke="#444" stroke-width="2"/>
+<line x1="1793" y1="1265" x2="1797" y2="1265" stroke="#444" stroke-width="2"/>
+<circle cx="1795" cy="1231" r="4" fill="#111"/>
+<line x1="1795" y1="1231" x2="1825" y2="1231" stroke="#555" stroke-width="1.5"/>
+<polygon points="1825,1222 1871,1222 1881,1231 1871,1240 1825,1240" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1850" y="1235" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG1</text>
+<text x="1964" y="1199" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J22</text>
+<rect x="1930" y="1205" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1934" y="1209" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1934" y="1231" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1952" y="1219" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1952" y="1241" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1998" y1="1216" x2="2030" y2="1216" stroke="#333" stroke-width="1.5"/>
+<rect x="2030" y="1211" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2030" y="1217" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2030" y="1223" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2034" y1="1209" x2="2034" y2="1211" stroke="#333" stroke-width="1.5"/>
+<line x1="2034" y1="1227" x2="2034" y2="1232" stroke="#333" stroke-width="1.5"/>
+<text x="2046" y="1219" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="2080" y="1215" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="2130" y="1235" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="2130" y="1250" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="2078" y="1231" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="2078" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="2182" y="1231" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="2182" y="1247" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="2034" y1="1232" x2="2080" y2="1232" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1998" y1="1238" x2="2065" y2="1238" stroke="#333" stroke-width="1.5"/>
+<line x1="2065" y1="1238" x2="2065" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="2065" y1="1247" x2="2080" y2="1247" stroke="#333" stroke-width="1.5"/>
+<line x1="2180" y1="1231" x2="2210" y2="1231" stroke="#555" stroke-width="1.5"/>
+<line x1="2210" y1="1231" x2="2210" y2="1223" stroke="#555" stroke-width="1.5"/>
+<polygon points="2170,1212 2210,1212 2220,1221 2210,1230 2170,1230" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2192" y="1225" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="2220" y1="1221" x2="2210" y2="1221" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="2180" y1="1247" x2="2210" y2="1247" stroke="#555" stroke-width="1.5"/>
+<line x1="2210" y1="1247" x2="2210" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="2200" y1="1255" x2="2220" y2="1255" stroke="#444" stroke-width="2"/>
+<line x1="2204" y1="1260" x2="2216" y2="1260" stroke="#444" stroke-width="2"/>
+<line x1="2208" y1="1265" x2="2212" y2="1265" stroke="#444" stroke-width="2"/>
+<circle cx="2210" cy="1231" r="4" fill="#111"/>
+<line x1="2210" y1="1231" x2="2240" y2="1231" stroke="#555" stroke-width="1.5"/>
+<polygon points="2240,1222 2286,1222 2296,1231 2286,1240 2240,1240" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1235" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG2</text>
+<text x="1134" y="1319" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J23</text>
+<rect x="1100" y="1325" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1104" y="1329" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1104" y="1351" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1122" y="1339" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1122" y="1361" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1168" y1="1336" x2="1200" y2="1336" stroke="#333" stroke-width="1.5"/>
+<rect x="1200" y="1331" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1200" y="1337" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1200" y="1343" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="1204" y1="1329" x2="1204" y2="1331" stroke="#333" stroke-width="1.5"/>
+<line x1="1204" y1="1347" x2="1204" y2="1352" stroke="#333" stroke-width="1.5"/>
+<text x="1216" y="1339" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="1250" y="1335" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="1300" y="1355" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="1300" y="1370" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="1248" y="1351" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="1248" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="1352" y="1351" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="1352" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="1204" y1="1352" x2="1250" y2="1352" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1168" y1="1358" x2="1235" y2="1358" stroke="#333" stroke-width="1.5"/>
+<line x1="1235" y1="1358" x2="1235" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="1235" y1="1367" x2="1250" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="1350" y1="1351" x2="1380" y2="1351" stroke="#555" stroke-width="1.5"/>
+<line x1="1380" y1="1351" x2="1380" y2="1343" stroke="#555" stroke-width="1.5"/>
+<polygon points="1340,1332 1380,1332 1390,1341 1380,1350 1340,1350" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1362" y="1345" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="1390" y1="1341" x2="1380" y2="1341" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1350" y1="1367" x2="1380" y2="1367" stroke="#555" stroke-width="1.5"/>
+<line x1="1380" y1="1367" x2="1380" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="1370" y1="1375" x2="1390" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="1374" y1="1380" x2="1386" y2="1380" stroke="#444" stroke-width="2"/>
+<line x1="1378" y1="1385" x2="1382" y2="1385" stroke="#444" stroke-width="2"/>
+<circle cx="1380" cy="1351" r="4" fill="#111"/>
+<line x1="1380" y1="1351" x2="1410" y2="1351" stroke="#555" stroke-width="1.5"/>
+<polygon points="1410,1342 1456,1342 1466,1351 1456,1360 1410,1360" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1435" y="1355" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG3</text>
+<text x="1549" y="1319" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J24</text>
+<rect x="1515" y="1325" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1519" y="1329" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1519" y="1351" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1537" y="1339" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1537" y="1361" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1583" y1="1336" x2="1615" y2="1336" stroke="#333" stroke-width="1.5"/>
+<rect x="1615" y="1331" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1615" y="1337" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="1615" y="1343" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="1619" y1="1329" x2="1619" y2="1331" stroke="#333" stroke-width="1.5"/>
+<line x1="1619" y1="1347" x2="1619" y2="1352" stroke="#333" stroke-width="1.5"/>
+<text x="1631" y="1339" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="1665" y="1335" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="1715" y="1355" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="1715" y="1370" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="1663" y="1351" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="1663" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="1767" y="1351" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="1767" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="1619" y1="1352" x2="1665" y2="1352" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1583" y1="1358" x2="1650" y2="1358" stroke="#333" stroke-width="1.5"/>
+<line x1="1650" y1="1358" x2="1650" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="1650" y1="1367" x2="1665" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="1765" y1="1351" x2="1795" y2="1351" stroke="#555" stroke-width="1.5"/>
+<line x1="1795" y1="1351" x2="1795" y2="1343" stroke="#555" stroke-width="1.5"/>
+<polygon points="1755,1332 1795,1332 1805,1341 1795,1350 1755,1350" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1777" y="1345" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="1805" y1="1341" x2="1795" y2="1341" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1765" y1="1367" x2="1795" y2="1367" stroke="#555" stroke-width="1.5"/>
+<line x1="1795" y1="1367" x2="1795" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="1785" y1="1375" x2="1805" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="1789" y1="1380" x2="1801" y2="1380" stroke="#444" stroke-width="2"/>
+<line x1="1793" y1="1385" x2="1797" y2="1385" stroke="#444" stroke-width="2"/>
+<circle cx="1795" cy="1351" r="4" fill="#111"/>
+<line x1="1795" y1="1351" x2="1825" y2="1351" stroke="#555" stroke-width="1.5"/>
+<polygon points="1825,1342 1871,1342 1881,1351 1871,1360 1825,1360" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="1850" y="1355" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG4</text>
+<text x="1964" y="1319" font-size="9" font-weight="bold" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">J25</text>
+<rect x="1930" y="1325" width="68" height="46" fill="#C0C0C0" stroke="#555" stroke-width="1.5" rx="3"/>
+<rect x="1934" y="1329" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<rect x="1934" y="1351" width="14" height="14" fill="#999" stroke="#555" stroke-width="1" rx="1"/>
+<text x="1952" y="1339" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN+</text>
+<text x="1952" y="1361" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">IN−</text>
+<line x1="1998" y1="1336" x2="2030" y2="1336" stroke="#333" stroke-width="1.5"/>
+<rect x="2030" y="1331" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2030" y="1337" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<rect x="2030" y="1343" width="8" height="4" fill="#DEB887" stroke="#555" stroke-width="1" rx="4"/>
+<line x1="2034" y1="1329" x2="2034" y2="1331" stroke="#333" stroke-width="1.5"/>
+<line x1="2034" y1="1347" x2="2034" y2="1352" stroke="#333" stroke-width="1.5"/>
+<text x="2046" y="1339" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">470Ω</text>
+<rect x="2080" y="1335" width="100" height="60" fill="#FFFDE7" stroke="#888" stroke-width="1.5" rx="3"/>
+<text x="2130" y="1355" font-size="9" font-weight="bold" fill="#111" text-anchor="middle" font-family="Courier New, Courier, monospace">PC817C</text>
+<text x="2130" y="1370" font-size="8" font-weight="normal" fill="#555" text-anchor="middle" font-family="Courier New, Courier, monospace">DIP-4</text>
+<text x="2078" y="1351" font-size="9" font-weight="normal" fill="#CC0000" text-anchor="end" font-family="Courier New, Courier, monospace">A</text>
+<text x="2078" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="end" font-family="Courier New, Courier, monospace">K</text>
+<text x="2182" y="1351" font-size="9" font-weight="normal" fill="#555" text-anchor="start" font-family="Courier New, Courier, monospace">C</text>
+<text x="2182" y="1367" font-size="9" font-weight="normal" fill="#333" text-anchor="start" font-family="Courier New, Courier, monospace">E</text>
+<line x1="2034" y1="1352" x2="2080" y2="1352" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="1998" y1="1358" x2="2065" y2="1358" stroke="#333" stroke-width="1.5"/>
+<line x1="2065" y1="1358" x2="2065" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="2065" y1="1367" x2="2080" y2="1367" stroke="#333" stroke-width="1.5"/>
+<line x1="2180" y1="1351" x2="2210" y2="1351" stroke="#555" stroke-width="1.5"/>
+<line x1="2210" y1="1351" x2="2210" y2="1343" stroke="#555" stroke-width="1.5"/>
+<polygon points="2170,1332 2210,1332 2220,1341 2210,1350 2170,1350" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2192" y="1345" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">+5V</text>
+<line x1="2220" y1="1341" x2="2210" y2="1341" stroke="#CC0000" stroke-width="1.5"/>
+<line x1="2180" y1="1367" x2="2210" y2="1367" stroke="#555" stroke-width="1.5"/>
+<line x1="2210" y1="1367" x2="2210" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="2200" y1="1375" x2="2220" y2="1375" stroke="#444" stroke-width="2"/>
+<line x1="2204" y1="1380" x2="2216" y2="1380" stroke="#444" stroke-width="2"/>
+<line x1="2208" y1="1385" x2="2212" y2="1385" stroke="#444" stroke-width="2"/>
+<circle cx="2210" cy="1351" r="4" fill="#111"/>
+<line x1="2210" y1="1351" x2="2240" y2="1351" stroke="#555" stroke-width="1.5"/>
+<polygon points="2240,1342 2286,1342 2296,1351 2286,1360 2240,1360" fill="#FFF9C4" stroke="#AAAA44" stroke-width="1.2"/>
+<text x="2265" y="1355" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-family="Courier New, Courier, monospace">DIG5</text>
+<rect x="40" y="1870" width="3720" height="40" fill="#ECEFF1" stroke="#263238" stroke-width="2" rx="6"/>
+<rect x="40" y="1870" width="3720" height="26" fill="#263238" rx="5"/>
+<rect x="40" y="1883" width="3720" height="13" fill="#263238"/>
+<text x="1900" y="1888" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">📋  STYKKLISTE  (BOM)  —  UNIVERSAL RACING SENSOR BOARD  —  TEENSY 4.1</text>
+<rect x="40" y="1916" width="3720" height="26" fill="#455A64" stroke="#455A64" stroke-width="1" rx="0"/>
+<text x="54" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Del</text>
+<text x="214" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Verdi / Type</text>
+<text x="494" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Antall</text>
+<text x="574" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">LCSC / Kilde</text>
+<text x="754" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Est. pris NOK</text>
+<text x="894" y="1932" font-size="10" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Merknad</text>
+<text x="54" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Teensy 4.1</text>
+<text x="214" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">PJRC 600MHz ARM</text>
+<text x="494" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">pjrc.com</text>
+<text x="754" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">320</text>
+<text x="894" y="1956" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Inkl. SD-kortleser</text>
+<rect x="40" y="1964" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">WIZ820io</text>
+<text x="214" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">WIZnet Ethernet modul</text>
+<text x="494" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">wiznet.io</text>
+<text x="754" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">120</text>
+<text x="894" y="1980" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">RJ45 + LAN8820</text>
+<text x="54" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">MAX31855KASA+</text>
+<text x="214" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">SPI K-type TC forsterker</text>
+<text x="494" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">8</text>
+<text x="574" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C67561</text>
+<text x="754" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">360 (8×45)</text>
+<text x="894" y="2004" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">SOIC-8, individuell CS per chip</text>
+<rect x="40" y="2012" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">LIS3DH</text>
+<text x="214" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">3-akse akselerometer SPI</text>
+<text x="494" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C91122</text>
+<text x="754" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">15</text>
+<text x="894" y="2028" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">14-LGA, ±16g</text>
+<text x="54" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">MP2307DN</text>
+<text x="214" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">3A Buck converter</text>
+<text x="494" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C89312</text>
+<text x="754" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">18</text>
+<text x="894" y="2052" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">8–24V inn, 5V ut, ~90% eff.</text>
+<rect x="40" y="2060" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">AO3400A</text>
+<text x="214" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">N-MOSFET SOT-23 30V/5.7A</text>
+<text x="494" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">4</text>
+<text x="574" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C20917</text>
+<text x="754" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">8 (4×2)</text>
+<text x="894" y="2076" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Logikk-nivå gate</text>
+<text x="54" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">PC817C</text>
+<text x="214" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Optocoupler DIP-4</text>
+<text x="494" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">6</text>
+<text x="574" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C6366</text>
+<text x="754" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">18 (6×3)</text>
+<text x="894" y="2100" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Galvanisk isolert digitale inn</text>
+<rect x="40" y="2108" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1N4007</text>
+<text x="214" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Diode 1A/1000V</text>
+<text x="494" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">4</text>
+<text x="574" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">C14007</text>
+<text x="754" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">4 (4×1)</text>
+<text x="894" y="2124" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Flyback, MOSFET-utganger</text>
+<text x="54" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">10k resistor</text>
+<text x="214" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">20</text>
+<text x="574" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">5</text>
+<text x="894" y="2148" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Pull-up NTC + ADC-deler</text>
+<rect x="40" y="2156" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">15k resistor</text>
+<text x="214" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">8</text>
+<text x="574" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">3</text>
+<text x="894" y="2172" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">ADC spenningsdeler (5V→3V)</text>
+<text x="54" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">470Ω resistor</text>
+<text x="214" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">6</text>
+<text x="574" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2</text>
+<text x="894" y="2196" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Optocoupler LED-strøm (12V inn)</text>
+<rect x="40" y="2204" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">100Ω resistor</text>
+<text x="214" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">4</text>
+<text x="574" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="894" y="2220" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Gate-resistor MOSFET</text>
+<text x="54" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">330Ω resistor</text>
+<text x="214" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="894" y="2244" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Status LED</text>
+<rect x="40" y="2252" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">100nF kondensator</text>
+<text x="214" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">20</text>
+<text x="574" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">4</text>
+<text x="894" y="2268" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Avkobling MAX31855 + ADC filter</text>
+<text x="54" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">10µF kondensator</text>
+<text x="214" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">0805 SMD</text>
+<text x="494" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">3</text>
+<text x="574" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">5</text>
+<text x="894" y="2292" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Buck converter utgang + Teensy</text>
+<rect x="40" y="2300" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">100µF/25V</text>
+<text x="214" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Elektrolytisk</text>
+<text x="494" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2</text>
+<text x="574" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">8</text>
+<text x="894" y="2316" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Buck inn/ut stabilisering</text>
+<text x="54" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2-pin skrueterminal</text>
+<text x="214" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">5mm stigning</text>
+<text x="494" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">30</text>
+<text x="574" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">150</text>
+<text x="894" y="2340" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">J0–J29 (alle sensorer)</text>
+<rect x="40" y="2348" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">WIZ820io-header</text>
+<text x="214" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2×10, 2mm stigning</text>
+<text x="494" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">15</text>
+<text x="894" y="2364" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">J22 Ethernet modul</text>
+<text x="54" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Teensy 4.1 sokkel</text>
+<text x="214" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2×24 pinnesokkel</text>
+<text x="494" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">30</text>
+<text x="894" y="2388" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Ikke loddes fast</text>
+<rect x="40" y="2396" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">F1 sikring</text>
+<text x="214" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">5A glassikring + holder</text>
+<text x="494" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">15</text>
+<text x="894" y="2412" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Inngangs-overspenningsvern</text>
+<text x="54" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Status LED</text>
+<text x="214" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">3mm eller 0805 SMD</text>
+<text x="494" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">—</text>
+<text x="754" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">2</text>
+<text x="894" y="2436" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">Teensy pin 41</text>
+<rect x="40" y="2444" width="3720" height="24" fill="#ECEFF1" stroke="none" stroke-width="0" rx="0"/>
+<text x="54" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">PCB</text>
+<text x="214" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">120×100mm 2-lag FR4</text>
+<text x="494" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">1</text>
+<text x="574" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">PCBWay</text>
+<text x="754" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">80</text>
+<text x="894" y="2460" font-size="10" font-weight="normal" fill="#263238" text-anchor="start" font-family="Arial, Helvetica, sans-serif">ENIG, grønn</text>
+<rect x="40" y="2468" width="3720" height="28" fill="#1B5E20" stroke="#1B5E20" stroke-width="1" rx="0"/>
+<text x="54" y="2484" font-size="11" font-weight="bold" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">TOTAL ESTIMERT</text>
+<text x="754" y="2484" font-size="11" font-weight="bold" fill="#FFD54F" text-anchor="start" font-family="Arial, Helvetica, sans-serif">ca. 1 225 NOK</text>
+<text x="894" y="2484" font-size="10" font-weight="normal" fill="white" text-anchor="start" font-family="Arial, Helvetica, sans-serif">PCB produksjon + alle komponenter</text>
+<rect x="0" y="2514" width="3800" height="40" fill="#0D1B2A"/>
+<text x="1900" y="2529" font-size="10" font-weight="normal" fill="#90A4AE" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Universal Racing Sensor Board · Teensy 4.1 · Åpen hardware · Generiske J-kontakter</text>
+<text x="1900" y="2544" font-size="10" font-weight="normal" fill="#607D8B" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">Sensortildeling via nettleser /settings · Konfigurasjon lagret på SD-kort · Printbar kablingsoversikt</text>
+</svg>

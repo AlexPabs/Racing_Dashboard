@@ -298,7 +298,7 @@
   (symbol (lib_id "WT32-ETH01") (at 130.0 130.0 0) (unit 1) (in_bom yes) (on_board yes) (uuid "c4da7cff-ff62-546b-8973-5095f3e3a057")
   (property "Reference" "U1" (at 130.0 109.53 0) (effects (font (size 1.524 1.524) (bold yes))))
   (property "Value" "WT32-ETH01" (at 130.0 112.03 0) (effects (font (size 1.27 1.27))))
-  (property "Footprint" "Module:WT32-ETH01" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+  (property "Footprint" "WT32-ETH01:WT32-ETH01_Socket_2x20" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
   (property "LCSC" "Bestilles separat" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
   
   (pin "1" (uuid "dcdb1c2b-0fde-50b9-ba2b-68ba9ad3de3b"))  

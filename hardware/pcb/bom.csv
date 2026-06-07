@@ -1,29 +1,24 @@
-Item,Qty,Reference(s),Value,Package,LCSC Part#,Description,Manufacturer,MPN,Pris NOK ca.
-1,1,U1,WT32-ETH01,Module 2×20-pin,-,ESP32 Ethernet-modul (bestilles separat fra leverandør),Wireless-Tag,WT32-ETH01,90
-2,5,U2 U3 U4 U5 U8,MAX31855KASA+,SOIC-8,C79396,"K-type termopar-forsterker (CHT1 CHT2 CHT3 CHT4 EGT1)",Maxim Integrated,MAX31855KASA+T,25
-3,1,U6,4N35,DIP-6,C9938,Optokoppler for RPM — isolerer tenningsspole (opptil 400V spiker),Vishay,4N35,4
-4,1,U7,LM7805CT,TO-220,C56158,12V→5V lineær regulator 1.5A,STMicroelectronics,L7805CV,12
-5,1,Q1,AO3400A,SOT-23,C20917,"N-kanal MOSFET for viftestyring 30V/5.7A logikknivå (maks ~3A vifte — for større vifte bruk AOD4184 C88329)",Alpha & Omega,AO3400A,5
-6,1,D1,1N4007,DO-41 THT,C14516,Flyback-diode parallelt med viftemotoren (vernediode),MDD,1N4007,1
-7,5,C1 C2 C3 C4 C7,100nF,0402,C1525,Avkoplingskondensator VCC for MAX31855 (én per IC),Samsung,CL05B104KO5NNNC,1
-8,1,C5,100µF 25V,THT Ø6.3mm,C16780,Inngangselyttkondensator for LM7805 spenningsregulator,Rubycon,25YXJ100M6.3X11,4
-9,1,C6,10µF 10V,0805,C15850,Avkoplingskondensator WT32-ETH01 VIN,Samsung,CL21A106KOQNNNE,2
-10,2,R1 R2,4.7kΩ,0402,C25900,"Pull-up til +5V for NTC-sensorer (Olje Temp + IAT)",YAGEO,RC0402FR-074K7L,1
-11,1,R3,10kΩ,0402,C25744,Øvre del spenningsdeler — Olje Trykk (4.5V→3.3V),YAGEO,RC0402FR-0710KL,1
-12,1,R4,3.3kΩ,0402,C25890,Nedre del spenningsdeler — Olje Trykk,YAGEO,RC0402FR-073K3L,1
-13,1,R5,10kΩ,0402,C25744,Øvre del spenningsdeler — Lambda / Innovate LC-2 (5V→3.3V),YAGEO,RC0402FR-0710KL,1
-14,1,R6,6.8kΩ,0402,C25879,Nedre del spenningsdeler — Lambda,YAGEO,RC0402FR-076K8L,1
-15,1,R7,100kΩ,0402,C25741,Øvre del spenningsdeler — Batterispenning (15V→3.3V),YAGEO,RC0402FR-07100KL,1
-16,1,R8,27kΩ,0402,C25843,Nedre del spenningsdeler — Batterispenning,YAGEO,RC0402FR-0727KL,1
-17,1,R9,120Ω,0402,C25087,Seriemotstand for Tank-sender (0–90Ω resistiv sender),YAGEO,RC0402FR-07120RL,1
-18,4,R10 R11 R16 R17,10kΩ,0402,C25744,"Div. pull-up og pull-down: RPM anode (R10), RPM collector (R11), MOSFET gate pull-down (R16), reserve (R17)",YAGEO,RC0402FR-0710KL,1
-19,1,R15,100Ω,0402,C25116,Seriemotstand MOSFET-gate (beskytter ESP32 GPIO mot overspenning),YAGEO,RC0402FR-07100RL,1
-20,3,R12 R13 R14,470Ω,0402,C25117,"Strømbegrenser for status-LEDs (PWR, ETH, DATA)",YAGEO,RC0402FR-07470RL,1
-21,1,LED1,Grønn LED,0402,C2286,Strøm-indikator (PWR — lyser når 3.3V er tilstede),Everlight,19-217/GHC-YR1S2/3T,1
-22,1,LED2,Blå LED,0402,C72043,Ethernet-indikator (ETH — styres av firmware),Everlight,19-213/BHC-AP1Q2/3T,2
-23,1,LED3,Gul LED,0402,C2290,Data-indikator (DATA — blinker ved UDP-sending),Everlight,19-213/Y2C-CN2P2B/3T,1
-24,9,"J1 J2 J3 J4 J5 J6 J7 J8 J17",Skruklemme 2-pin 5mm,THT P5.0mm,C8262,"Sensor-innganger + vifte: J1=12V inn, J2=Olje Temp, J3=IAT, J4=Olje Trykk, J5=Lambda, J6=Batteri, J7=Tank, J8=RPM, J17=Vifte",Ningbo Kangnex,WJ500V-5.0-2P,36
-25,5,J9 J10 J11 J12 J16,Skruklemme 2-pin 3.5mm,THT P3.5mm,C8465,"K-type termopar-innganger: J9=CHT1, J10=CHT2, J11=CHT3, J12=CHT4, J16=EGT1",Ningbo Kangnex,WJ500V-3.5-2P,20
-26,1,J14,RJ45-kontakt horisontal,THT,C12074,Ethernet til RPi 5 (CAT6 FTP-kabel),Amphenol,RJHSE5380,25
-27,2,H1 H2,20-pin 2.54mm hunn-header,THT 2.54mm,C50982,"Sokkel for WT32-ETH01 modul (2 stk × 1×20 = 1 stk 2×20 sokkel)",BOOMELE,2541F-20,8
-28,1,F1,Sikringsholder PCB 5×20mm,THT,C382046,For 5A sikring (anbefalt — beskytter mot kortslutning),Keystone,3557-2,12
+Item,Qty,Reference(s),Value,Package,LCSC Part#,Description,Estimated NOK
+1,1,U1,Teensy 4.1,Socket 2×24,pjrc.com,PJRC 600MHz ARM Cortex-M7 — SD-kort inkl. — IKKE loddes fast,320
+2,1,U2,WIZ820io,2×10 header 2mm,wiznet.io,WIZnet W5200 Ethernet modul med RJ45 — SPI1-grensesnitt,120
+3,8,U3–U10,MAX31855KASA+,SOIC-8,C67561,K-type termopar-forsterker SPI — individuell CS per chip,360
+4,1,U11,LIS3DH,14-LGA,C91122,3-akse akselerometer SPI ±16g — delt SPI-buss eget CS,15
+5,1,U12,MP2307DN,SOP-8,C89312,3A synkron buck-omformer 8–24V inn / 5.0V ut / ~90% eff.,18
+6,4,Q1–Q4,AO3400A,SOT-23,C20917,N-kanal MOSFET 30V/5.7A logikknivå — vifte/pumpe/rele/ventil,8
+7,6,OK1–OK6,PC817C,DIP-4,C6366,Optokoppler galvanisk isolert — digitale innganger RPM/hjulhast,18
+8,4,D1–D4,1N4007,DO-41,C14007,Likeretter-diode flyback-vern MOSFET-utganger,4
+9,20,R1–R20,10k,0805,C25744,Pull-up NTC + øvre ADC-spenningsdeler,5
+10,8,R21–R28,15k,0805,C25885,Nedre ADC-spenningsdeler — 5V → 3.0V (Teensy ADC maks 3.3V),3
+11,6,R29–R34,470R,0805,C25117,Optokoppler LED-strømbegrenser (12V-kilde),2
+12,4,R35–R38,100R,0805,C25116,MOSFET gate-motstand,1
+13,1,R39,330R,0805,C25087,Status LED strømbegrenser,1
+14,20,C1–C20,100nF,0805,C1525,Avkobling MAX31855 + ADC støyfilter,4
+15,3,C21–C23,10µF,0805,C15850,Buck-utgang + Teensy avkobling,5
+16,2,C24–C25,100µF/25V,Ø8mm elektrolytisk,C16780,Buck inn/ut stabilisering,8
+17,1,F1,5A glassikring,+ holder PCB,C382046,Inngangs-overspenningsvern,15
+18,30,J0–J29,Skruklemme 2-pin 5mm,THT P5.0mm,C8262,Alle sensor-kontakter — generisk navngivning,150
+19,1,J22,2×10 pin-header 2mm,THT,C50982,WIZ820io Ethernet-modul sokkel,15
+20,1,—,Teensy 4.1 sokkel,2×24 pinnelist,—,Precision socket — IKKE loddes Teensy fast,30
+21,1,LED1,3mm LED eller 0805,THT/SMD,C2286,Status LED — Teensy pin 41,2
+22,1,PCB,120×100mm 2-lag FR4,1.6mm ENIG grønn,PCBWay,Se PCBWay_Design_Brief.md for full spesifikasjon,80
+TOTAL,,,,,,,1224
