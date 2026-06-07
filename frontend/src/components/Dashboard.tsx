@@ -49,7 +49,8 @@ export function Dashboard() {
   const dimming = useNattmodus()
   const vp = useViewport()
 
-  const erMobil = vp.w < 768 && !forceDesktop
+  const isMobileDomain = window.location.hostname.startsWith('m.')
+  const erMobil = (vp.w < 768 || isMobileDomain) && !forceDesktop
 
   const scale = Math.min(vp.w / CANVAS_W, vp.h / CANVAS_H)
   const canvasLeft = (vp.w - CANVAS_W * scale) / 2
