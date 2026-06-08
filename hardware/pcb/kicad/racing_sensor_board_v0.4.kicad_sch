@@ -1464,8 +1464,7 @@
   (label "SS" (at 378.54 313.81 0)
     (effects (font (size 1.27 1.27)))
     (uuid "154afac4-29e8-4dc0-a325-905135d9c914") )
-  (text "Cout, Lout, R-divider
-add manually in KiCad" (at 332.00 321.35 0)
+  (text "Cout, Lout, R-divider — add manually in KiCad" (at 332.00 321.35 0)
     (effects (font (size 1.5 1.5)) (justify left))
     (uuid "adb41195-5f72-4494-aef1-c0d3a35efbd9") )
   (rectangle (start 30.00 295.00) (end 230.00 435.00)
