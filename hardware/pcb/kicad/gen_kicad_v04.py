@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Generate racing_sensor_board_v0.4.kicad_sch — all pins on 50-mil grid."""
+"""Generate racing_sensor_board_v0.4.kicad_sch — all pins on 50-mil grid.
+v0.4 redesign: all 42 Teensy pins used, 6 MOSFETs, 4 opto DIG, GPS UART, NeoPixel.
+"""
 import uuid
 
 def uid(): return str(uuid.uuid4())
@@ -15,23 +17,17 @@ def gp(x):
     return round(x / G) * G
 
 # ── Geometry ───────────────────────────────────────────────────────────────────
-# bw MUST be a multiple of 2*G = 2.54 mm so that hw = bw/2 is a multiple of G.
-# All cx, cy MUST be multiples of G (use gp()).
-# Then every pin endpoint = integer-multiple of G → KiCad connects reliably.
-
 def body_dims(n_left, n_right, bw=15.24):
     """Returns (hw, hh).  bw must be k*2.54 for integer k."""
     n = max(n_left, n_right, 2)
-    hw = bw / 2                  # always a multiple of G if bw is multiple of 2G
-    hh = (n + 1) * G            # always a multiple of G
+    hw = bw / 2
+    hh = (n + 1) * G
     return hw, hh
 
 def lp_xy(cx, cy, hw, hh, i):
-    """World coords of left-side pin i connection point."""
     return cx - hw - 2*G, cy + (-hh + 2*G + i*2*G)
 
 def rp_xy(cx, cy, hw, hh, i):
-    """World coords of right-side pin i connection point."""
     return cx + hw + 2*G, cy + (-hh + 2*G + i*2*G)
 
 # ── Symbol definition ─────────────────────────────────────────────────────────
@@ -136,11 +132,11 @@ w('(kicad_sch (version 20230121) (generator python_v04)')
 w('  (paper "A1")')
 w('  (title_block')
 w('    (title "Universal Racing Sensor Board v0.4")')
-w('    (date "2025-06-08")')
-w('    (rev "0.4")')
+w('    (date "2026-06-10")')
+w('    (rev "0.4b")')
 w('    (company "AlexPabs Racing")')
-w('    (comment 1 "Custom inline symbols — all pins on 50-mil grid")')
-w('    (comment 2 "Same net label = same wire; pin names set in firmware")')
+w('    (comment 1 "All 42 Teensy pins used: 8TC + 8ANA + 4NTC + 4DIG + 6MOS + GPS + NEOPIXEL + ETH + SPI")')
+w('    (comment 2 "DIG0=RPM(coil) TVS+2.2kohm  DIG1=brake  DIG2=linelock  DIG3=launch")')
 w('  )')
 w()
 
@@ -150,6 +146,7 @@ w()
 w('  (lib_symbols')
 
 # ── Teensy 4.1 ── bw = 9*2.54 = 22.86 mm → hw = 9*G ─────────────────────────
+# Left side: p0–p21 (22 pins) — SPI bus, ADC, CS lines
 T41_L = [
     ("0",  "p0/CS_ETH",   "passive"),
     ("1",  "p1/SP1_MISO", "passive"),
@@ -174,29 +171,31 @@ T41_L = [
     ("20", "p20/A6",      "passive"),
     ("21", "p21/A7",      "passive"),
 ]
+# Right side: VIN/GND/3V3 + p22–p41 (all remaining pins) = 23 pins
 T41_R = [
-    ("VIN", "VIN",          "passive"),
-    ("GND", "GND",          "passive"),
-    ("3V3", "3V3",          "passive"),
-    ("22",  "p22/A8",       "passive"),
-    ("23",  "p23/A9",       "passive"),
-    ("24",  "p24/A10",      "passive"),
-    ("25",  "p25/A11",      "passive"),
-    ("26",  "p26/SP1_MOSI", "passive"),
-    ("27",  "p27/SP1_SCK",  "passive"),
-    ("28",  "p28/INT_ETH",  "passive"),
-    ("29",  "p29/RST_ETH",  "passive"),
-    ("30",  "p30/DIG0",     "passive"),
-    ("31",  "p31/DIG1",     "passive"),
-    ("32",  "p32/DIG2",     "passive"),
-    ("33",  "p33/DIG3",     "passive"),
-    ("34",  "p34/DIG4",     "passive"),
-    ("35",  "p35/DIG5",     "passive"),
-    ("36",  "p36/MOS0",     "passive"),
-    ("37",  "p37/MOS1",     "passive"),
-    ("38",  "p38/MOS2",     "passive"),
-    ("39",  "p39/MOS3",     "passive"),
-    ("41",  "p41/LED",      "passive"),
+    ("VIN", "VIN",           "passive"),
+    ("GND", "GND",           "passive"),
+    ("3V3", "3V3",           "passive"),
+    ("22",  "p22/A8",        "passive"),   # NTC0
+    ("23",  "p23/A9",        "passive"),   # NTC1
+    ("24",  "p24/A10",       "passive"),   # NTC2
+    ("25",  "p25/A11",       "passive"),   # NTC3
+    ("26",  "p26/SP1_MOSI",  "passive"),
+    ("27",  "p27/SP1_SCK",   "passive"),
+    ("28",  "p28/INT_ETH",   "passive"),
+    ("29",  "p29/RST_ETH",   "passive"),
+    ("30",  "p30/DIG0",      "passive"),   # RPM from ignition coil (opto isolated)
+    ("31",  "p31/DIG1",      "passive"),   # Brake light switch
+    ("32",  "p32/DIG2",      "passive"),   # Line lock switch
+    ("33",  "p33/DIG3",      "passive"),   # Launch control switch
+    ("34",  "p34/GPS_RX",    "passive"),   # GPS NEO-6M TX → Teensy Serial8 RX
+    ("35",  "p35/NEOPIXEL",  "passive"),   # WS2812B data (underglow + shift lights)
+    ("36",  "p36/MOS0",      "passive"),   # Cooling fan
+    ("37",  "p37/MOS1",      "passive"),   # Water pump / spare
+    ("38",  "p38/MOS2",      "passive"),   # Shift light power / spare
+    ("39",  "p39/MOS3",      "passive"),   # Spare MOSFET
+    ("40",  "p40/MOS4",      "passive"),   # Spare MOSFET
+    ("41",  "p41/MOS5",      "passive"),   # Spare MOSFET
 ]
 T41_HW, T41_HH = define_sym(
     "Custom:Teensy41", "U",
@@ -277,7 +276,7 @@ LIS_HW, LIS_HH = define_sym(
 MP_L = [
     ("2", "VIN", "passive"),
     ("1", "BST", "passive"),
-    ("3", "SW",  "output"),
+    ("3", "SW",  "passive"),
     ("4", "GND", "passive"),
 ]
 MP_R = [
@@ -328,6 +327,17 @@ CONN_HW, CONN_HH = define_sym(
     "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
     CONN_L, [], bw=4*2.54)
 
+# ── 3-pin connector ── bw = 4*2.54 = 10.16 mm ────────────────────────────────
+CONN3_L = [
+    ("1", "Pin1", "passive"),
+    ("2", "Pin2", "passive"),
+    ("3", "Pin3", "passive"),
+]
+CONN3_HW, CONN3_HH = define_sym(
+    "Custom:Conn3pin", "J",
+    "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+    CONN3_L, [], bw=4*2.54)
+
 # ── Power input connector ── bw = 4*2.54 = 10.16 mm ──────────────────────────
 PWR_L = [
     ("1", "+12V", "passive"),
@@ -348,7 +358,7 @@ w()
 # ── U1: Teensy 4.1 ────────────────────────────────────────────────────────────
 T41_CX, T41_CY = gp(170), gp(230)
 box(T41_CX-55, T41_CY-T41_HH-15, T41_CX+85, T41_CY+T41_HH+10)
-txt("TEENSY 4.1 — MICROCONTROLLER", T41_CX-54, T41_CY-T41_HH-13, 2.5, True)
+txt("TEENSY 4.1 — MICROCONTROLLER (ALL 42 PINS USED)", T41_CX-54, T41_CY-T41_HH-13, 2.5, True)
 place("Custom:Teensy41", "U1", "Teensy_4.1",
       "Connector_PinHeader_2.54mm:PinHeader_2x24_P2.54mm_Vertical",
       T41_CX, T41_CY,
@@ -364,8 +374,9 @@ for i, net in enumerate(nets_L):
 nets_R = ["+5V", "GND", "+3V3",
           "NTC0","NTC1","NTC2","NTC3",
           "SP1_MOSI","SP1_SCK","INT_ETH","RST_ETH",
-          "DIG0","DIG1","DIG2","DIG3","DIG4","DIG5",
-          "MOS0","MOS1","MOS2","MOS3","LED_PIN"]
+          "DIG0","DIG1","DIG2","DIG3",
+          "GPS_RX","NEOPIXEL",
+          "MOS0","MOS1","MOS2","MOS3","MOS4","MOS5"]
 for i, net in enumerate(nets_R):
     rlbl(net, T41_CX, T41_CY, T41_HW, T41_HH, i)
 
@@ -471,13 +482,17 @@ lbl("SS",   *rp_xy(MP_CX, MP_CY, MP_HW, MP_HH, 3), 0)
 txt("Cout, Lout, R-divider — add manually in KiCad",
     MP_CX-42, MP_CY+MP_HH+5, 1.5)
 
-# ── OK1–OK6: PC817 optocouplers + J24–J29 digital connectors ─────────────────
-DIG_NETS = ["DIG0","DIG1","DIG2","DIG3","DIG4","DIG5"]
-box(gp(30), gp(296), gp(232), gp(438))
-txt("DIGITAL INPUTS (J24-J29 + PC817)", gp(31), gp(298), 2.5, True)
+# ── OK1–OK4: PC817 optocouplers + J24–J27 digital inputs ─────────────────────
+# DIG0 = RPM from ignition coil (requires spike protection — see note)
+# DIG1 = Brake light switch, DIG2 = Line lock, DIG3 = Launch control
+DIG_NETS = ["DIG0","DIG1","DIG2","DIG3"]
+box(gp(30), gp(296), gp(232), gp(400))
+txt("DIGITAL INPUTS — J24-J27 (PC817 OPTO)", gp(31), gp(298), 2.5, True)
+txt("! DIG0=COIL/RPM: use SMBJ18A TVS + 2.2kohm (not 470ohm) at J24 input",
+    gp(31), gp(308), 1.2)
 
-for i in range(6):
-    OCY = gp(320) + i * gp(20)
+for i in range(4):
+    OCY = gp(326) + i * gp(16)
 
     JCX = gp(65)
     JCY = OCY
@@ -497,29 +512,30 @@ for i in range(6):
     lbl("+3V3",         *rp_xy(OCX, OCY, PC_HW, PC_HH, 0), 0)
     rlbl(DIG_NETS[i],   OCX, OCY, PC_HW, PC_HH, 1)
 
-# ── Q1–Q4: AO3400A MOSFETs + J12–J15 load connectors ─────────────────────────
-MOS_NETS = ["MOS0","MOS1","MOS2","MOS3"]
-box(gp(30), gp(442), gp(232), gp(535))
-txt("MOSFET OUTPUTS (J12-J15)", gp(31), gp(444), 2.5, True)
+# ── Q1–Q6: AO3400A MOSFETs + load connectors ─────────────────────────────────
+# J12–J15 = MOS0–MOS3, J31–J32 = MOS4–MOS5 (all 6 use same circuit)
+MOS_NETS  = ["MOS0","MOS1","MOS2","MOS3","MOS4","MOS5"]
+MOS_JNUMS = [12, 13, 14, 15, 31, 32]
+box(gp(30), gp(404), gp(232), gp(524))
+txt("MOSFET OUTPUTS — J12-J15 + J31-J32 (AO3400A)", gp(31), gp(406), 2.5, True)
+txt("MOS0=fan  MOS1=pump  MOS2=shift-light  MOS3-5=spare", gp(31), gp(416), 1.2)
 
-for i in range(4):
+for i in range(6):
     QCX = gp(90)
-    QCY = gp(466) + i * gp(16)
+    QCY = gp(430) + i * gp(16)
 
     place("Custom:AO3400A", f"Q{i+1}", "AO3400A",
           "Package_TO_SOT_SMD:SOT-23",
           QCX, QCY,
           [p[0] for p in MOS_L] + [p[0] for p in MOS_R])
 
-    # Gate: label directly at pin endpoint (same approach as all other left-side pins)
     llbl(MOS_NETS[i], QCX, QCY, MOS_HW, MOS_HH, 0)
-
-    rlbl(f"LOAD{i}", QCX, QCY, MOS_HW, MOS_HH, 0)
-    lbl("GND",       *rp_xy(QCX, QCY, MOS_HW, MOS_HH, 1), 0)
+    rlbl(f"LOAD{i}",  QCX, QCY, MOS_HW, MOS_HH, 0)
+    lbl("GND",        *rp_xy(QCX, QCY, MOS_HW, MOS_HH, 1), 0)
 
     JCX = gp(165)
     JCY = QCY
-    place("Custom:Conn2pin", f"J{12+i}", f"OUT{i}",
+    place("Custom:Conn2pin", f"J{MOS_JNUMS[i]}", f"OUT{i}",
           "Connector_Phoenix_MC_1.5mm_1x02_P1.5mm_Horizontal",
           JCX, JCY, ["1", "2"])
     llbl(f"LOAD{i}", JCX, JCY, CONN_HW, CONN_HH, 0)
@@ -561,31 +577,60 @@ place("Custom:PwrConn", "J30", "PWR_IN",
 lbl("+12V", *lp_xy(J30_CX, J30_CY, PWR_HW, PWR_HH, 0), 180)
 lbl("GND",  *lp_xy(J30_CX, J30_CY, PWR_HW, PWR_HH, 1), 180)
 
+# ── J33: GPS module + J34: NeoPixel data ─────────────────────────────────────
+# GPS NEO-6M: 5V power, TX→Teensy p34 (Serial8 RX), GND
+# NeoPixel WS2812B: 5V power, data→Teensy p35, GND
+box(gp(240), gp(436), gp(375), gp(524))
+txt("GPS (J33) + NEOPIXEL (J34)", gp(241), gp(438), 2.5, True)
+txt("J33: GPS NEO-6M  Pin1=+5V  Pin2=GPS_TX(to p34)  Pin3=GND", gp(241), gp(448), 1.2)
+txt("J34: WS2812B     Pin1=+5V  Pin2=DATA(to p35)    Pin3=GND", gp(241), gp(456), 1.2)
+
+G33_CX, G33_CY = gp(300), gp(476)
+place("Custom:Conn3pin", "J33", "GPS_NEO-6M",
+      "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      G33_CX, G33_CY, ["1", "2", "3"])
+lbl("+5V",    *lp_xy(G33_CX, G33_CY, CONN3_HW, CONN3_HH, 0), 180)
+llbl("GPS_RX",  G33_CX, G33_CY, CONN3_HW, CONN3_HH, 1)
+lbl("GND",    *lp_xy(G33_CX, G33_CY, CONN3_HW, CONN3_HH, 2), 180)
+
+N34_CX, N34_CY = gp(300), gp(504)
+place("Custom:Conn3pin", "J34", "NEOPIXEL_WS2812B",
+      "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      N34_CX, N34_CY, ["1", "2", "3"])
+lbl("+5V",       *lp_xy(N34_CX, N34_CY, CONN3_HW, CONN3_HH, 0), 180)
+llbl("NEOPIXEL",   N34_CX, N34_CY, CONN3_HW, CONN3_HH, 1)
+lbl("GND",       *lp_xy(N34_CX, N34_CY, CONN3_HW, CONN3_HH, 2), 180)
+
 # ── Net legend ────────────────────────────────────────────────────────────────
-box(gp(658), gp(35), gp(842), gp(315))
-txt("NET LEGEND", gp(660), gp(37), 3.0, True)
+box(gp(658), gp(35), gp(870), gp(355))
+txt("NET LEGEND — v0.4b (ALL PINS USED)", gp(660), gp(37), 3.0, True)
 legend = [
     ("SPI_MOSI/MISO/SCK", "Teensy p11/12/13 → MAX31855 ×8 + LIS3DH"),
     ("SP1_MOSI/MISO/SCK",  "Teensy p26/1/27 ↔ WIZ820io"),
-    ("CS_ETH",  "Teensy p0 → WIZ820io SCSn"),
-    ("CS_ACC",  "Teensy p2 → LIS3DH CS"),
-    ("CS_TC0-7","Teensy p10,9,8,7,6,5,4,3 → MAX31855"),
-    ("INT_ETH", "WIZ820io INTn → Teensy p28"),
-    ("RST_ETH", "Teensy p29 → WIZ820io RSTn"),
-    ("INT1_ACC","LIS3DH INT1 → Teensy (spare)"),
-    ("ANA0-7",  "0-5V sensors → Teensy A0-A7 (p14-21)"),
-    ("NTC0-3",  "NTC pull-up → Teensy A8-A11 (p22-25)"),
-    ("DIG0-5",  "PC817 out → Teensy p30-35"),
-    ("MOS0-3",  "Teensy p36-39 → R → MOSFET gate"),
-    ("TC0-7 +/-","Thermocouple T+/T- → MAX31855"),
-    ("LED_PIN", "Teensy p41 → R → LED"),
-    ("+12V",    "Vehicle supply 10-16V"),
-    ("+5V",     "MP2307DN output 12V → 5V"),
-    ("+3V3",    "Teensy regulator max 250mA"),
+    ("CS_ETH",   "Teensy p0 → WIZ820io SCSn"),
+    ("CS_ACC",   "Teensy p2 → LIS3DH CS"),
+    ("CS_TC0-7", "Teensy p10,9,8,7,6,5,4,3 → MAX31855"),
+    ("INT_ETH",  "WIZ820io INTn → Teensy p28"),
+    ("RST_ETH",  "Teensy p29 → WIZ820io RSTn"),
+    ("INT1_ACC", "LIS3DH INT1 → Teensy (spare digital)"),
+    ("ANA0-7",   "0-5V sensors → Teensy A0-A7 (p14-21) via 10k/15k divider"),
+    ("NTC0-3",   "NTC 10k pullup → Teensy A8-A11 (p22-25)"),
+    ("DIG0",     "RPM — coil signal via PC817 + SMBJ18A TVS + 2.2kohm"),
+    ("DIG1",     "Brake light switch → PC817 → Teensy p31"),
+    ("DIG2",     "Line lock switch → PC817 → Teensy p32"),
+    ("DIG3",     "Launch control switch → PC817 → Teensy p33"),
+    ("GPS_RX",   "GPS NEO-6M TX → Teensy p34 (Serial8 RX, 9600 baud NMEA)"),
+    ("NEOPIXEL", "WS2812B data → Teensy p35 (underglow + shift lights)"),
+    ("MOS0-5",   "Teensy p36-41 → 100ohm → AO3400A gate (fan/pump/light/spare)"),
+    ("TC0-7",    "K-type thermocouple T+/T- → MAX31855 (CHT/EGT/oil/coolant)"),
+    ("+12V",     "Vehicle supply 10-16V  (fused 5A at J30)"),
+    ("+5V",      "MP2307DN 12V→5V 3A buck (powers Teensy, GPS, NeoPixel)"),
+    ("+3V3",     "Teensy internal reg max 250mA (logic, sensors)"),
+    ("COIL NOTE","J24 DIG0: replace 470ohm with 2.2kohm + add SMBJ18A TVS"),
 ]
 for i, (net, desc) in enumerate(legend):
-    txt(f"{net}:", gp(660), gp(57)+i*14, 1.3, True)
-    txt(desc,       gp(700), gp(57)+i*14, 1.3)
+    txt(f"{net}:", gp(660), gp(57)+i*13, 1.3, True)
+    txt(desc,       gp(720), gp(57)+i*13, 1.3)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FOOTER
