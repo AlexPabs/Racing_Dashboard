@@ -11,12 +11,12 @@ interface Ctx {
   logs: SensorLog[]
   editMode: boolean
   selectedWidgetId: string | null
-  showPanel: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'
+  showPanel: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms' | 'simulator'
   canvasScale: number
   forceDesktop: boolean
   setEditMode: (v: boolean) => void
   setSelectedWidget: (id: string | null) => void
-  setShowPanel: (p: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms') => void
+  setShowPanel: (p: 'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms' | 'simulator') => void
   setCanvasScale: (s: number) => void
   setForceDesktop: (v: boolean) => void
   updateBackground: (type: 'color' | 'image', value: string) => void
@@ -51,7 +51,7 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
   const [logs, setLogs] = useState<SensorLog[]>([])
   const [editMode, setEditMode] = useState(false)
   const [selectedWidgetId, setSelectedWidget] = useState<string | null>(null)
-  const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms'>('none')
+  const [showPanel, setShowPanel] = useState<'none' | 'settings' | 'logger' | 'hardware' | 'drag' | 'tpms' | 'simulator'>('none')
   const [canvasScale, setCanvasScale] = useState(1)
   const [forceDesktop, setForceDesktop] = useState(false)
 
