@@ -3,7 +3,8 @@
 
 **Til: Neste AI som tar over dette prosjektet**  
 **Fra: AlexPabs Racing / Claude Sonnet 4.6**  
-**Dato: 2026-06-10**  
+**Dato: 2026-06-11**  
+**Revisjon: v0.4b — alle 42 Teensy-pins brukt**  
 **Mål: Ferdig KiCad-layout → Gerber-filer til PCBway**
 
 ---
@@ -60,11 +61,15 @@ Sensor-boardet er en **universell** sensor-interface. Det er ikke låst til VW B
 | 8× termokobler K-type | MAX31855 SPI ADC per kanal — CHT, EGT, oljetemperatur, etc. |
 | 8× analog 0–5V inngang | Oljetrykk, drivstofftrykk, AFR, TPS, MAP, IAT, bremsevæsketrykk, etc. |
 | 4× NTC termistor inngang | Oljetemperatur, kjølevæske, intake, etc. |
-| 6× digital inngang (isolert) | RPM-puls, hjulhastighetssensor, bryter-input — opto-isolert |
-| 4× MOSFET utgang 12V | Vifte, pumpe, solenoid, relay-spole, advarselsbuzzer |
+| 4× digital inngang (opto-isolert) | DIG0=RPM fra tenningsspole, DIG1=bremselys, DIG2=linelock, DIG3=launch control |
+| 6× MOSFET utgang 12V | Kjølevifte, pumpe, shift-light, + 3 spare (MOS0–MOS5) |
+| GPS UART inn | NEO-6M modul → Teensy Serial8 (pin 34) — hastighet, tidtaking |
+| NeoPixel WS2812B | Enkeltpins data (pin 35) → underglow + shift-lights (adresserbare LEDs) |
 | 3-akse akselerometer | LIS3DH SPI — G-krefter, lateral akselerasjon |
 | 100 Mbit Ethernet | WIZ820io modul — web-dashboard, UDP-telemetri |
 | Buck-converter 12V→5V | MP2307DN — strømforsyning til Teensy og sensorer |
+
+> **v0.4b: Alle 42 Teensy-pins er nå brukt.** Se fullstendig pin-kart i Del 3.2.
 
 ### 2.2 Hva er Teensy 4.1?
 
@@ -115,36 +120,117 @@ Teensy 4.1 er et ARM Cortex-M7 utviklingskort (600 MHz, IMXRT1062) som er ideelt
 - **Alternativ A:** MP2307DN IC med diskrete komponenter (mer kompakt, krever mer layout-vennlighet)
 - **Alternativ B:** Ferdig 5V buck-modul på pin-header (tar mer plass, men er enklere og mer robust)
 
-### 3.2 Koblingsskjema — besluttede koblinger
+### 3.2 Koblingsskjema — fullstendig pin-kart (alle 42 Teensy-pins)
 
-Alle koblinger er dokumentert i KABELKART.md og PCB_DESIGN_BRIEF.md. Her er de kritiske:
+```
+Teensy 4.1 — Pin-kart v0.4b
+─────────────────────────────────────────────────────────────
+VENSTRE SIDE (p0–p21):
+  p0   CS_ETH    → WIZ820io SCSn
+  p1   SP1_MISO  ← WIZ820io MISO
+  p2   CS_ACC    → LIS3DH CS
+  p3   CS_TC7    → MAX31855 U10 /CS
+  p4   CS_TC6    → MAX31855 U9 /CS
+  p5   CS_TC5    → MAX31855 U8 /CS
+  p6   CS_TC4    → MAX31855 U7 /CS
+  p7   CS_TC3    → MAX31855 U6 /CS
+  p8   CS_TC2    → MAX31855 U5 /CS
+  p9   CS_TC1    → MAX31855 U4 /CS
+  p10  CS_TC0    → MAX31855 U3 /CS
+  p11  SPI_MOSI  → MAX31855 ×8 + LIS3DH
+  p12  SPI_MISO  ← MAX31855 SO parallelt + LIS3DH SDO
+  p13  SPI_SCK   → MAX31855 ×8 + LIS3DH
+  p14  A0/ANA0   ← J16 via 10kΩ/15kΩ deler (0–5V → 3.0V)
+  p15  A1/ANA1   ← J17 via deler
+  p16  A2/ANA2   ← J18 via deler
+  p17  A3/ANA3   ← J19 via deler
+  p18  A4/ANA4   ← J20 via deler
+  p19  A5/ANA5   ← J21 via deler
+  p20  A6/ANA6   ← J22 via deler
+  p21  A7/ANA7   ← J23 via deler
+
+HØYRE SIDE (VIN/GND/3V3 + p22–p41):
+  VIN  → +5V fra buck
+  GND  → jord
+  3V3  ← Teensy intern reg (250mA maks)
+  p22  A8/NTC0  ← J8 via 10kΩ pull-up til +3V3
+  p23  A9/NTC1  ← J9 via pull-up
+  p24  A10/NTC2 ← J10 via pull-up
+  p25  A11/NTC3 ← J11 via pull-up
+  p26  SP1_MOSI → WIZ820io MOSI
+  p27  SP1_SCK  → WIZ820io SCLK
+  p28  INT_ETH  ← WIZ820io INTn
+  p29  RST_ETH  → WIZ820io RSTn
+  p30  DIG0     ← J24 OK1 (RPM — tenningsspole, se koil-beskyttelse under)
+  p31  DIG1     ← J25 OK2 (Bremselys-bryter)
+  p32  DIG2     ← J26 OK3 (Linelock-bryter)
+  p33  DIG3     ← J27 OK4 (Launch control-bryter)
+  p34  GPS_RX   ← J33 GPS NEO-6M TX (Serial8, 9600 baud NMEA)
+  p35  NEOPIXEL → J34 WS2812B data (underglow + shift-lights)
+  p36  MOS0     → Q1 gate 100Ω → AO3400A (kjølevifte)
+  p37  MOS1     → Q2 gate 100Ω → AO3400A (pumpe / spare)
+  p38  MOS2     → Q3 gate 100Ω → AO3400A (shift-light strøm)
+  p39  MOS3     → Q4 gate 100Ω → AO3400A (spare)
+  p40  MOS4     → Q5 gate 100Ω → AO3400A (spare)
+  p41  MOS5     → Q6 gate 100Ω → AO3400A (spare)
+─────────────────────────────────────────────────────────────
+```
 
 **SPI-buss #1 (Teensy primary SPI):**
-- SCK (pin 13), MISO (pin 12), MOSI (pin 11) → MAX31855 ×8 + LIS3DH
-- Individuelle CS per MAX31855: pins 3, 4, 5, 6, 7, 8, 9, 10
-- CS for LIS3DH: pin 2
+- SCK (p13), MISO (p12), MOSI (p11) → MAX31855 ×8 + LIS3DH
+- Individuelle CS per MAX31855: p10, p9, p8, p7, p6, p5, p4, p3
+- CS for LIS3DH: p2
 
 **SPI-buss #2 (Teensy SPI1):**
-- SCK (pin 27), MISO (pin 1), MOSI (pin 26) → WIZ820io
-- CS: pin 0, INT: pin 28, RST: pin 29
+- SCK (p27), MISO (p1), MOSI (p26) → WIZ820io
+- CS: p0, INT: p28, RST: p29
 
 **Analoge innganger (0–5V → 3.3V skaling):**
-- J16–J23 → 10kΩ/15kΩ spenningsdeler → Teensy A0–A7 (pins 14–21)
-- VIKTIG: Teensy ADC er 3.3V maks, ikke 5V! Deler må skalere 5V til maks 3.0V
+- J16–J23 → 10kΩ/15kΩ spenningsdeler → Teensy A0–A7 (p14–p21)
+- VIKTIG: Teensy ADC er 3.3V maks! Deleren skalerer 5V → 3.0V
 
 **NTC innganger:**
-- J8–J11 → 10kΩ pull-up til +3.3V → Teensy A8–A11 (pins 22–25)
+- J8–J11 → 10kΩ pull-up til +3.3V → Teensy A8–A11 (p22–p25)
 
-**Optokoppler digital inngang:**
-- J24–J29 → 470Ω serie → PC817 anode/katode
-- PC817 kollektor → +5V med 10kΩ pull-up → Teensy pins 30–35
+**Digitale innganger — 4 kanaler (J24–J27):**
+- Alle fire via PC817C optokoppler (galvanisk isolasjon)
+- J24 (DIG0/RPM): SMBJ18A TVS-diode + 2.2kΩ serie → PC817 anode (se koil-beskyttelse)
+- J25–J27 (DIG1–3/brytere): standard 470Ω serie → PC817 anode
+- PC817 kollektor → +3.3V med 10kΩ pull-up → Teensy p30–p33
 
-**MOSFET utganger:**
-- Teensy pins 36–39 → 100Ω gate-resistor → AO3400A gate
-- AO3400A drain → J12–J15 kontakt (last+)
+**⚡ Koil-beskyttelse (J24/DIG0 — KRITISK):**  
+Tenningsspolens primærside genererer +300V back-EMF-spigg ved avklipping.  
+PC817 tåler maks 80V — dette DREPER optokoppleren uten beskyttelse.  
+Løsning:
+```
+J24[1] ──────── SMBJ18A (TVS, Vbr=18V, Vc≈29V ved 10A) ──── GND
+         │
+         2.2kΩ (1W)
+         │
+         → PC817 anode (pin 1)
+```
+- Normal 12V: (12-1.2)/2200 = 4.9mA → PC817 OK
+- Spigg (TVS klemmer ~29V): (29-1.2)/2200 = 12.6mA → innenfor PC817 maks
+- 300V spigg: TVS absorberer (600W toppeffekt >> typisk spiggenergi ~1–5µJ)
+- **MERK:** Bruk 2.2kΩ ved J24, IKKE 470Ω som på J25–J27
+
+**GPS (J33, 3-pin):**
+- Pin 1: +5V → GPS NEO-6M VCC
+- Pin 2: GPS_RX → GPS TX (NMEA ut fra modulen) → Teensy p34 (Serial8 RX)
+- Pin 3: GND
+
+**NeoPixel (J34, 3-pin):**
+- Pin 1: +5V → WS2812B strøm
+- Pin 2: NEOPIXEL → WS2812B data inn → Teensy p35
+- Pin 3: GND
+- Anbefalt: 300–500Ω serie-resistor + 1000µF bulk-kondensator på +5V skinne ved første LED
+
+**MOSFET utganger (6 kanaler):**
+- Teensy p36–p41 → 100Ω gate-resistor → AO3400A gate (Q1–Q6)
+- AO3400A drain → last-kontakter J12–J15 + J31–J32 (last+)
 - AO3400A source → GND
-- J12–J15 kontakt (12V) → +12V skinne
-- Flyback-diode 1N4007: katode til drain, anode til GND (beskytter mot induktiv spike)
+- Last-kontakt (12V) → +12V skinne
+- Flyback-diode per MOSFET: 1N4007 katode → drain, anode → GND
 
 ---
 
@@ -163,7 +249,7 @@ Vi har gått gjennom fire versjoner av skjemaet:
 ### 4.2 Filen vi har
 
 **`hardware/pcb/kicad/racing_sensor_board_v0.4.kicad_sch`**
-- 2465 linjer KiCad 7 S-expression format
+- 2596 linjer KiCad 7 S-expression format (v0.4b)
 - Alle symboler er definert inline i `lib_symbols`-blokken (Custom:Teensy41, Custom:MAX31855, osv.)
 - Alle koblinger er satt via net-labels (samme label = samme net)
 - Alle pins er verifisert å ligge på 1.27mm KiCad 50-mil grid
@@ -208,19 +294,20 @@ Vi har skjema. Det vi IKKE har:
 | U3–U10 | MAX31855KASA+ | MAX31855KASA+ | SOIC-8 | C67561 | 8 |
 | U11 | LIS3DH | LIS3DH | LGA-16 3×3mm | C91122 | 1 |
 | U12 | MP2307DN | MP2307DN | SOIC-8 | C89312 | 1 |
-| Q1–Q4 | AO3400A | AO3400A | SOT-23 | C20917 | 4 |
-| OK1–OK6 | PC817C | PC817C | DIP-4 W7.62mm | C6366 | 6 |
-| D1–D4 | 1N4007 | 1N4007 | DO-41 gjennomgående | C14007 | 4 |
+| Q1–Q6 | AO3400A | AO3400A | SOT-23 | C20917 | **6** |
+| OK1–OK4 | PC817C | PC817C | DIP-4 W7.62mm | C6366 | **4** |
+| D1–D6 | 1N4007 | 1N4007 | DO-41 gjennomgående | C14007 | **6** |
+| D7 | SMBJ18A | TVS 18V 600W | DO-214AA (SMB) | C17014 | **1** |
 | L1 | Spole | 10µH 1.5A | SMD 6.8×6.8mm | Würth 7447789100 | 1 |
-| R1–R4 | Gate-resistor | 100Ω | 0805 | C25116 | 4 |
-| R5–R10 | Optokoppler serie | 470Ω | 0805 | C25117 | 6 |
+| R1–R6 | Gate-resistor | 100Ω | 0805 | C25116 | **6** |
+| R7–R9 | Opto serie (DIG1–3) | 470Ω | 0805 | C25117 | **3** |
+| R10 | Opto serie (DIG0/koil) | **2.2kΩ 1W** | 1206 | C25748 | **1** |
 | R11–R18 | Analog øvre deler | 10kΩ | 0805 | C25744 | 8 |
 | R19–R26 | Analog nedre deler | 15kΩ | 0805 | C25885 | 8 |
 | R27–R30 | NTC pull-up | 10kΩ | 0805 | C25744 | 4 |
-| R31–R36 | Optokoppler pull-up | 10kΩ | 0805 | C25744 | 6 |
-| R37 | LED-resistor | 330Ω | 0805 | C25087 | 1 |
-| R38 | FB øvre | 100kΩ | 0805 | C25867 | 1 |
-| R39 | FB nedre | 4.7kΩ | 0805 | C25905 | 1 |
+| R31–R34 | Optokoppler pull-up | 10kΩ | 0805 | C25744 | **4** |
+| R35 | FB øvre | 100kΩ | 0805 | C25867 | 1 |
+| R36 | FB nedre | 4.7kΩ | 0805 | C25905 | 1 |
 | C1–C8 | MAX31855 bypass | 100nF | 0402 | C1525 | 8 |
 | C9 | LIS3DH bypass | 100nF | 0402 | C1525 | 1 |
 | C10–C11 | WIZ820io bypass | 10µF 16V | 0805 | C15850 | 2 |
@@ -235,11 +322,17 @@ Vi har skjema. Det vi IKKE har:
 | J8–J11 | NTC-tilkobling | 2-pin skruklemme | 5.0mm stigning | C8262 | 4 |
 | J12–J15 | MOSFET-utgang | 2-pin skruklemme | 5.0mm stigning | C8262 | 4 |
 | J16–J23 | Analog inngang | 2-pin skruklemme | 5.0mm stigning | C8262 | 8 |
-| J24–J29 | Digital inngang | 2-pin skruklemme | 5.0mm stigning | C8262 | 6 |
+| J24–J27 | Digital inngang | 2-pin skruklemme | 5.0mm stigning | C8262 | **4** |
 | J30 | Strøm inn 12V | 2-pin skruklemme | 5.0mm stigning | C8262 | 1 |
-| LED1 | Status-LED | Rød 3mm | Gjennomgående | C2286 | 1 |
+| J31–J32 | MOSFET-utgang | 2-pin skruklemme | 5.0mm stigning | C8262 | **2** |
+| J33 | GPS inngang | 3-pin skruklemme | 5.0mm stigning | C8263 | **1** |
+| J34 | NeoPixel utgang | 3-pin skruklemme | 5.0mm stigning | C8263 | **1** |
 
-**Total skruklemmebehov:** 31× 2-pin 5.0mm stigning
+**Total skruklemmebehov:** 30× 2-pin + 2× 3-pin, alle 5.0mm stigning
+
+> **Endringer fra v0.4:** Q1-Q6 (6 stk, +2), OK1-OK4 (4 stk, -2), D1-D6 (6 stk, +2 flyback),
+> D7 SMBJ18A TVS (ny), R10 = 2.2kΩ 1W for koil-kanal (ikke 470Ω), J31/J32 nye MOSFET-kontakter,
+> J33/J34 nye 3-pin GPS/NeoPixel-kontakter. Ingen status-LED lenger (p41 brukes til MOS5).
 
 ### 5.2 Komplett nettliste
 
@@ -278,7 +371,7 @@ Ethernet kontroll:
   RST_ETH: U1[p29]  → U2[RSTn]
 
 Akselerometer:
-  INT1_ACC: U11[INT1] → U1[p41] (eller spare pin)
+  INT1_ACC: U11[INT1] → U1 (spare digital — knyttes til ledig GPIO i firmware)
 
 Termokoblere:
   TC0_PLUS:  J0[1] → U3[T+]     TC0_MINUS: J0[2] → U3[T-]
@@ -307,19 +400,41 @@ NTC innganger (10kΩ pull-up til +3V3):
   +3V3 → R29 → NTC2 → J10[1]  J10[2] → GND   NTC2 → U1[p24/A10]
   +3V3 → R30 → NTC3 → J11[1]  J11[2] → GND   NTC3 → U1[p25/A11]
 
-Optokoppler digitale innganger:
-  J24[1] → R5(470Ω) → OK1[Anode=pin1]
+Optokoppler digitale innganger (4 kanaler):
+  --- DIG0 (RPM/koil — spike-beskyttelse) ---
+  J24[1] → D7(SMBJ18A TVS, katode mot J24[1]) → GND
+  J24[1] → R10(2.2kΩ 1W) → OK1[Anode=pin1]
   J24[2] → OK1[Katode=pin2] → GND
-  +5V → R31(10kΩ) → OK1[Kollektor=pin4]
+  +3V3 → R31(10kΩ) → OK1[Kollektor=pin4]
   OK1[Emitter=pin3] → DIG0 → U1[p30]
-  (Tilsvarende for OK2–OK6 på J25–J29, DIG1–DIG5, U1[p31–p35])
 
-MOSFET utganger:
+  --- DIG1–DIG3 (brytere — standard) ---
+  J25[1] → R7(470Ω) → OK2[Anode]   OK2[Emitter] → DIG1 → U1[p31]
+  J26[1] → R8(470Ω) → OK3[Anode]   OK3[Emitter] → DIG2 → U1[p32]
+  J27[1] → R9(470Ω) → OK4[Anode]   OK4[Emitter] → DIG3 → U1[p33]
+  +3V3 → R32–R34(10kΩ) → OK2–OK4[Kollektor]
+  J25–J27[2] → GND
+
+GPS inngang:
+  J33[1] → +5V
+  J33[2] → GPS_RX → U1[p34] (Serial8 RX — GPS NEO-6M TX)
+  J33[3] → GND
+
+NeoPixel data:
+  J34[1] → +5V
+  J34[2] → NEOPIXEL → U1[p35] (WS2812B data)
+  J34[3] → GND
+
+MOSFET utganger (6 kanaler):
   U1[p36] → R1(100Ω) → MOS0 → Q1[Gate]
   Q1[Drain] → LOAD0 → J12[1]   J12[2] → +12V
   Q1[Source] → GND
   D1[Anode] → GND   D1[Katode] → Q1[Drain]  (flyback)
-  (Tilsvarende Q2–Q4 på R2–R4, J13–J15, MOS1–3)
+  (Tilsvarende Q2–Q4 → MOS1–3 → J13–J15)
+  U1[p40] → R5(100Ω) → MOS4 → Q5[Gate]   Q5[Drain] → LOAD4 → J31[1]
+  U1[p41] → R6(100Ω) → MOS5 → Q6[Gate]   Q6[Drain] → LOAD5 → J32[1]
+  J31–J32[2] → +12V   Q5–Q6[Source] → GND
+  D5–D6 flyback dioder på Q5–Q6 (identisk Q1–Q4)
 
 Buck-converter:
   +12V → C16(100µF) → GND   (Cin)
@@ -333,9 +448,7 @@ Buck-converter:
   U12[COMP=pin7] → 10nF → GND   (10kΩ i serie valgfritt)
   U12[SS=pin6] → C14(10nF) → GND
 
-Status LED:
-  U1[p41] → R37(330Ω) → LED1[Anode]
-  LED1[Katode] → GND
+  (Ingen separat status-LED — p41 er MOS5. Status vises via NeoPixel i firmware.)
 ```
 
 ---
@@ -387,15 +500,17 @@ Status LED:
 
 6. **U12 MP2307DN + L1 + D_Buck** — Eget hjørne (f.eks. nedre høyre). SW-node (U12 pin3 → L1 → D_Buck) skal være KORT — maksimum 10mm. Stor groundplane-kopper under og rundt U12.
 
-7. **OK1–OK6 PC817** — Venstre side, én kolonne. Serie-resistorene R5–R10 rett ved anode-siden. Kollektor pull-up R31–R36 mot høyre (Teensy-side). Fysisk separasjon (min 4mm creepage) mellom "kjøretøy-side" (anode/katode) og "Teensy-side" (kollektor/emitter).
+7. **OK1–OK4 PC817** — Venstre side, én kolonne. R10 (2.2kΩ 1W) + D7 (SMBJ18A TVS) rett ved J24/OK1 på "kjøretøy-siden". R7–R9 (470Ω) ved J25–J27/OK2–OK4. Kollektor pull-up R31–R34 mot Teensy-siden. Min 4mm creepage mellom isolasjonsgrensene.
 
-8. **Q1–Q4 AO3400A + flyback D1–D4** — Nær J12–J15. Gate-resistor R1–R4 rett mellom Teensy-pin og gate-pad. 1N4007-diode tett på drain-pad.
+8. **Q1–Q6 AO3400A + flyback D1–D6** — Nær J12–J15 og J31–J32. Gate-resistor R1–R6 rett mellom Teensy-pin og gate-pad. 1N4007-diode tett på drain-pad.
 
-9. **J12–J15 MOSFET-utganger** — Nedre kant, lett tilgjengelig fra utsiden.
+9. **J12–J15 + J31–J32 MOSFET-utganger** — Nedre kant, lett tilgjengelig fra utsiden.
 
 10. **J16–J23 analoge innganger + J8–J11 NTC** — Venstre eller bunn kant.
 
-11. **J24–J29 digitale innganger** — Nær OK1–OK6.
+11. **J24–J27 digitale innganger** — Nær OK1–OK4. D7 (TVS) plasseres mellom J24 og R10.
+
+12. **J33 GPS + J34 NeoPixel** — Kant-plassert. GPS bør ha direkte sti til Teensy p34 (Serial8).
 
 12. **U11 LIS3DH** — Midten av boardet nær U1. Unngå hjørner (akselerometer skal måle kjøretøy-akselerasjon, ikke vibrasjon fra PCB-feste).
 
@@ -433,9 +548,10 @@ Vi har et ferdig skjema i KiCad 7-format, men INGEN layout-fil. Neste steg er:
 | Custom:PC817 | Package_DIP:DIP-4_W7.62mm |
 | Custom:AO3400A | Package_TO_SOT_SMD:SOT-23 |
 | Custom:Conn2pin | Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical |
+| Custom:Conn3pin | Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical |
 | Custom:PwrConn | Connector_Phoenix_GMSTB_2.54mm:GMSTB_2,5_2-G_1x02_P7.5mm_Horizontal |
 
-**Merk:** "Custom:Conn2pin" brukes for ALLE signal-kontakter (J0–J29). Disse bør i PCB-layout erstattes med **skruklemmefotavtrykk 5.0mm stigning** (f.eks. `Connector_Phoenix_MC_1.5mm:Phoenix_MC_1,5_2-G_1x02_P1.5mm_Horizontal` eller tilsvarende 5mm variant), ikke pin-header.
+**Merk:** "Custom:Conn2pin" og "Custom:Conn3pin" brukes for alle signal-kontakter (J0–J34). Disse bør i PCB-layout erstattes med **skruklemmefotavtrykk 5.0mm stigning** (f.eks. `Connector_Phoenix_MC_1.5mm:Phoenix_MC_1,5_2-G_1x02_P1.5mm_Horizontal` eller tilsvarende 5mm variant), ikke pin-header.
 
 ---
 
@@ -461,13 +577,12 @@ Vi har brukt Phoenix MC 1.5mm og GMSTB 2.54mm som placeholder-footprints. For mo
 - 2-pin, 5.0mm stigning, gjennomgående montering
 - Eksempel: `Connector_Phoenix_SPT:Phoenix_SPT_1,5_2-H-3.5_P3.50mm_Horizontal`
 
-### 8.3 Optokoppler serie-resistor verdi
+### 8.3 Optokoppler serie-resistor verdi — ✅ LØST
 
-Vi bruker 470Ω for optokoppler-inngangen (J24–J29 → PC817). Dette beregner:
-- 12V kilde: (12V - 1.2V) / 470Ω ≈ 23mA LED-strøm (innenfor PC817 absolutt maks 50mA)
-- 5V kilde: (5V - 1.2V) / 470Ω ≈ 8mA (fungerer, men CTR kan være lavere)
+DIG0 (koil/RPM): **2.2kΩ 1W** + **SMBJ18A TVS-diode** (se Del 3.2 for beregning).  
+DIG1–DIG3 (brytere): **470Ω** standard — 12V kilde gir 4.9mA ✓.
 
-**Spørsmål til AI:** Er 470Ω riktig verdi? Bør vi ha to parallelle verdier (én for 12V-kilde, én for 5V-kilde)?
+**Spørsmål til AI:** Bør 6N137 (raskere optokoppler) brukes for DIG0 i stedet for PC817? PC817 er rask nok for 1700 Hz maks (VW 12-tann triggerhjul ved 8500 RPM), men 6N137 gir bedre margin.
 
 ### 8.4 Flyback-diode for MOSFET-utganger
 
@@ -477,14 +592,26 @@ Vi har 1N4007 fra GND til drain. Men kjøretøy-laster er typisk 12V-spoler og v
 
 ### 8.5 Mangler det noe?
 
-**Spørsmål til AI:** Ser du noe vi har glemt? Eksempler på ting som kan mangle:
-- TVS-diode på +12V inngangen for transient-beskyttelse
+**Spørsmål til AI:** Ser du noe vi har glemt? Eksempler:
+- TVS-diode på +12V inngangen for transient-beskyttelse (er SMBJ18A bare ved J24, ikke på +12V main)
 - Ferrittkjerne på +12V for EMI-filtrering
 - Reverse-polarity-beskyttelse (P-kanal MOSFET på +12V inn)
-- Soft-start krets
+- NeoPixel strøm: trengs 300–500Ω serie-resistor på data-linja? 1000µF bulk C?
+- GPS pull-up på RX-linja? (NEO-6M TX er 3.3V nivå — Teensy 3.3V kompatibel, OK)
 - Watchdog-IC
 - Reset-knapp for Teensy
 - Test-pads på SPI-buss og analoge signaler
+
+### 8.7 GPS og NeoPixel — nye spørsmål
+
+**GPS (J33):** NEO-6M TX er 3.3V LVTTL — direkte til Teensy p34 er OK. Men:
+- Trenger vi TX fra Teensy til GPS? (Kun nødvendig for konfigurasjon — NMEA strøm er standardinnstilling)
+- Bør det være 4-pin kontakt (inkl. TX fra Teensy) for fremtidig fleksibilitet?
+
+**NeoPixel (J34):** WS2812B bruker 5V logikk, Teensy er 3.3V. 3.3V HIGH (~3V) tolkes av WS2812B som HIGH (terskelen er typisk 0.7×VDD = 3.5V — teknisk under spek). Løsning:
+- **Alternativ A:** Bruk 74AHCT125 buffer (3.3V inn → 5V ut) — garantert sikker
+- **Alternativ B:** Prøv direkte (mange WS2812B fungerer fine med 3.3V signal i praksis)
+- **Spørsmål til AI:** Bør vi legge til en 74AHCT125 level-shifter for NeoPixel data?
 
 ### 8.6 Alternativer til WIZ820io
 
@@ -596,13 +723,15 @@ Racing_Dashboard/
 | MAX31855 ×8 | ~10mA total |
 | LIS3DH | ~0.5mA |
 | MP2307DN kjerne | ~10mA quiescent |
-| 4× MOSFET (gate drive) | ~5mA |
-| 6× PC817 | ~10–25mA per kanal (kun ved aktiv input) |
-| **Sum (uten laster)** | **~350mA ved 5V = 1.75W** |
+| 6× MOSFET (gate drive) | ~5mA |
+| 4× PC817 | ~5–10mA per aktiv kanal |
+| GPS NEO-6M modul | ~50mA |
+| WS2812B NeoPixel (idle) | ~5mA (uten lys) / opp til 60mA per LED ved full hvit |
+| **Sum (uten laster)** | **~400–500mA ved 5V = 2.0–2.5W** |
 
-Buck-konverter er dimensjonert for 3A — god margin for tilkobling av relay-spoler osv.
+Buck-konverter er dimensjonert for 3A — god margin. GPS og NeoPixel legger til ~55–100mA ekstra.
 
 ---
 
 *Dokument generert av Claude Sonnet 4.6 — AlexPabs Racing Dashboard Project*  
-*Sist oppdatert: 2026-06-10*
+*Sist oppdatert: 2026-06-11 — v0.4b: alle 42 Teensy-pins brukt, 6 MOSFET, 4 DIG, GPS, NeoPixel, koil-beskyttelse*
