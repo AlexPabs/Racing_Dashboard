@@ -500,19 +500,25 @@ export function SimulatorPanel({ onClose }: { onClose: () => void }) {
 
       liveRef.current = { rpm:p.rpm, speed:p.speed, manifold, lambda, cht:[...p.cht], oil:p.oil, oilPress, battery:batt, ign }
 
-      updateSensorValue('rpm',            p.rpm + (Math.random()-0.5)*12)
-      updateSensorValue('speed',          p.speed)
-      updateSensorValue('manifold_press', manifold)
-      updateSensorValue('lambda',         lambda)
-      updateSensorValue('cht1',           p.cht[0])
-      updateSensorValue('cht2',           p.cht[1])
-      updateSensorValue('cht3',           p.cht[2])
-      updateSensorValue('cht4',           p.cht[3])
-      updateSensorValue('oil_temp',       p.oil)
-      updateSensorValue('oil_press',      oilPress)
-      updateSensorValue('ignition_adv',   ign)
-      updateSensorValue('battery',        batt)
-      updateSensorValue('fuel',           Math.max(0, 30 - p.speed * 0.0004))
+      // Always safe to update
+      updateSensorValue('speed',   p.speed)
+      updateSensorValue('battery', batt)
+      updateSensorValue('fuel',    Math.max(0, 30 - p.speed * 0.0004))
+
+      // Only push engine-specific sensors when running — avoids oil_press 0.0 and
+      // lambda 1.0 triggering alarms when engine is off (mock data handles them instead)
+      if (c.engineOn) {
+        updateSensorValue('rpm',            p.rpm + (Math.random()-0.5)*12)
+        updateSensorValue('manifold_press', manifold)
+        updateSensorValue('lambda',         lambda * 14.7)  // sensor expects AFR (10-20), not λ (0.8-1.0)
+        updateSensorValue('cht1',           p.cht[0])
+        updateSensorValue('cht2',           p.cht[1])
+        updateSensorValue('cht3',           p.cht[2])
+        updateSensorValue('cht4',           p.cht[3])
+        updateSensorValue('oil_temp',       p.oil)
+        updateSensorValue('oil_press',      oilPress)
+        updateSensorValue('ignition_adv',   ign)
+      }
 
       setLive({ ...liveRef.current })
     }, 50)
