@@ -9,6 +9,7 @@ import { LoggerPanel } from './panels/LoggerPanel'
 import { HardwarePanel } from './panels/HardwarePanel'
 import { DragPanel } from './panels/DragPanel'
 import { TPMSPanel } from './panels/TPMSPanel'
+import { SimulatorPanel } from './panels/SimulatorPanel'
 import { useMockData } from '../hooks/useMockData'
 
 function useNattmodus(): number {
@@ -104,6 +105,7 @@ export function Dashboard() {
       {showPanel === 'hardware' && <HardwarePanel onClose={() => setShowPanel('none')} />}
       {showPanel === 'drag' && <DragPanel onClose={() => setShowPanel('none')} />}
       {showPanel === 'tpms' && <TPMSPanel onClose={() => setShowPanel('none')} />}
+      {showPanel === 'simulator' && <SimulatorPanel onClose={() => setShowPanel('none')} />}
     </div>
   )
 }

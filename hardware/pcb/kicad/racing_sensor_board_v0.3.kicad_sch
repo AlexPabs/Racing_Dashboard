@@ -575,7 +575,8 @@
     (effects (font (size 1.5 1.5) (bold yes))(justify left))
     (uuid "b2421d25-4ab8-4915-ba2c-29f6283d8cf9")
   )
-  (text "WIZ820io 2x10 Header" (at 336.00 60.34 0)
+  (text "WIZ820io
+2×10 Header" (at 336.00 60.34 0)
     (effects (font (size 1.2 1.2) )(justify left))
     (uuid "5d5bd1a4-8262-442e-89fa-a40233a58bfe")
   )

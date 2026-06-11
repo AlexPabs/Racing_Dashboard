@@ -66,7 +66,8 @@ export function Toolbar() {
       {btn('DRAG',          showPanel === 'drag',     () => setShowPanel(showPanel === 'drag' ? 'none' : 'drag'),     '#a8ff3e')}
       {btn('TPMS',          showPanel === 'tpms',     () => setShowPanel(showPanel === 'tpms' ? 'none' : 'tpms'),     '#ffaa00')}
       {btn('LOGGER',        showPanel === 'logger',   () => setShowPanel(showPanel === 'logger' ? 'none' : 'logger'), '#bf5fff')}
-      {btn('HARDWARE',      showPanel === 'hardware', () => setShowPanel(showPanel === 'hardware' ? 'none' : 'hardware'), '#ff6b35')}
+      {btn('HARDWARE',      showPanel === 'hardware',   () => setShowPanel(showPanel === 'hardware'   ? 'none' : 'hardware'),   '#ff6b35')}
+      {btn('SIMULATOR',     showPanel === 'simulator',  () => setShowPanel(showPanel === 'simulator'  ? 'none' : 'simulator'),  '#a8ff3e')}
 
       {/* Status indicator */}
       <div style={{ marginLeft: 6, display: 'flex', alignItems: 'center', gap: 4 }}>
