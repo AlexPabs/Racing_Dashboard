@@ -56,8 +56,11 @@ Sensor-PCBen er det vi nå designer. Alt software (firmware, backend, frontend) 
 | 1× RPM isolert digital | Via 6N137 rask optokoppler (fra tenningsspole) | **6N137** (var PC817) |
 | 3× digital inngang | DIG1–DIG3 — RC-filter + Zener, ingen opto | **Direkte** (var PC817 opto) |
 | 4× MOSFET utgang 12V | OUT1=vifte, OUT2=pumpe, OUT3=shift-light, OUT4=spare | ↓ fra 6 |
-| GPS UART bidireksjonell | 4-pin — +3V3, GND, GPS_TX→Teensy_RX, Teensy_TX→GPS_RX | **4-pin bidi** (var 3-pin) |
-| NeoPixel WS2812B | Via 74AHCT125D level-shifter 3.3V→5V → 3-pin kontakt | **Level-shifter** (var direkte) |
+| GPS UART bidireksjonell | NEO-6M, 4-pin — +3V3, GND, GPS_TX→Teensy_RX, Teensy_TX→GPS_RX | **4-pin bidi** (var 3-pin) |
+| NeoPixel WS2812B | Via 74AHCT125D level-shifter 3.3V→5V + 300Ω → 3-pin kontakt | **Level-shifter** (var direkte) |
+| Status-LED | Grønn 0805 SMD LED + 1kΩ, loddet på PCB, Teensy p2 | **Ny i v0.5** |
+| Reset-knapp | 6mm taktil, RST→GND | **Ny i v0.5** |
+| Test-pader | 10× bare kobber 1.5mm (strøm + SPI + I2C + RPM) | **Ny i v0.5** |
 | 3-akse akselerometer | LIS3DH på I2C (Wire, p18/p19) — G-krefter | **I2C** (var SPI) |
 | 100 Mbit Ethernet | WIZ850io (W5500) SPI1 — web-dashboard, UDP-telemetri | **WIZ850io** (var WIZ820io) |
 | 12V→5V 3A buck | LMR33630-Q1 automotive buck | **LMR33630-Q1** (var MP2307DN) |
@@ -126,7 +129,7 @@ Teensy 4.1 — Pin-kart v0.5
 VENSTRE SIDE (p0–p21):
   p0   CS_ETH      → WIZ850io SCSn             (SPI1)
   p1   SP1_MISO    ← WIZ850io MISO             (SPI1)
-  p2   EXPN_P2     → J_EXP pin 1               (frigjort fra CS_ACC)
+  p2   STATUS_LED  → 1kΩ → grønn 0805 LED → GND (heartbeat på PCB)
   p3   CS_TC7      → MAX31855 U10 /CS
   p4   CS_TC6      → MAX31855 U9  /CS
   p5   CS_TC5      → MAX31855 U8  /CS
@@ -189,9 +192,12 @@ UART Serial8:
   RX=p34 ← GPS TX (NMEA output)
   TX=p35 → GPS RX (for konfigurasjon)
 
-Expansion header J_EXP (6-pin):
-  Pin1=EXPN_P2, Pin2=EXPN_P16, Pin3=EXPN_P17
-  Pin4=EXPN_P20, Pin5=EXPN_P21, Pin6=EXPN_P41
+Status LED:
+  p2 → 1kΩ → green 0805 LED → GND  (heartbeat, soldered on PCB)
+
+Expansion header J_EXP (5-pin, remaining unused I/O):
+  Pin1=EXPN_P16, Pin2=EXPN_P17, Pin3=EXPN_P20
+  Pin4=EXPN_P21, Pin5=EXPN_P41
 ```
 
 ---
@@ -532,21 +538,62 @@ hardware/pcb/kicad/
 
 ---
 
-## DEL 9: GJENSTÅENDE SPØRSMÅL
+## DEL 9: EKSTRA FUNKSJONER (alle besluttet — IKKE valgfrie)
 
-Alle store komponentvalg er avgjort i v0.5. Disse småspørsmål gjenstår:
+### 9.1 Status-LED (grønn, loddet på PCB)
 
-1. **Test-pads:** Bør vi legge til test-pads på SPI-buss (SCK, MOSI, MISO), I2C (SDA/SCL) og +5V/+3V3 for debugging?
+En 0805 SMD grønn LED loddet direkte på PCB-overflaten. Gir visuell bekreftelse på at boardet har strøm og Teensy kjører.
 
-2. **Reset-knapp:** Ønsker vi en taktil reset-knapp for Teensy (kortslutter RST til GND) tilgjengelig på PCB-kanten?
+- **LED:** 0805 grønn SMD LED
+- **Motstand:** 1kΩ 0805 i serie (3.3V − 2.0V = 1.3mA — synlig, lavt strømforbruk)
+- **Tilkoblet:** Teensy p2 → 1kΩ → LED anode → LED katode → GND
+- **Funksjon:** Firmware blinker: 1Hz = alt OK, rask blink = feil, av = ingen strøm/krasj
+- **Plassering:** Nær kortkant, synlig gjennom lite hull i ABS-bokslokket
+- **Konsekvens:** p2 er ikke lenger ledig expansion. J_EXP har nå **5 pinner** (p16, p17, p20, p21, p41)
 
-3. **Status-LED:** Har vi en ledig GPIO for en enkel 3.3V status-LED? (EXPN_P2 kan brukes)
+### 9.2 Reset-knapp
 
-4. **NeoPixel serie-resistor:** 300–500Ω serie-resistor på NEO_5V-linjen mellom 74AHCT125D og J_NEO? (Beskytter mot ESD og ringning på lang ledning til LEDs)
+- **Type:** 6mm taktil trykkknapp, gjennomgående montering (f.eks. Omron B3F-1000)
+- **Funksjon:** Kortslutter Teensy RST til GND momentant → reset
+- **Plassering:** PCB-kant, tilgjengelig gjennom hull i ABS-boks
 
-5. **WIZ850io footprint:** Modulen bruker 2.0mm stigning (ikke 2.54mm). Bruk: `Connector_PinHeader_2.00mm:PinHeader_2x10_P2.00mm_Vertical`
+### 9.3 Test-pader
 
-6. **LMR33630 FB-verdier:** Velg presise R-verdier for nøyaktig 5.000V output. Beregn: R_upper=100kΩ → R_lower = 100kΩ/(5.0/1.0 - 1) = 25kΩ (bruk 24.9kΩ E96-serie).
+Runde 1.5mm bare kobberpads (ingen soldermask) for probing med multimeter/oscilloskop.
+
+| Pad | Signal | Formål |
+|-----|--------|--------|
+| TP1 | +12V (VBAT_PROT) | Verifiser beskyttet 12V-skinne |
+| TP2 | +5V | Verifiser buck-utgang |
+| TP3 | +3V3 | Verifiser Teensy-regulator |
+| TP4 | GND | Referanse for oscilloskop |
+| TP5 | SPI_SCK (p13) | Debug SPI0-buss |
+| TP6 | SPI_MISO (p12) | Debug SPI0-buss |
+| TP7 | SPI_MOSI (p11) | Debug SPI0-buss |
+| TP8 | I2C_SDA (p18) | Debug I2C-buss |
+| TP9 | I2C_SCL (p19) | Debug I2C-buss |
+| TP10 | RPM_IN (p30) | Verifiser RPM etter optokoppler |
+
+### 9.4 NeoPixel serie-motstand
+
+- **Verdi:** 300Ω 0805
+- **Plassering:** Mellom 74AHCT125D utgang (1Y, pin 3) og J_NEO pin 2 (data)
+- **Formål:** Demper signalringing på lang ledning til LED-strip + ESD-beskyttelse
+
+### 9.5 WIZ850io footprint
+
+- Modulen bruker **2.0mm stigning** (ikke 2.54mm)
+- Bruk: `Connector_PinHeader_2.00mm:PinHeader_2x10_P2.00mm_Vertical`
+
+### 9.6 LMR33630 FB-verdier
+
+- Vout = Vref × (1 + R_upper/R_lower), Vref = 1.0V
+- For 5.0V: R_upper=100kΩ, R_lower = 100k/(5.0−1) = 25kΩ → bruk **24.9kΩ** (E96-verdi)
+- Gir Vout = 1.0V × (1 + 100k/24.9k) = **5.016V** ✓
+
+### 9.7 Ingen gjenstående spørsmål
+
+Alle designbeslutninger er tatt. Se `PCB_V05_ANSWERS.md` for detaljerte svar på alle spørsmål.
 
 ---
 
