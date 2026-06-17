@@ -48,25 +48,30 @@ The 6N137 + SMBJ18A TVS + 270Ω + 5.1V Zener protection circuit in v0.5 is corre
 
 ### Analog 0–5V Inputs (2 channels)
 
-| Channel | Sensor | Model/Type | Output Range | Notes |
-|---------|--------|-----------|-------------|-------|
-| ANA1 (p14) | Oil pressure | VDO 360-081-030-015C or Autometer 2246 | 0.5–4.5V (0–10 bar) | Ratiometric 5V sensor, 1/8" NPT thread. Common on VW race builds. |
-| ANA2 (p15) | Fuel pressure | Generic 0-100 PSI (0-5V) | 0.5–4.5V | Monitors fuel rail pressure. Important for EFI conversion or high-flow carb setups. |
+**IMPORTANT: These inputs are GENERIC.** The hardware provides two 0–5V analog channels with a 10k/15k voltage divider (scales 5V → 3.0V for the 3.3V ADC). Any 0–5V automotive sensor can be connected. Calibration (offset, scale, sensor curve) is done in the React dashboard frontend — NOT hardcoded in hardware or firmware.
+
+| Channel | Typical use | Hardware | Notes |
+|---------|------------|---------|-------|
+| ANA1 (p14) | Oil pressure, fuel pressure, MAP, TPS, or any 0–5V sensor | 10kΩ upper + 15kΩ lower divider + 100nF filter | User assigns sensor type in dashboard settings |
+| ANA2 (p15) | Same — second generic 0–5V channel | Same circuit | User assigns sensor type in dashboard settings |
 
 **Scaling resistor values (10k/15k divider):**
 - Input 0–5V → Teensy sees 0–3.0V (within 3.3V ADC range) ✓
-- If sensors are ratiometric (powered from +5V rail): accuracy depends on 5V rail stability. LMR33630-Q1 should be stable enough.
+- Works with any ratiometric or absolute 0–5V sensor
+- Dashboard has per-sensor `offset` and `scale` calibration fields
 
 ### NTC Thermistor Inputs (4 channels)
 
-| Channel | Measures | Sensor Type | Notes |
-|---------|----------|------------|-------|
-| NTC1 (p22) | Oil temperature | 10kΩ NTC, 1/8" NPT (e.g., Bosch 0280130026 or generic) | At oil cooler or sump drain plug |
-| NTC2 (p23) | Cylinder head temp (CHT) — spare/average | 10kΩ NTC, ring terminal (CHT sensor under spark plug gasket) | Air-cooled VW: CHT is critical — no coolant temp available |
-| NTC3 (p24) | Intake air temperature (IAT) | 10kΩ NTC, open-tip or threaded | In air filter housing or intake manifold runner |
-| NTC4 (p25) | Transmission / ambient | 10kΩ NTC | Gearbox temp or ambient reference |
+**IMPORTANT: These inputs are GENERIC.** Any 10kΩ NTC thermistor can be connected. The pull-up resistor value (10kΩ) is fixed in hardware, but the temperature calibration curve (Steinhart-Hart coefficients or lookup table) is configured in firmware/dashboard.
 
-**Pull-up value:** 10kΩ to +3V3 is correct for 10kΩ NTC — gives best resolution around 25–100°C range.
+| Channel | Typical use | Hardware | Notes |
+|---------|------------|---------|-------|
+| NTC1 (p22) | Oil temp, coolant, head temp, or any NTC | 10kΩ pull-up to +3V3 | User assigns in dashboard |
+| NTC2 (p23) | Same | 10kΩ pull-up to +3V3 | User assigns in dashboard |
+| NTC3 (p24) | Same | 10kΩ pull-up to +3V3 | User assigns in dashboard |
+| NTC4 (p25) | Same | 10kΩ pull-up to +3V3 | User assigns in dashboard |
+
+**Pull-up value:** 10kΩ to +3V3 is correct for standard 10kΩ NTC — gives best resolution around 25–100°C range. Works with most automotive NTC sensors (VDO, Bosch, generic).
 
 ### K-Type Thermocouple Inputs (8 channels via MAX31855)
 
