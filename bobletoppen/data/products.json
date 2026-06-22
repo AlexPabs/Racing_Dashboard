@@ -1,0 +1,90 @@
+[
+  {
+    "id": "motor-1600",
+    "name": "Motor 1600cc Dual Port",
+    "category": "Motor",
+    "description": "Komplett 1600cc dual port motor. Renovert og testet. Passer Type 1 Boble 1971-1979.",
+    "price": 18500,
+    "stock": 1,
+    "condition": "Renovert",
+    "fits": "Type 1 (1971-1979)",
+    "image": "img/placeholder-motor.svg"
+  },
+  {
+    "id": "girkasse-4spd",
+    "name": "Girkasse 4-trinns",
+    "category": "Drivverk",
+    "description": "Original 4-trinns manuell girkasse for VW Boble. God stand, ingen lekkasjer.",
+    "price": 8500,
+    "stock": 2,
+    "condition": "Brukt - God stand",
+    "fits": "Type 1 (1961-1979)",
+    "image": "img/placeholder-girkasse.svg"
+  },
+  {
+    "id": "frontrute-oval",
+    "name": "Frontrute Oval",
+    "category": "Karosseri",
+    "description": "Original oval frontrute for VW Boble. Uten sprekker eller skader.",
+    "price": 4200,
+    "stock": 1,
+    "condition": "Brukt - Meget god",
+    "fits": "Type 1 Oval (1953-1957)",
+    "image": "img/placeholder-rute.svg"
+  },
+  {
+    "id": "skjermer-front",
+    "name": "Forskjermer Par",
+    "category": "Karosseri",
+    "description": "Par med forskjermer til VW Boble. Noe overflatrust, men solid metall. Kan lakkeres.",
+    "price": 6500,
+    "stock": 1,
+    "condition": "Brukt - Overflaterust",
+    "fits": "Type 1 (1968-1979)",
+    "image": "img/placeholder-skjerm.svg"
+  },
+  {
+    "id": "seter-front",
+    "name": "Forseter Komplett Par",
+    "category": "Interiør",
+    "description": "Originale forseter med skinner. Trekket har normal slitasje men ingen hull.",
+    "price": 3800,
+    "stock": 1,
+    "condition": "Brukt - Normal slitasje",
+    "fits": "Type 1 (1968-1979)",
+    "image": "img/placeholder-seter.svg"
+  },
+  {
+    "id": "ratt-original",
+    "name": "Originalt Ratt",
+    "category": "Interiør",
+    "description": "Original VW ratt i bakelitt. Komplett med hornknapp. Meget fin stand.",
+    "price": 2200,
+    "stock": 3,
+    "condition": "Brukt - Meget god",
+    "fits": "Type 1 (1968-1979)",
+    "image": "img/placeholder-ratt.svg"
+  },
+  {
+    "id": "bremsetromler-bak",
+    "name": "Bremsetromler Bak (Par)",
+    "category": "Bremser",
+    "description": "Par med bakre bremsetromler. Nylig dreid, klar for montering.",
+    "price": 1800,
+    "stock": 2,
+    "condition": "Renovert",
+    "fits": "Type 1 (1968-1979)",
+    "image": "img/placeholder-bremse.svg"
+  },
+  {
+    "id": "eksosanlegg-komplett",
+    "name": "Eksosanlegg Komplett",
+    "category": "Motor",
+    "description": "Komplett eksosanlegg med varmevekslere for 1600cc motor. Nyprodusert kvalitetsdel.",
+    "price": 5900,
+    "stock": 4,
+    "condition": "Ny",
+    "fits": "Type 1 (1966-1979)",
+    "image": "img/placeholder-eksos.svg"
+  }
+]
